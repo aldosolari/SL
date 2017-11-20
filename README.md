@@ -12,8 +12,8 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
 
 1. 21/11 11:30-14:30 Lab713 : **Introduction**
     + *Slides:* [Introduction]() • [Algorithms and inference]() • [IQ and zodiacal signs]() • [Inference after model selection]()
-       + *Dataset:* [Yesterday](https://github.com/aldosolari/DM/blob/master/0_intro/0_yesterday.pdf)
-       + *Reading*: EH 1, 2, 3, 4, 5
+       + *Dataset:* [Leukemia data](https://web.stanford.edu/~hastie/CASI/data.html) • [Kidney fitness data](https://web.stanford.edu/~hastie/CASI/data.html)
+       + *Reading*: EH 1-5
 
 2. 22/11 13:30-16:30 U7-16?
 
