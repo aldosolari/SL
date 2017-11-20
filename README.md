@@ -45,8 +45,8 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
 
 ### Data analysis assignment
 
-  + [data](https://osf.io/47tnc/)
-  + [README]()
+  + [Download data](https://osf.io/47tnc/)
+  + [README](https://github.com/aldosolari/SL/tree/master/DAA)
 
 
 ### References
