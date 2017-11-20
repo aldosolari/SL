@@ -11,7 +11,7 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
 *1st week*
 
 1. 21/11 11:30-14:30 Lab713 
-    + 
+    + [Introduction]
     
 2. 22/11 13:30-16:30 U7-16
 
