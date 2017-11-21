@@ -10,20 +10,23 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
 
 *1st week*
 
-1. 21/11 11:30-14:30 Lab713 : **Introduction**
-    + *Slides:* [Introduction]() • [Algorithms and inference]() • [IQ and zodiacal signs]() • [Inference after model selection]()
+1. 21/11 11:30-14:30 Lab713 : **Algorithms and inference**
+    + *Slides:* [Introduction](https://github.com/aldosolari/SL/blob/master/1_intro/1_intro.pdf) • [Two problems]() • [Algorithms and inference](https://github.com/aldosolari/SL/blob/master/1_intro/1_alginf.pdf) 
     + *Datasets:* [Leukemia data](https://web.stanford.edu/~hastie/CASI_files/DATA/leukemia.html) • [Kidney fitness data](https://web.stanford.edu/~hastie/CASI_files/DATA/kidney.html)
-    + *Reading*: EH Part I Classic Statistical Inference: Chapters 1-5
+    + *Books*: EH chapter 1 
 
-2. 22/11 13:30-16:30 U7-16?
+2. 22/11 13:30-16:30 U4-10 : **Testing against a high dimensional alternative**
+    + *Slides*: [Testing against a high-dimensional alternative]()
+    + *Papers*: Goeman, Van de Geer, De Kort, Van Houwelingen (2004) A global test for groups of genes. Bioinformatics 20:93–99 • Goeman, Van de Geer and Van Houwelingen (2006) Testing against a high-dimensional alternative. JRSSB 68:477-493 • [Goeman, Oosting, Finos, Solari. The Global Test and globaltest R package](https://www.bioconductor.org/packages/devel/bioc/vignettes/globaltest/inst/doc/GlobalTest.pdf). 
+    + *Books*: EH chapters 2 and 4.1, 4.2 
 
 3. 24/11 9:30-11:30 Lab908 
 
 *2nd week*
 
-4. 28/11 11:30-14:30 ?
+4. 28/11 11:30-14:30 U4-10
 
-5. 29/11 13:30-16:30 U7-16?
+5. 29/11 13:30-16:30 U4-10
 
 6. 1/12 9:30-11:30 Lab907
 
@@ -31,7 +34,7 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
 
 7. 5/12 11:30-14:30 Lab713
 
-8. 6/12 13:30-16:30 U7-16?
+8. 6/12 13:30-16:30 U4-10
 
 *4th week*
 
