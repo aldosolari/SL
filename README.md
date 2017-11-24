@@ -23,6 +23,11 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
     + *Books:* EH chapter 2 and 4.1, 4.2 
 
 3. 24/11 9:30-11:30 Lab908 
+    + *Simulation*: (kidney)[https://github.com/aldosolari/SL/blob/master/simulation/2problems.Rmd]
+    + *Case study*: (kidney)[https://github.com/aldosolari/SL/blob/master/casestudy/1_kidney.pdf]
+    + *Case study*: (leukemia)[https://github.com/aldosolari/SL/blob/master/casestudy/2_leukemia.pdf]
+
+    
 
 *2nd week*
 

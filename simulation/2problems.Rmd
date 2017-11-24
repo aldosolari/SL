@@ -1,0 +1,93 @@
+---
+title: "Two problems"
+output: html_document
+---
+
+## Multiple testing
+
+```{r}
+rm(list=ls())
+set.seed(123)
+
+n = 100
+p = 25
+
+# design matrix
+X = matrix(runif(n*p), ncol=p)
+colnames(X) = paste0("X",1:p)
+
+# betas
+beta = rep(0,p)
+
+# response
+y = 2 + X %*% beta + rnorm(n)
+
+# data
+yX = data.frame(y,X)
+
+# linear model
+fit <- lm(y~., yX)
+summary(fit)
+
+# type I errors
+names(which(summary(fit)$coef[-1,4] < 0.05))
+```
+
+## Inference after variable selection
+
+Data generation
+
+```{r}
+rm(list=ls())
+set.seed(123)
+
+n = 25
+p = 100
+
+# design matrix
+X = matrix(runif(n*p), ncol=p)
+colnames(X) = paste0("X",1:p)
+
+# betas
+beta = c(rep(2,5),rep(0,p-5))
+
+# response
+y = 2 + X %*% beta + rnorm(n)
+
+# data
+yX = data.frame(y,X)
+```
+
+Forward selection
+
+```{r}
+fml.full <- as.formula(paste("y ~ ", paste(colnames(X), collapse= "+"))) 
+fit.null <- lm(y~1,yX)
+fit.fwd <- step(fit.null, scope=fml.full, direction="forward", steps=5, trace=0)
+hatS.fwd <- attr(fit.fwd$coefficients, "names")[-1]
+hatS.fwd
+
+fml.fwd <- as.formula(paste("y ~ ", paste(hatS.fwd, collapse= "+")))
+summary(lm(fml.fwd,yX))
+```
+
+Lasso selection
+
+```{r, message=FALSE, warning=FALSE}
+library(glmnet)
+fit.lasso <- glmnet(X,y, alpha=1, dfmax=5)
+lambda = fit.lasso$lambda[which.max(fit.lasso$df>=5)]
+hatS.lasso = colnames(X)[which(coef(fit.lasso, s=lambda)[-1]!=0)]
+hatS.lasso
+
+fml.lasso <- as.formula(paste("y ~ ", paste(hatS.lasso, collapse= "+")))
+summary(lm(fml.lasso,yX))
+```
+
+Random selection
+
+```{r}
+hatS.random <- sample(colnames(X),5)
+fml.random <- as.formula(paste("y ~ ", paste(hatS.random, collapse= "+")))
+summary(lm(fml.random,yX))
+```
