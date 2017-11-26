@@ -14,7 +14,7 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
 
     + [Introduction](https://github.com/aldosolari/SL/blob/master/lectures/0_intro.pdf)
     + [Algorithms and inference](https://github.com/aldosolari/SL/blob/master/lectures/1_ai.pdf)
-    + [Two inferential problems](https://github.com/aldosolari/SL/blob/master/lectures/1_twoip.pdf)
+    + [Two inferential problems](https://github.com/aldosolari/SL/blob/master/lectures/2_twoip.pdf)
 
 2. 22/11 13:30-16:30 U4-10 : **Testing against an high-dimensional alternative**
 
@@ -32,7 +32,7 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
     + [p-values](https://github.com/aldosolari/SL/blob/master/lectures/6_pvalue.pdf)
     + [Multiple testing](https://github.com/aldosolari/SL/blob/master/lectures/7_mt.pdf)
 
-5. 29/11 13:30-16:30 U4-10 : **False Discovery Rate**
+5. 29/11 13:30-16:30 U4-10 : **FWER and FDR**
 
     + Methods for FWER control
     + Methods for FDR control
