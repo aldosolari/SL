@@ -14,44 +14,43 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
 
     + [Introduction](https://github.com/aldosolari/SL/blob/master/lectures/0_intro.pdf)
     + [Algorithms and inference](https://github.com/aldosolari/SL/blob/master/lectures/1_ai.pdf)
-    + [The four eras of data](https://github.com/aldosolari/SL/blob/master/lectures/2_4eras.pdf)
-    + [Two inferential problems](https://github.com/aldosolari/SL/blob/master/lectures/3_2ip.pdf)
+  + Two inferential problems
 
 2. 22/11 13:30-16:30 U4-10 : **Testing against an high-dimensional alternative**
 
-    + [Case study: Leukemia data](https://github.com/aldosolari/SL/blob/master/lectures/4_leukemia.pdf)
-    + [Testing against an high-dimensional alternative](https://github.com/aldosolari/SL/blob/master/lectures/5_tahda.pdf)
+    + [Case study: Leukemia data](https://github.com/aldosolari/SL/blob/master/lectures/3_leukemia.pdf)
+    + Testing against an high-dimensional alternative
 
-3. 24/11 9:30-11:30 Lab908 : **Kidney data: prediction intervals**
+3. 24/11 9:30-11:30 Lab908 : **Kidney data**
 
-    + [Case study: Kidney data](https://github.com/aldosolari/SL/blob/master/lectures/6_kidney.pdf)
-
+    + Case study: Kidney data
+    
 *2nd week*
 
-4. 28/11 11:30-14:30 U4-10 **Multiple testing**
+4. 28/11 11:30-14:30 U4-10 : **Multiple testing**
 
-    + [p-values]()
-    + [Multiple testing]()
-    + [Methods for FWER control]()
+    + p-values
+    + Multiple testing
+    + Methods for FWER control
 
-5. 29/11 13:30-16:30 U4-10 **False Discovery Rate**
+5. 29/11 13:30-16:30 U4-10 : **False Discovery Rate**
 
-    + [Methods for FDR control]()
-    + [Methods for FDP estimation]()
+    + Methods for FDR control
+    + Methods for FDP estimation
 
-6. 1/12 9:30-11:30 Lab907 **Golub data**
+6. 1/12 9:30-11:30 Lab907 : **Golub data**
 
-    + [Case study: Golub data]()
+    + Case study: Golub data
 
 *3rd week*
 
-7. 5/12 11:30-14:30 Lab713 **Permutation methods**
+7. 5/12 11:30-14:30 Lab713 : **Permutation methods**
 
-    + [Permutation methods]()
+    + Permutation methods
 
-8. 6/12 13:30-16:30 U4-10 **Methods for FDP confidence**
+8. 6/12 13:30-16:30 U4-10 : **Methods for FDP confidence**
 
-    + [Methods for FDP confidence]()
+    + Methods for FDP confidence
 
 *4th week*
 
