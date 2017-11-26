@@ -10,25 +10,47 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
 
 *1st week*
 
-1. 21/11 11:30-14:30 Lab713 
+1. 21/11 11:30-14:30 Lab713 : **Algorithms and inference**
 
-2. 22/11 13:30-16:30 U4-10  
+    + [Algorithms and inference]()
+    + [The four eras of data]()
+    + [Two inferential problems]()
 
-3. 24/11 9:30-11:30 Lab908     
+2. 22/11 13:30-16:30 U4-10 : **Testing against an high-dimensional alternative**
+
+    + [Case study: Leukemia data]()
+    + [Testing against an high-dimensional alternative]()
+
+3. 24/11 9:30-11:30 Lab908 : **Kidney data: prediction intervals**
+
+    + [Case study: Kidney data]()
 
 *2nd week*
 
-4. 28/11 11:30-14:30 U4-10
+4. 28/11 11:30-14:30 U4-10 **Multiple testing**
 
-5. 29/11 13:30-16:30 U4-10
+    + [$p$-values]()
+    + [Multiple testing]()
+    + [Methods for FWER control]()
 
-6. 1/12 9:30-11:30 Lab907
+5. 29/11 13:30-16:30 U4-10 **False Discovery Rate**
+
+    + [Methods for FDR control]()
+    + [Methods for FDP estimation]()
+
+6. 1/12 9:30-11:30 Lab907 **Golub data**
+
+    + [Case study: Golub data]()
 
 *3rd week*
 
-7. 5/12 11:30-14:30 Lab713
+7. 5/12 11:30-14:30 Lab713 **Permutation methods**
 
-8. 6/12 13:30-16:30 U4-10
+    + [Permutation methods]()
+
+8. 6/12 13:30-16:30 U4-10 **Methods for FDP confidence**
+
+    + [Methods for FDP confidence]()
 
 *4th week*
 
