@@ -12,24 +12,25 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
 
 1. 21/11 11:30-14:30 Lab713 : **Algorithms and inference**
 
-    + [Algorithms and inference]()
-    + [The four eras of data]()
-    + [Two inferential problems]()
+    + [Introduction](0_intro)
+    + [Algorithms and inference](1_ai)
+    + [The four eras of data](2_4eras)
+    + [Two inferential problems](3_2ip)
 
 2. 22/11 13:30-16:30 U4-10 : **Testing against an high-dimensional alternative**
 
-    + [Case study: Leukemia data]()
-    + [Testing against an high-dimensional alternative]()
+    + [Case study: Leukemia data](4_leukemia)
+    + [Testing against an high-dimensional alternative](5_tahda)
 
 3. 24/11 9:30-11:30 Lab908 : **Kidney data: prediction intervals**
 
-    + [Case study: Kidney data]()
+    + [Case study: Kidney data](6_kidney)
 
 *2nd week*
 
 4. 28/11 11:30-14:30 U4-10 **Multiple testing**
 
-    + [$p$-values]()
+    + [p-values]()
     + [Multiple testing]()
     + [Methods for FWER control]()
 
