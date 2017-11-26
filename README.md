@@ -23,7 +23,7 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
 
 3. 24/11 9:30-11:30 Lab908 : **Kidney data**
 
-    + Case study: Kidney data
+    + [Case study: Kidney data](https://github.com/aldosolari/SL/blob/master/lectures/5_kidney.pdf)
     
 *2nd week*
 
