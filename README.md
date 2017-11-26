@@ -14,12 +14,12 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
 
     + [Introduction](https://github.com/aldosolari/SL/blob/master/lectures/0_intro.pdf)
     + [Algorithms and inference](https://github.com/aldosolari/SL/blob/master/lectures/1_ai.pdf)
-  + Two inferential problems
+    + [Two inferential problems](https://github.com/aldosolari/SL/blob/master/lectures/1_twoip.pdf)
 
 2. 22/11 13:30-16:30 U4-10 : **Testing against an high-dimensional alternative**
 
     + [Case study: Leukemia data](https://github.com/aldosolari/SL/blob/master/lectures/3_leukemia.pdf)
-    + Testing against an high-dimensional alternative
+    + [Testing against an high-dimensional alternative](https://github.com/aldosolari/SL/blob/master/lectures/4_tahda.pdf)
 
 3. 24/11 9:30-11:30 Lab908 : **Kidney data**
 
