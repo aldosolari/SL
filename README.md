@@ -29,13 +29,12 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
 
 4. 28/11 11:30-14:30 U4-10 : **Multiple testing**
 
-    + [p-values](https://github.com/aldosolari/SL/blob/master/lectures/6_pvalue.pdf)
-    + [Multiple testing](https://github.com/aldosolari/SL/blob/master/lectures/7_mt.pdf)
+    + [Multiple testing](https://github.com/aldosolari/SL/blob/master/lectures/6_mt.pdf)
 
 5. 29/11 13:30-16:30 U4-10 : **FWER and FDR**
 
-    + Methods for FWER control
-    + Methods for FDR control
+    + [Methods for FWER control](https://github.com/aldosolari/SL/blob/master/lectures/7_FWER.pdf)
+    + [Methods for FDR control](https://github.com/aldosolari/SL/blob/master/lectures/8_FDR.pdf))
 
 6. 1/12 9:30-11:30 Lab907 : **Golub data**
 
