@@ -34,7 +34,7 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
 5. 29/11 13:30-16:30 U4-10 : **FWER and FDR**
 
     + [Methods for FWER control](https://github.com/aldosolari/SL/blob/master/lectures/7_FWER.pdf)
-    + [Methods for FDR control](https://github.com/aldosolari/SL/blob/master/lectures/8_FDR.pdf))
+    + [Methods for FDR control](https://github.com/aldosolari/SL/blob/master/lectures/8_FDR.pdf)
 
 6. 1/12 9:30-11:30 Lab907 : **Golub data**
 
