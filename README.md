@@ -35,6 +35,7 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
 
     + [Methods for FWER control](https://github.com/aldosolari/SL/blob/master/lectures/7_FWER.pdf)
     + [Methods for FDR control](https://github.com/aldosolari/SL/blob/master/lectures/8_FDR.pdf)
+    + [Slides from the ISCB2015 course](https://github.com/aldosolari/SL/blob/master/extra/partI.pdf)
 
 6. 1/12 9:30-11:30 Lab907 : **Van de Vijver and Rosenwald data**
 
