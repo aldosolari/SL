@@ -15,6 +15,7 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
     + [Introduction](https://github.com/aldosolari/SL/blob/master/lectures/0_intro.pdf)
     + [Algorithms and inference](https://github.com/aldosolari/SL/blob/master/lectures/1_ai.pdf)
     + [Two inferential problems](https://github.com/aldosolari/SL/blob/master/lectures/2_twoip.pdf)
+    + [Is most published research false?]
 
 2. 22/11 13:30-16:30 U4-10 : **Testing against an high-dimensional alternative**
 
@@ -29,9 +30,10 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
 
 4. 28/11 11:30-14:30 U4-10 : **Multiple testing**
 
+    + [Review: hypothesis testing](http://www.econ.uzh.ch/dam/jcr:ffffffff-935a-b0d6-0000-00002a046dec/are_2010.pdf)
     + [Multiple testing](https://github.com/aldosolari/SL/blob/master/lectures/6_mt.pdf)
 
-5. 29/11 13:30-16:30 U4-10 : **FWER and FDR**
+5. 29/11 13:30-16:30 U4-10 : **Methods for FWER and FDR control**
 
     + [Methods for FWER control](https://github.com/aldosolari/SL/blob/master/lectures/7_FWER.pdf)
     + [Methods for FDR control](https://github.com/aldosolari/SL/blob/master/lectures/8_FDR.pdf)
@@ -45,11 +47,15 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
 
 7. 5/12 11:30-14:30 Lab713 : **Permutation methods**
 
-    + Permutation methods
+    + [Permutation methods]()
+    + [Slides from ISCB2015 course](https://github.com/aldosolari/SL/blob/master/extra/partII.pdf)
+    + [Slides from ISCB2015 course](https://github.com/aldosolari/SL/blob/master/extra/partII.pdf)
 
-8. 6/12 13:30-16:30 U4-10 : **Methods for FDP confidence**
 
-    + Methods for FDP confidence
+8. 6/12 13:30-16:30 U4-10 : **Multiple testing for exploratory research**
+
+    + [Multiple testing for exploratory research](https://projecteuclid.org/download/pdfview_1/euclid.ss/1330437937)
+    + [Slides from ISCB2015 course](https://github.com/aldosolari/SL/blob/master/extra/partIII.pdf)
 
 *4th week*
 
@@ -71,6 +77,3 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
 
   + [EH] Efron and Hastie (2016) Computer-Age Statistical Inference: Algorithms, Evidence, and Data Science, Cambridge University Press
   + [GI] Giraud C. (2015) Introduction to High-Dimensional Statistics. Chapman and Hall/CRC
-  + [NL] Nolan D., Lang D.T. (2015) Data Science in R: A Case Studies Approach to Computational Reasoning and Problem Solving. Chapman and Hall/CRC
-  + [HTW] Hastie T., Tibshirani R., Wainwright M. (2016) Statistical Learning with Sparsity: The Lasso and Generalizations. Springer
-  + [BG] Bühlmann, P., van de Geer, S. (2011) Statistics for High-Dimensional Data. Methods, Theory and Applications. Springer
