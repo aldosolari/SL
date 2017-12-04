@@ -15,7 +15,6 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
     + [Introduction](https://github.com/aldosolari/SL/blob/master/lectures/0_intro.pdf)
     + [Algorithms and inference](https://github.com/aldosolari/SL/blob/master/lectures/1_ai.pdf)
     + [Two inferential problems](https://github.com/aldosolari/SL/blob/master/lectures/2_twoip.pdf)
-    + [Is most published research false?]
 
 2. 22/11 13:30-16:30 U4-10 : **Testing against an high-dimensional alternative**
 
@@ -47,8 +46,9 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
 
 7. 5/12 11:30-14:30 Lab713 : **Permutation methods**
 
-    + [Permutation methods]()
-    + [Slides from ISCB2015 course](https://github.com/aldosolari/SL/blob/master/extra/partII.pdf)
+    + [Permutation methods](https://github.com/aldosolari/SL/blob/master/lectures/10_perm.pdf)
+    + [Slides from ASTI2016 course](https://github.com/aldosolari/SL/blob/master/extra/NPclassic.pdf)
+    + [Slides from ASTI2016 course](https://github.com/aldosolari/SL/blob/master/extra/NPperm.pdf)
     + [Slides from ISCB2015 course](https://github.com/aldosolari/SL/blob/master/extra/partII.pdf)
 
 
