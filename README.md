@@ -59,7 +59,10 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
 
 *4th week*
 
-9. 12/12 11:30-14:30 Lab713
+9. 12/12 11:30-14:30 Lab713 : **All-Resolutions Inference for Brain Imaging**
+    + [Case study: fMRI data](https://www.biorxiv.org/content/biorxiv/early/2017/11/28/226126.full.pdf)
+    + [Slides from CLADAG2017 course](https://github.com/aldosolari/SL/blob/master/extra/cladag.pdf)
+
 
 10. 13/12 13:30-16:30 Lab713
 

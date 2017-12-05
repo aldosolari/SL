@@ -1,0 +1,160 @@
+---
+title: "Test di Permutazione"
+author: ''
+date: ''
+output: html_document
+---
+
+### Dataset Cholesterol
+
+L'obiettivo dello studio è di stabilire se una dieta a base di pesce diminuisce il livello di colesterolo rispetto ad una dieta a base di carne (Ludbrook and Dudley, 1998). A questo scopo, 12 soggetti sono stati assegnati casualmente alle due diete: 7 alla dieta a base di pesce, e 5 alla dieta a base di carne. Dopo un anno, è stato misurato il loro livello di colesterolo:
+
+```{r}
+# pulizia del workspace
+rm(list=ls())
+
+# dati pooled: prime 7 osservazioni "fish", ultime 5 "meat"
+Z = c(5.42,5.86,6.16,6.55,6.8,7,7.11,6.51,7.56,7.61,7.84,11.5)
+
+# numerosità dei due gruppi
+n.x = 7
+n.y = 5
+
+# numerosità complessiva
+n.z = n.x + n.y
+```
+
+**Test t di Student per due campioni indipendenti di permutazione**
+
+```{r, message=FALSE}
+require(combinat)
+# tutti i possibili sottoinsiemi di {1,...,n.z} con numerosità n.x
+perms = combn(1:n.z,n.x)
+
+# valori osservati delle statistica test t di Student per ciascuna permutazione
+t.stat = apply(perms, 2, 
+              function(perm) t.test(Z[-perm],Z[perm],
+                                  var.equal=T,
+                                  alternative="greater")$statistic
+              )
+
+# distribuzione di permutazione della statistica test t di Student
+plot(table(t.stat), 
+     xlab = "t",
+     ylab = "frequenza")
+
+# valore osservato della statistica test
+points(t.stat[1],0,pch=4,col="red")
+
+# p-value di permutazione
+mean( t.stat >= t.stat[1] ) 
+
+# con la libreria flip
+require(flip)
+gruppi = c(rep("fish",n.x),rep("meat",n.y))
+set.seed(123)
+res=flip(Z ~ gruppi,
+         perms=1000,
+         statTest="t",
+         tail = 1)
+summary(res)
+hist(res)
+```
+
+**Test di Wilcoxon-Mann-Whitney esatto**
+
+```{r, message=FALSE}
+# trasformo i dati in ranghi
+R = rank(Z)
+
+# valori osservati delle statistica test di Wilcoxon per ciascuna permutazione
+w.stat = apply(perms, 2, 
+              function(perm) sum(R[-perm])
+              )
+
+# distribuzione di permutazione della statistica test di Wilcoxon
+plot(table(w.stat), 
+     xlab = "somma dei ranghi del secondo campione",
+     ylab = "frequenza")
+
+# valore osservato della statistica test
+points(w.stat[1],0,pch=4,col="red")
+
+# p-value di permutazione
+mean( w.stat >= w.stat[1] )
+
+wilcox.test(Z[(n.x+1):n.z],Z[1:n.x], 
+            alternative="greater",
+            exact=TRUE)
+
+# con la libreria flip
+set.seed(123)
+res=flip(Z ~ gruppi,
+         perms=1000,
+         statTest="Wilcoxon",
+         tail = 1)
+summary(res)
+hist(res)
+```
+
+### Dataset SAR
+
+Nineteen patients with asthma were enrolled in a study to
+investigate the respiratory effects of sulfur dioxide.
+Measurements specific airway resistance (SAR) were
+measured from patients in the following way. First, SAR was
+measured while at rest, then after 5 minutes of exercising.
+This gives an increase in SAR. This was done while patients
+breathed "normal" air , and while subjected to 0.25 ppm SO2.
+Thus, two measurements of increased SAR were obtained
+from each patient. 
+
+```{r}
+Air = c(.82, .86, 1.86, 1.64, 12.57, 1.56, 1.28, 1.08, 4.29, 1.34, 14.68, 3.64, 3.89, .58, 9.50, .93, 0.49, 31.04, 1.66)
+SO2 = c(.72, 1.05, 1.40, 2.30, 13.49, .62, 2.41, 2.32, 8.19, 6.33, 19.88,8.87,9.25, 6.59, 2.17, 9.93,13.44,16.25,19.89)
+
+Dif = SO2 - Air
+n = length(Dif)
+```
+
+**Test t di Student per dati appaiati di permutazione**
+
+```{r, message=FALSE}
+
+# tutti i possibili segni
+require(e1071)
+signs <- bincombinations(n)
+signs[which(signs == 1)] <- -1
+signs[which(signs == 0)] <- 1
+#
+# # valori osservati delle statistica test t di Student per ciascuna permutazione
+t.stat = ( (signs%*%Dif) / n )/sqrt( var(Dif) / n )
+#
+# # distribuzione di permutazione della statistica test t di Student
+plot(table(t.stat),
+     xlab = "t",
+     ylab = "frequenza")
+
+# # valore osservato della statistica test
+points(t.stat[1],0,pch=4,col="red")
+
+# p-value di permutazione
+mean( t.stat >= t.stat[1] )
+
+# con la libreria flip
+set.seed(123)
+res=flip(as.matrix(Dif),
+         perms=1000,
+         tail = 1)
+summary(res)
+hist(res)
+```
+
+**Test dei ranghi con segno di Wilcoxon esatto**
+
+```{r}
+wilcox.test(SO2, Air, 
+            pair=TRUE,
+            exact=TRUE,
+            alternative="greater")
+```
