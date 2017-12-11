@@ -63,8 +63,7 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
 11. 20/12 13:30-16:30 Lab713
 
 ### Data analysis assignment: 
- 
- 	+ Silberzahn and  Uhlmann (2015) Many hands make tight work. *Nature* Comments 189-191 [download .pdf](http://www.socialjudgments.com/docs/Silberzahn_Uhlmann_2015.pdf)
+  + Silberzahn and  Uhlmann (2015) Many hands make tight work. *Nature* Comments 189-191 [download .pdf](http://www.socialjudgments.com/docs/Silberzahn_Uhlmann_2015.pdf)
 	+ Webpage of the project: [https://osf.io/gvm2z/](https://osf.io/gvm2z/)
 	+ Silberzahn et al. Crowdsourcing data analysis: Do soccer referees give more red cards to dark skin toned players? [download .pdf](http://home.uchicago.edu/~npope/crowdsourcing_paper.pdf)
 	+ [Download data](https://osf.io/47tnc/)
@@ -74,14 +73,13 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
 	+ Goeman, Van De Geer, Van Houwelingen (2006) Testing against a high dimensional alternative. *Journal of the Royal Statistical Society - Series B* 68:477--493. Read Sections 1, 2, 3, 5, 6, 11
 	+ Romano, Shaikh, Wolf (2010) Hypothesis Testing in Econometrics. *Annual Review of Economics* 2:75--104 [download .pdf](http://www.econ.uzh.ch/dam/jcr:ffffffff-935a-b0d6-0000-00002a046dec/are_2010.pdf) Read Sections 1, 2, 3.0, 3.1, 4.0, 5.0, 6.0, 6.1 
 	+ Goeman and Solari (2014) Multiple Hypothesis Testing in Genomics. *Statistics in Medicine* 33:1946-78 Read Sections 1, 2, 3, 4, 5, 6.0, 6.1, 6.3, 6.5, 8
-	+ Goeman and Solari (2012) Multiple Testing for Exploratory Research. *Statistical Science* 26:584-597 [download .pdf](https://projecteuclid.org/download/pdfview_1/euclid.ss/1330437937) Read Sections 1, 2, 3, 5, 6
-	+ Rosenblatt, Finos, Weeda, Solari, Goeman (2017) All-Resolutions Inference for Brain Imaging. *bioRxiv* [download .pdf](https://www.biorxiv.org/content/biorxiv/early/2017/11/28/226126.full.pdf) Read everything
+  + Goeman and Solari (2012) Multiple Testing for Exploratory Research. *Statistical Science* 26:584-597 [download .pdf](https://projecteuclid.org/download/pdfview_1/euclid.ss/1330437937) Read Sections 1, 2, 3, 5, 6
+  + Rosenblatt, Finos, Weeda, Solari, Goeman (2017) All-Resolutions Inference for Brain Imaging. *bioRxiv* [download .pdf](https://www.biorxiv.org/content/biorxiv/early/2017/11/28/226126.full.pdf) Read everything
     
 
 ## Slides extra
-
-	+  ISCB2015: Multiple Hypothesis Testing in Genomics [part I](https://github.com/aldosolari/SL/blob/master/extra/partI.pdf) ? [part II](https://github.com/aldosolari/SL/blob/master/extra/partI.pdf) ? [part III](https://github.com/aldosolari/SL/blob/master/extra/partIII.pdf) 
-	+  ASTI2016: [Test nonparametrici classici](https://github.com/aldosolari/SL/blob/master/extra/NPclassic.pdf) ?  [Test di permutazione](https://github.com/aldosolari/SL/blob/master/extra/NPperm.pdf)  
+  +  ISCB2015: Multiple Hypothesis Testing in Genomics [part I](https://github.com/aldosolari/SL/blob/master/extra/partI.pdf) • [part II](https://github.com/aldosolari/SL/blob/master/extra/partI.pdf) • [part III](https://github.com/aldosolari/SL/blob/master/extra/partIII.pdf) 
+  +  ASTI2016: [Test nonparametrici classici](https://github.com/aldosolari/SL/blob/master/extra/NPclassic.pdf) • [Test di permutazione](https://github.com/aldosolari/SL/blob/master/extra/NPperm.pdf)  
 
 ### Books
   + [EH] Efron and Hastie (2016) Computer-Age Statistical Inference: Algorithms, Evidence, and Data Science, Cambridge University Press
