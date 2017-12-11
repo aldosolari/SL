@@ -15,6 +15,9 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
     + [Introduction](https://github.com/aldosolari/SL/blob/master/lectures/0_intro.pdf)
     + [Algorithms and inference](https://github.com/aldosolari/SL/blob/master/lectures/1_ai.pdf)
     + [Two inferential problems](https://github.com/aldosolari/SL/blob/master/lectures/2_twoip.pdf)
+    + [Explanation implies causation?](https://www.biorxiv.org/content/biorxiv/early/2017/11/13/218784.full.pdf)
+    + [A statistical definition for reproducibility and replicability](https://www.biorxiv.org/content/early/2016/07/29/066803.full.pdf)
+    + [ASA Statement on Statistical Significance and P-Values](https://socialsciences.mcmaster.ca/jfox/Courses/soc6z3/AmStatAssn-p-values.pdf)
 
 2. 22/11 13:30-16:30 U4-10 : **Testing against an high-dimensional alternative**
 
@@ -29,7 +32,6 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
 
 4. 28/11 11:30-14:30 U4-10 : **Multiple testing**
 
-    + [Review: hypothesis testing](http://www.econ.uzh.ch/dam/jcr:ffffffff-935a-b0d6-0000-00002a046dec/are_2010.pdf)
     + [Multiple testing](https://github.com/aldosolari/SL/blob/master/lectures/6_mt.pdf)
 
 5. 29/11 13:30-16:30 U4-10 : **Methods for FWER and FDR control**
@@ -78,8 +80,9 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
     
 
 ### Slides extra
-  +  ISCB2015: Multiple Hypothesis Testing in Genomics [part I](https://github.com/aldosolari/SL/blob/master/extra/partI.pdf) • [part II](https://github.com/aldosolari/SL/blob/master/extra/partI.pdf) • [part III](https://github.com/aldosolari/SL/blob/master/extra/partIII.pdf) 
-  +  ASTI2016: [Test nonparametrici classici](https://github.com/aldosolari/SL/blob/master/extra/NPclassic.pdf) • [Test di permutazione](https://github.com/aldosolari/SL/blob/master/extra/NPperm.pdf)  
+  +  ISCB2015: Multiple Hypothesis Testing in Genomics [part I](https://github.com/aldosolari/SL/blob/master/extra/ISCB2015partI.pdf) • [part II](https://github.com/aldosolari/SL/blob/master/extra/ISCB2015partI.pdf) • [part III](https://github.com/aldosolari/SL/blob/master/extra/ISCB2015partIII.pdf) 
+  +  ASTI2016: [Test nonparametrici classici](https://github.com/aldosolari/SL/blob/master/extra/ASTI2016classic.pdf) • [Test di permutazione](https://github.com/aldosolari/SL/blob/master/extra/ASTI2016perm.pdf)  
+  + CLADAG2017: [Flexible Inference for fMRI data](https://github.com/aldosolari/SL/blob/master/extra/CLADAG2017.pdf)
 
 ### Books
   + [EH] Efron and Hastie (2016) Computer-Age Statistical Inference: Algorithms, Evidence, and Data Science, Cambridge University Press
