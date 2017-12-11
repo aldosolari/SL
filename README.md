@@ -12,10 +12,10 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
 
 1. 21/11 11:30-14:30 Lab713 : **Algorithms and inference**
 
-    + [Introduction](https://github.com/aldosolari/SL/blob/master/lectures/0_intro.pdf)
-    + [Algorithms and inference](https://github.com/aldosolari/SL/blob/master/lectures/1_ai.pdf)
-    + [Case study: kidney data](https://github.com/aldosolari/SL/blob/master/lectures/5_kidney.pdf)
-    + [Two inferential problems](https://github.com/aldosolari/SL/blob/master/lectures/2_twoip.pdf)
+  + [Introduction](https://github.com/aldosolari/SL/blob/master/lectures/0_intro.pdf)
+  + [Algorithms and inference](https://github.com/aldosolari/SL/blob/master/lectures/1_ai.pdf)
+  + [Case study: kidney data](https://github.com/aldosolari/SL/blob/master/lectures/5_kidney.pdf)
+  + [Two inferential problems](https://github.com/aldosolari/SL/blob/master/lectures/2_twoip.pdf)
 
 
 2. 22/11 13:30-16:30 U4-10 : **ASA Statement on Statistical Significance and P-Values**
@@ -30,43 +30,43 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
 
 3. 24/11 9:30-11:30 Lab908 : **Testing against an high-dimensional alternative**
 
-    + [Case study: leukemia data](https://github.com/aldosolari/SL/blob/master/lectures/3_leukemia.pdf)
-    + [Testing against an high-dimensional alternative](https://github.com/aldosolari/SL/blob/master/lectures/4_tahda.pdf)
-    + Goeman, Van De Geer, Van Houwelingen (2006) Testing against a high dimensional alternative. *Journal of the Royal Statistical Society - Series B* 68:477--493. Read Sections 1, 2, 3, 5, 6, 11
+  + [Case study: leukemia data](https://github.com/aldosolari/SL/blob/master/lectures/3_leukemia.pdf)
+  + [Testing against an high-dimensional alternative](https://github.com/aldosolari/SL/blob/master/lectures/4_tahda.pdf)
+  + Goeman, Van De Geer, Van Houwelingen (2006) Testing against a high dimensional alternative. *Journal of the Royal Statistical Society - Series B* 68:477--493. Read Sections 1, 2, 3, 5, 6, 11
     
 *2nd week*
 
 4. 28/11 11:30-14:30 U4-10 : **Multiple testing**
 
-    + [Multiple testing](https://github.com/aldosolari/SL/blob/master/lectures/6_mt.pdf)
-    + Romano, Shaikh, Wolf (2010) Hypothesis Testing in Econometrics. *Annual Review of Economics* 2:75--104 [[.pdf]](http://www.econ.uzh.ch/dam/jcr:ffffffff-935a-b0d6-0000-00002a046dec/are_2010.pdf). Read Sections 1, 2, 3.0, 3.1, 4.0, 5.0, 6.0, 6.1
-    + Goeman and Solari (2014) Multiple Hypothesis Testing in Genomics. *Statistics in Medicine* 33:1946-78. Read Sections 1, 2, 3, 4, 5, 6.0, 6.1, 6.3, 6.5, 8
+  + [Multiple testing](https://github.com/aldosolari/SL/blob/master/lectures/6_mt.pdf)
+  + Goeman and Solari (2014) Multiple Hypothesis Testing in Genomics. *Statistics in Medicine* 33:1946-78. Read Sections 1, 2, 3, 4, 5, 6.0, 6.1, 6.3, 6.5, 8
+  + Romano, Shaikh, Wolf (2010) Hypothesis Testing in Econometrics. *Annual Review of Economics* 2:75--104 [[.pdf]](http://www.econ.uzh.ch/dam/jcr:ffffffff-935a-b0d6-0000-00002a046dec/are_2010.pdf). Read Sections 1, 2, 3.0, 3.1, 4.0, 5.0, 6.0, 6.1
 
 5. 29/11 13:30-16:30 U4-10 : **Methods for FWER and FDR control**
 
-    + [Methods for FWER control](https://github.com/aldosolari/SL/blob/master/lectures/7_FWER.pdf)
-    + [Methods for FDR control](https://github.com/aldosolari/SL/blob/master/lectures/8_FDR.pdf)
+  + [Methods for FWER control](https://github.com/aldosolari/SL/blob/master/lectures/7_FWER.pdf)
+  + [Methods for FDR control](https://github.com/aldosolari/SL/blob/master/lectures/8_FDR.pdf)
 
 6. 1/12 9:30-11:30 Lab907 : **Van de Vijver and Rosenwald data**
 
-    + [Case study: Van de Vijver and Rosenwald data](https://github.com/aldosolari/SL/blob/master/lectures/9_VandeVijver.pdf)
+  + [Case study: Van de Vijver and Rosenwald data](https://github.com/aldosolari/SL/blob/master/lectures/9_VandeVijver.pdf)
 
 *3rd week*
 
 7. 5/12 11:30-14:30 Lab713 : **Permutation methods**
 
-    + [Permutation methods](https://github.com/aldosolari/SL/blob/master/lectures/10_perm.pdf)
+  + [Permutation methods](https://github.com/aldosolari/SL/blob/master/lectures/10_perm.pdf)
 
 8. 6/12 13:30-16:30 U4-10 : **Methods for FDP estimation and confidence**
 
-    + [FDP estimation and confidence]()
-    + Goeman and Solari (2012) Multiple Testing for Exploratory Research. *Statistical Science* 26:584-597 [[.pdf]](https://projecteuclid.org/download/pdfview_1/euclid.ss/1330437937). Read Sections 1, 2, 3, 5, 6
+  + [FDP estimation and confidence]()
+  + Goeman and Solari (2012) Multiple Testing for Exploratory Research. *Statistical Science* 26:584-597 [[.pdf]](https://projecteuclid.org/download/pdfview_1/euclid.ss/1330437937). Read Sections 1, 2, 3, 5, 6
     
 *4th week*
 
 9. 12/12 11:30-14:30 Lab713 : **fMRI data**
-    + [Case study: fMRI data](https://www.biorxiv.org/content/biorxiv/early/2017/11/28/226126.full.pdf)
-    + Rosenblatt, Finos, Weeda, Solari, Goeman (2017) All-Resolutions Inference for Brain Imaging. *bioRxiv* [[.pdf]](https://www.biorxiv.org/content/biorxiv/early/2017/11/28/226126.full.pdf). Read everything
+  + [Case study: fMRI data](https://www.biorxiv.org/content/biorxiv/early/2017/11/28/226126.full.pdf)
+  + Rosenblatt, Finos, Weeda, Solari, Goeman (2017) All-Resolutions Inference for Brain Imaging. *bioRxiv* [[.pdf]](https://www.biorxiv.org/content/biorxiv/early/2017/11/28/226126.full.pdf). Read everything
     
 10. 13/12 13:30-16:30 Lab713 
 
