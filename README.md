@@ -20,9 +20,11 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
 
 2. 22/11 13:30-16:30 U4-10 : **ASA Statement on Statistical Significance and P-Values**
 
+  + Scientific Studies: Last Week Tonight with John Oliver (HBO) [[watch]](https://www.youtube.com/watch?v=0Rnq1NpHdmw)
   + ASA Statement on Statistical Significance and P-Values. *The American Statistician*. 2016, 70:129--133
   [[.pdf]](https://socialsciences.mcmaster.ca/jfox/Courses/soc6z3/AmStatAssn-p-values.pdf). Read everything.
   + Myint, Leek, Jager (2017) Explanation implies causation? *bioRxiv* [[.pdf]](https://www.biorxiv.org/content/biorxiv/early/2017/11/13/218784.full.pdf). Read everything.
+  + Statistics explained to my cat: Chocolate, correlation and cat's whiskers [[watch]](https://www.youtube.com/watch?v=ZeCr3Jgh8r0&t=12s)
   + Patil, Peng, Leek (2017) A statistical definition for reproducibility and replicability. *bioRxiv* [[.pdf]](https://www.biorxiv.org/content/early/2016/07/29/066803.full.pdf). Read everything.
   
 
