@@ -66,8 +66,8 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
   + Webpage of the project: [https://osf.io/gvm2z/](https://osf.io/gvm2z/)
   + Silberzahn and  Uhlmann (2015) Many hands make tight work. *Nature* Comments 189-191 [[.pdf]](http://www.socialjudgments.com/docs/Silberzahn_Uhlmann_2015.pdf)
   + Silberzahn et al. Crowdsourcing data analysis: Do soccer referees give more red cards to dark skin toned players? [[.pdf]](http://home.uchicago.edu/~npope/crowdsourcing_paper.pdf)
-	+ [Download data](https://osf.io/47tnc/)
-	+ [README](https://github.com/aldosolari/SL/tree/master/DAA)
+  + [Download data](https://osf.io/47tnc/)
+  + [README](https://github.com/aldosolari/SL/tree/master/DAA)
 
 ### Articles
   + Goeman, Van De Geer, Van Houwelingen (2006) Testing against a high dimensional alternative. *Journal of the Royal Statistical Society - Series B* 68:477--493. Read Sections 1, 2, 3, 5, 6, 11
