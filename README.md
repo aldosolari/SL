@@ -66,8 +66,7 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
  
  	+ Silberzahn and  Uhlmann (2015) Many hands make tight work. *Nature* Comments 189-191 [download .pdf](http://www.socialjudgments.com/docs/Silberzahn_Uhlmann_2015.pdf)
 	+ Webpage of the project: [https://osf.io/gvm2z/](https://osf.io/gvm2z/)
-	+ Silberzahn et al. Crowdsourcing data analysis: Do soccer referees give more red cards to dark skin toned
-players? [download .pdf](http://home.uchicago.edu/~npope/crowdsourcing_paper.pdf)
+	+ Silberzahn et al. Crowdsourcing data analysis: Do soccer referees give more red cards to dark skin toned players? [download .pdf](http://home.uchicago.edu/~npope/crowdsourcing_paper.pdf)
 	+ [Download data](https://osf.io/47tnc/)
 	+ [README](https://github.com/aldosolari/SL/tree/master/DAA)
 
