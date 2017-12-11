@@ -21,7 +21,7 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
 2. 22/11 13:30-16:30 U4-10 : **ASA Statement on Statistical Significance and P-Values**
 
   + Scientific Studies: Last Week Tonight with John Oliver (HBO) [[watch]](https://www.youtube.com/watch?v=0Rnq1NpHdmw)
-  + ASA Statement on Statistical Significance and P-Values. *The American Statistician*. 2016, 70:129--133
+  + ASA Statement on Statistical Significance and P-Values. *The American Statistician*. 2016, 70:129-133
   [[.pdf]](https://socialsciences.mcmaster.ca/jfox/Courses/soc6z3/AmStatAssn-p-values.pdf). Read everything.
   + Myint, Leek, Jager (2017) Explanation implies causation? *bioRxiv* [[.pdf]](https://www.biorxiv.org/content/biorxiv/early/2017/11/13/218784.full.pdf). Read everything.
   + Statistics explained to my cat: Chocolate, correlation and cat's whiskers [[watch]](https://www.youtube.com/watch?v=ZeCr3Jgh8r0&t=12s)
@@ -30,9 +30,9 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
 
 3. 24/11 9:30-11:30 Lab908 : **Testing against an high-dimensional alternative**
 
-  + [Case study: leukemia data](https://github.com/aldosolari/SL/blob/master/lectures/3_leukemia.pdf)
   + [Testing against an high-dimensional alternative](https://github.com/aldosolari/SL/blob/master/lectures/4_tahda.pdf)
-  + Goeman, Van De Geer, Van Houwelingen (2006) Testing against a high dimensional alternative. *Journal of the Royal Statistical Society - Series B* 68:477--493. Read Sections 1, 2, 3, 5, 6, 11
+  + [Case study: leukemia data](https://github.com/aldosolari/SL/blob/master/lectures/3_leukemia.pdf)
+  + Goeman, Van De Geer, Van Houwelingen (2006) Testing against a high dimensional alternative. *Journal of the Royal Statistical Society - Series B* 68:477-493. Read Sections 1, 2, 3, 5, 6, 11
     
 *2nd week*
 
@@ -40,7 +40,7 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
 
   + [Multiple testing](https://github.com/aldosolari/SL/blob/master/lectures/6_mt.pdf)
   + Goeman and Solari (2014) Multiple Hypothesis Testing in Genomics. *Statistics in Medicine* 33:1946-78. Read Sections 1, 2, 3, 4, 5, 6.0, 6.1, 6.3, 6.5, 8
-  + Romano, Shaikh, Wolf (2010) Hypothesis Testing in Econometrics. *Annual Review of Economics* 2:75--104 [[.pdf]](http://www.econ.uzh.ch/dam/jcr:ffffffff-935a-b0d6-0000-00002a046dec/are_2010.pdf). Read Sections 1, 2, 3.0, 3.1, 4.0, 5.0, 6.0, 6.1
+  + Romano, Shaikh, Wolf (2010) Hypothesis Testing in Econometrics. *Annual Review of Economics* 2:75-104 [[.pdf]](http://www.econ.uzh.ch/dam/jcr:ffffffff-935a-b0d6-0000-00002a046dec/are_2010.pdf). Read Sections 1, 2, 3.0, 3.1, 4.0, 5.0, 6.0, 6.1
 
 5. 29/11 13:30-16:30 U4-10 : **Methods for FWER and FDR control**
 
@@ -59,13 +59,13 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
 
 8. 6/12 13:30-16:30 U4-10 : **Methods for FDP estimation and confidence**
 
-  + [FDP estimation and confidence]()
+  + [FDP estimation and confidence](https://github.com/aldosolari/SL/blob/master/lectures/11_fdp.pdf)
   + Goeman and Solari (2012) Multiple Testing for Exploratory Research. *Statistical Science* 26:584-597 [[.pdf]](https://projecteuclid.org/download/pdfview_1/euclid.ss/1330437937). Read Sections 1, 2, 3, 5, 6
     
 *4th week*
 
-9. 12/12 11:30-14:30 Lab713 : **fMRI data**
-  + [Case study: fMRI data](https://www.biorxiv.org/content/biorxiv/early/2017/11/28/226126.full.pdf)
+9. 12/12 11:30-14:30 Lab713 : **Auditory data**
+  + [Case study: auditory data](https://github.com/aldosolari/SL/blob/master/lectures/12_fMRI.pdf)
   + Rosenblatt, Finos, Weeda, Solari, Goeman (2017) All-Resolutions Inference for Brain Imaging. *bioRxiv* [[.pdf]](https://www.biorxiv.org/content/biorxiv/early/2017/11/28/226126.full.pdf). Read everything
     
 10. 13/12 13:30-16:30 Lab713 
