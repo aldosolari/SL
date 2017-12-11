@@ -14,7 +14,7 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
 
     + [Introduction](https://github.com/aldosolari/SL/blob/master/lectures/0_intro.pdf)
     + [Algorithms and inference](https://github.com/aldosolari/SL/blob/master/lectures/1_ai.pdf)
-    + [Case study: Kidney data](https://github.com/aldosolari/SL/blob/master/lectures/5_kidney.pdf)
+    + [Case study: kidney data](https://github.com/aldosolari/SL/blob/master/lectures/5_kidney.pdf)
     + [Two inferential problems](https://github.com/aldosolari/SL/blob/master/lectures/2_twoip.pdf)
 
 
@@ -28,16 +28,16 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
 
 3. 24/11 9:30-11:30 Lab908 : **Testing against an high-dimensional alternative**
 
-    + [Case study: Leukemia data](https://github.com/aldosolari/SL/blob/master/lectures/3_leukemia.pdf)
+    + [Case study: leukemia data](https://github.com/aldosolari/SL/blob/master/lectures/3_leukemia.pdf)
     + [Testing against an high-dimensional alternative](https://github.com/aldosolari/SL/blob/master/lectures/4_tahda.pdf)
     + Goeman, Van De Geer, Van Houwelingen (2006) Testing against a high dimensional alternative. *Journal of the Royal Statistical Society - Series B* 68:477--493. Read Sections 1, 2, 3, 5, 6, 11
     
 *2nd week*
 
-4. 28/11 11:30-14:30 U4-10 : **Hypothesis testing and multiple testing**
+4. 28/11 11:30-14:30 U4-10 : **Multiple testing**
 
-    + Romano, Shaikh, Wolf (2010) Hypothesis Testing in Econometrics. *Annual Review of Economics* 2:75--104 [[.pdf]](http://www.econ.uzh.ch/dam/jcr:ffffffff-935a-b0d6-0000-00002a046dec/are_2010.pdf). Read Sections 1, 2, 3.0, 3.1, 4.0, 5.0, 6.0, 6.1
     + [Multiple testing](https://github.com/aldosolari/SL/blob/master/lectures/6_mt.pdf)
+    + Romano, Shaikh, Wolf (2010) Hypothesis Testing in Econometrics. *Annual Review of Economics* 2:75--104 [[.pdf]](http://www.econ.uzh.ch/dam/jcr:ffffffff-935a-b0d6-0000-00002a046dec/are_2010.pdf). Read Sections 1, 2, 3.0, 3.1, 4.0, 5.0, 6.0, 6.1
     + Goeman and Solari (2014) Multiple Hypothesis Testing in Genomics. *Statistics in Medicine* 33:1946-78. Read Sections 1, 2, 3, 4, 5, 6.0, 6.1, 6.3, 6.5, 8
 
 5. 29/11 13:30-16:30 U4-10 : **Methods for FWER and FDR control**
