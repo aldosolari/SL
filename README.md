@@ -21,6 +21,7 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
 2. 22/11 13:30-16:30 U4-10 : **ASA Statement on Statistical Significance and P-Values**
 
   + Scientific Studies: Last Week Tonight with John Oliver (HBO) [[watch]](https://www.youtube.com/watch?v=0Rnq1NpHdmw)
+  + Nuzzo (2014) Statistical errors. *Nature* News & Comment 506:150-152 [[.pdf]](http://folk.ntnu.no/slyderse/Nuzzo%20and%20Editorial%20-%20p-values.pdf). Read everything
   + ASA Statement on Statistical Significance and P-Values. *The American Statistician*. 2016, 70:129-133
   [[.pdf]](https://socialsciences.mcmaster.ca/jfox/Courses/soc6z3/AmStatAssn-p-values.pdf). Read everything.
   + Myint, Leek, Jager (2017) Explanation implies causation? *bioRxiv* [[.pdf]](https://www.biorxiv.org/content/biorxiv/early/2017/11/13/218784.full.pdf). Read everything.
@@ -68,9 +69,10 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
   + [Case study: auditory data](https://github.com/aldosolari/SL/blob/master/lectures/12_fMRI.pdf)
   + Rosenblatt, Finos, Weeda, Solari, Goeman (2017) All-Resolutions Inference for Brain Imaging. *bioRxiv* [[.pdf]](https://www.biorxiv.org/content/biorxiv/early/2017/11/28/226126.full.pdf). Read everything
     
-10. 13/12 13:30-16:30 Lab713 
+10. 13/12 13:30-16:30 Lab713 : 
 
 *5th week*
+	+ Taylor, Tibshirani (2015) Statistical learning and selective inference *PNAS* 112:7629-7634 [[.pdf]](http://www.pnas.org/content/112/25/7629.full.pdf). Read everything
 
 11. 20/12 13:30-16:30 Lab713
 
