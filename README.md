@@ -70,14 +70,14 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
   + Rosenblatt, Finos, Weeda, Solari, Goeman (2017) All-Resolutions Inference for Brain Imaging. *bioRxiv* [[.pdf]](https://www.biorxiv.org/content/biorxiv/early/2017/11/28/226126.full.pdf). Read everything
     
 10. 13/12 13:30-16:30 Lab713 : **High-dimensional regression**
-	+  [Sample-splitting inference](https://github.com/aldosolari/SL/blob/master/lectures/13_hdi.pdf)
-	+ Taylor, Tibshirani (2015) Statistical learning and selective inference *PNAS* 112:7629-7634 [[.pdf]](http://www.pnas.org/content/112/25/7629.full.pdf). Read everything
+  +  [Sample-splitting inference](https://github.com/aldosolari/SL/blob/master/lectures/13_hdi.pdf)
+  + Taylor, Tibshirani (2015) Statistical learning and selective inference *PNAS* 112:7629-7634 [[.pdf]](http://www.pnas.org/content/112/25/7629.full.pdf). Read everything
 
 *5th week*
 
 
-11. 20/12 13:30-16:30 Lab713 **Stability selection**
-	+  [Stability selection](https://github.com/aldosolari/SL/blob/master/lectures/14_stability.pdf)
+11. 20/12 13:30-16:30 Lab713 : **Stability selection**
+  +  [Stability selection](https://github.com/aldosolari/SL/blob/master/lectures/14_stability.pdf)
 	
 ### Data analysis assignment:
   + Webpage of the project: [https://osf.io/gvm2z/](https://osf.io/gvm2z/)
