@@ -71,6 +71,8 @@ University of Milano-Bicocca, CLAMSES, A.A. 2017/18
     
 10. 13/12 13:30-16:30 Lab713 : **High-dimensional regression**
   +  [Sample-splitting inference](https://github.com/aldosolari/SL/blob/master/lectures/13_hdi.pdf)
+  + Dezeure, Buhlmann, Meier, Meinshausen (2015) High-Dimensional Inference: Confidence
+Intervals, p-Values and R-Software hdi  *Statistical Science* 30:533-558 [[.pdf]](https://arxiv.org/pdf/1408.4026.pdf). Read 1, 2.0, 2.1.1
   + Taylor, Tibshirani (2015) Statistical learning and selective inference *PNAS* 112:7629-7634 [[.pdf]](http://www.pnas.org/content/112/25/7629.full.pdf). Read everything
 
 *5th week*
