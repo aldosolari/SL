@@ -79,7 +79,16 @@ Intervals, p-Values and R-Software hdi  *Statistical Science* 30:533-558 [[.pdf]
 
 
 11. 20/12 13:30-16:30 Lab713 : **Stability selection**
-  +  [Stability selection](https://github.com/aldosolari/SL/blob/master/lectures/14_stability.pdf)
+  + Taylor, Tibshirani (2015) Statistical learning and selective inference *PNAS* 112:7629-7634 [[.pdf]](http://www.pnas.org/content/112/25/7629.full.pdf). Read
+  +  [Stability selection](https://github.com/aldosolari/SL/blob/master/extra/vsu.pdf)
+  
+  
+*6th week*
+
+
+12. 9/1 11:30-14:30 Lab711 : **Variable selection uncertainty**
+  + Shmueli (2010) To explain or to predict? *Statistical Science* 25:289-310 [[.pdf]](https://arxiv.org/pdf/1101.0891.pdf). Read
+  +  [Variable selection uncertainty](https://github.com/aldosolari/SL/blob/master/lectures/14_stability.pdf)
 	
 ### Data analysis assignment:
   + Webpage of the project: [https://osf.io/gvm2z/](https://osf.io/gvm2z/)
