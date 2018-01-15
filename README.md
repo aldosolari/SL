@@ -99,6 +99,7 @@ Intervals, p-Values and R-Software hdi  *Statistical Science* 30:533-558 [[.pdf]
 14. 15/1 11:30-14:30 Lab716 : **Chocolate and nobel prize**
   +   Messerli (2012) Chocolate Consumption, Cognitive Function,
 and Nobel Laureates *NEJM* [[.pdf]](http://www.biostat.jhsph.edu/courses/bio621/misc/Chocolate%20consumption%20cognitive%20function%20and%20nobel%20laurates%20(NEJM).pdf)
+	+ [Winning formula](http://i.huffpost.com/gen/819873/thumbs/h-NOBEL-1536x1536.jpg?6)
   +   Statistics explained to my cat: Chocolate, correlation and cat's whiskers [[watch]](https://www.youtube.com/watch?v=ZeCr3Jgh8r0&t=12s)
   +  [Chocolate and nobel prize](https://github.com/aldosolari/SL/blob/master/lectures/16_choco.pdf)
 
