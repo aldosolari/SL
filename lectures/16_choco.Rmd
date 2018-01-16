@@ -1,0 +1,192 @@
+---
+title: "Chocolate and nobel prize"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+From *Chocolate and the Nobel Prize – a true story?*
+
+http://gforge.se/2012/12/chocolate-and-nobel-prize/
+
+First we get nobel prizes per country by reading the table using readHTMLTable() from the XML package. After that we do some cleaning to the dataset.
+
+```{r, message=FALSE, warning=FALSE, comment=FALSE}
+rm(list=ls())
+library(XML)
+library(httr)
+url <- "http://en.wikipedia.org/wiki/List_of_countries_by_Nobel_laureates_per_capita"
+theurl <- htmlParse(rawToChar(GET(url)$content))
+tables <- readHTMLTable(theurl)
+# delete  Faroe Islands
+tables <- tables[[2]][-c(1,31),]
+
+nobel_prizes <- tables
+# Clean column names
+colnames(nobel_prizes) <- 
+  gsub(" ", "_", 
+       gsub("(/|\\[[0-9]+\\])", "", 
+            gsub("\n", " ", colnames(nobel_prizes))
+        )
+    )
+ 
+# Delete those that aren't countries and thus lack rank
+nobel_prizes$Rank <- as.numeric(as.character(nobel_prizes$Rank))
+nobel_prizes <- subset(nobel_prizes, is.na(Rank) == FALSE)
+
+# Create Country
+nobel_prizes$Country = nobel_prizes$Entity
+
+# Clean the country names
+nobel_prizes$Country <- 
+  gsub("[^a-zA-Z ]", "", nobel_prizes$Entity)
+ 
+# Clean the loriates variable
+nobel_prizes$Laureates_10_million <- 
+  as.numeric(as.character(nobel_prizes$Laureates_10_million))
+
+```
+
+The next part is slightly trickier since we need to translate german country names to match the nobel prize data.
+
+```{r, message=FALSE, warning=FALSE, comment=FALSE}
+# Translation from German to English
+url <- "http://german.about.com/library/blnation_index.htm"
+theurl <- htmlParse(rawToChar(GET(url)$content))
+tables <- readHTMLTable(theurl)
+ 
+translate_german <- tables[[1]]
+translate_german <- translate_german[3:NROW(translate_german), 1:2]
+colnames(translate_german) <- c("English", "German")
+translate_german$German <- 
+    gsub("([ ]+(f|pl)\\.$|\\([[:alnum:] -]+\\))", "", translate_german$German)
+
+# Get the consumption from a German list
+url <- "http://www.theobroma-cacao.de/wissen/wirtschaft/international/konsum"
+theurl <- htmlParse(rawToChar(GET(url)$content))
+
+tables <- readHTMLTable(theurl)
+
+german_chocolate_data <- tables[[1]][2:NROW(tables[[1]]), ]
+names(german_chocolate_data) <- c("Country", "Chocolate_consumption")
+german_chocolate_data$Country <- 
+    gsub("([ ]+f\\.$|\\([[:alnum:] -]+\\))", "", german_chocolate_data$Country)
+
+library(sqldf)
+
+sql <- paste0("SELECT gc.*, tg.English as Country_en",
+              " FROM german_chocolate_data AS gc", 
+              " LEFT JOIN translate_german AS tg", 
+              " ON gc.Country = tg.German",
+              " OR gc.Country = tg.English")
+german_chocolate_data <- sqldf(sql)
+
+german_chocolate_data$Country <- 
+    ifelse(is.na(german_chocolate_data$Country_en), 
+    german_chocolate_data$Country, 
+    german_chocolate_data$Country_en)
+    
+german_chocolate_data$Country_en <- NULL
+german_chocolate_data$Chocolate_consumption_tr <- NA
+for (i in 1:NROW(german_chocolate_data)) {
+    number <- as.character(german_chocolate_data$Chocolate_consumption[i])
+    if (length(number) > 0) {
+        m <- regexpr("^([0-9]+,[0-9]+)", number)
+        if (m > 0) {
+            german_chocolate_data$Chocolate_consumption_tr[i] <- 
+                as.numeric(
+                    sub(",", ".", regmatches(number, m))
+                )
+        } else {
+            m <- regexpr("\\(([0-9]+,[0-9]+)", number)
+
+            if (m > 0) 
+                german_chocolate_data$Chocolate_consumption_tr[i] <- 
+                    as.numeric(
+                        sub("\\(", "", 
+                            sub(",", ".", regmatches(number, m))
+                        )
+                    )
+        }
+    }
+}
+
+sql <- paste0("SELECT np.*, gp.Chocolate_consumption_tr AS choc",
+              " FROM nobel_prizes AS np", 
+              " LEFT JOIN german_chocolate_data AS gp", 
+              " ON gp.Country = np.Country")
+nobel_prizes <- sqldf(sql)
+```
+
+Chocalate data  for Switzerland
+
+```{r, message=FALSE, warning=FALSE}
+nobel_prizes$choc[nobel_prizes$Country == "Switzerland"] <- 11.9
+```
+
+This leaves us with 18 countries that have chocolate data. 
+
+```{r, message=FALSE, warning=FALSE}
+sum(complete.cases(nobel_prizes))
+nobel_prizes_cc = nobel_prizes[complete.cases(nobel_prizes),]
+nobel_prizes_cc
+```
+
+Lets plot Countries' Annual Per Capita Chocolate Consumption and the Number of Nobel Laureates per 10 Million Population (in the log scale)
+
+```{r, message=FALSE, warning=FALSE}
+cc = nobel_prizes_cc$choc
+paesi = nobel_prizes_cc$Country
+pop_temp = as.character(nobel_prizes_cc$`Population_(2017)[note_1]`)
+pop = as.numeric(gsub(",", "", pop_temp))
+np = 10^7*as.numeric(nobel_prizes_cc$`Nobel_laureates_(2017)`)/pop
+lnp = log(np)
+cor(lnp,cc)
+plot(cc, np, log="y")
+text(cc, np, labels=paesi )
+```
+
+Without controlling for other factors:
+
+```{r, message=FALSE, warning=FALSE}
+plot(cc, lnp)
+abline(lm(lnp ~ cc), lwd=2, col=2)
+summary(lm(lnp ~ cc))
+```
+
+What else might explain this relationship? 
+How do we identify confounders?
+How do we control for them? 
+
+Best case: randomize treatment. In a randomized experiment, there
+should be no confounding variables.
+
+In many social science settings, RCT is
+impossible: subjects (e.g. countries, individuals)
+choose their own treatment.
+
+
+The Nordic countries rank at the top of the graph on the right and they are known to rank high on per capita income. 
+
+Controlling for Nordic countries and GDP?
+
+```{r}
+library("countrycode")
+countryc = countrycode(paesi, origin="country.name", destination="wb")
+library("wbstats")
+new_wb_cache <- wbcache()
+wbsearch("gdp.*capita.*US\\$", cache = new_wb_cache)
+indicator <- wb(indicator = c("NY.GDP.PCAP.KD"), startdate=2010, enddate=2010, country = countryc) 
+gdp <- indicator$value[match(paesi, indicator$country)]
+nc = paesi %in% c("Sweden","Denmark","Norway","Canada", "Finland", "Ireland","Austria","Switzerland", "Germany", "Belgium")*1
+plot(cc,lm(lnp ~ gdp + nc)$resid)
+abline(lm( lm(lnp ~ gdp + nc)$resid ~ cc ), lwd=2,col=2 )
+summary(lm(lnp ~ cc + gdp + nc))
+```
+
+

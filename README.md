@@ -102,6 +102,7 @@ and Nobel Laureates *NEJM* [[.pdf]](http://www.biostat.jhsph.edu/courses/bio621/
 	+ [Winning formula](http://i.huffpost.com/gen/819873/thumbs/h-NOBEL-1536x1536.jpg?6)
   +   Statistics explained to my cat: Chocolate, correlation and cat's whiskers [[watch]](https://www.youtube.com/watch?v=ZeCr3Jgh8r0&t=12s)
   +  [Chocolate and nobel prize](https://github.com/aldosolari/SL/blob/master/lectures/16_choco.pdf)
+  +  [xyz](https://github.com/aldosolari/SL/blob/master/lectures/17_xyz.pdf)
 
 
 15. 16/1 13:30-16:30 Lab713 : 
