@@ -78,8 +78,8 @@ Intervals, p-Values and R-Software hdi  *Statistical Science* 30:533-558 [[.pdf]
 
 
 11. 20/12 13:30-16:30 Lab713 : **Stability selection**
-  + Taylor, Tibshirani (2015) Statistical learning and selective inference *PNAS* 112:7629-7634 [[.pdf]](http://www.pnas.org/content/112/25/7629.full.pdf). Read
   +  [Stability selection](https://github.com/aldosolari/SL/blob/master/lectures/14_stability.pdf)
+  + Meinshausen & Bühlmann (2010) Stability selection *JRSS-B* 72:417-473 [[.pdf]](https://stat.ethz.ch/~nicolai/stability.pdf). Read
   
   
 *6th week*
@@ -105,7 +105,7 @@ and Nobel Laureates *NEJM* [[.pdf]](http://www.biostat.jhsph.edu/courses/bio621/
   +  [xyz](https://github.com/aldosolari/SL/blob/master/lectures/17_xyz.pdf)
 
 
-15. 16/1 13:30-16:30 Lab713 : 
+15. 16/1 13:30-16:30 Lab713 : Discussion of the assignment
 
 	
 ### Data analysis assignment:
