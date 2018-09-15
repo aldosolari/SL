@@ -1,0 +1,95 @@
+---
+title: "**Statistical Learning**"
+output:
+  html_document:
+    theme: cosmo
+    toc: yes
+    toc_float: yes
+---
+
+Teacher: [Aldo Solari](https://aldosolari.github.io/)
+
+*Big Data* and *Data Science* have now become recurring terms in media communication. In response to the growing need to analyze data, the profession of the *data scientist* has recently emerged. This course aims to provide new tools for the data scientist. These tools require technical skills such as programming and statistics. They also require professional skills such as communication, teamwork, problem solving, and critical thinking.
+
+The topics covered by this course are
+
+* *Advanced statistical/machine learning models*, e.g. GAMs, boosting algorithms, support vector machines and deep learning
+* *Large-scale testing* and *selective inference*
+* *Modern inferential methods for the analysis of high-dimensional data*, e.g.  sample-splitting inference, stability selection, and knockoffs. 
+
+The final project is to do a novel data analysis and write a blog post about it. See the [#Project](#project) section for more details.
+
+See the **[course syllabus](https://aldosolari.github.io/SL/syllabus/syllabus.html)** for more information. 
+
+
+# **Course Material**
+
+Most of the course material can be found in the notes linked to below. The notes are supplemented by readings which are listed in the [#Reading](#reading) section.
+
+| N | Date |  Lecture    | Notes | Slides|
+|--|--|--------------|--------|-------|
+| 1 | TBD | TBD | Notes | Slides |
+| 2 | | | | |
+
+
+    
+
+# **Reading**
+
+Readings should be complete by the following class. There are two primary references:
+
+- [Computer-Age Statistical Inference](https://web.stanford.edu/~hastie/CASI/) (CASI)
+- [The Elements of Statistical Learning](https://web.stanford.edu/~hastie/ElemStatLearn/) (ESL)
+
+**November tbd** Introduction 
+
+- tbd
+- tbd
+
+
+**tbd**
+
+- tbd 
+- tbd
+
+
+
+
+# **Project**
+
+Your final project is to do a novel data analysis to answer a question and write about it. This can be interpreted broadly and the requirements are discussed below.
+
+The rough outline of the project is: Start with a question. Find data that might get at that question. Play around with the data. Attempt to answer the question. Iterate. Communicate.
+
+Your project should have one significant aspect to it. Examples might include,
+
+* put together a novel data set (e.g. scrape something from the web)
+* answer an interesting question
+* a sophisticated statistical/machine learning model
+* a really compelling visualization
+* write a shiny app
+
+### Grading
+
+Your project will be graded on
+
+* Creativity
+    - The project should take some creativity and effort, i.e. should be more than a matter of copy/pasting code
+    - Why should someone else care about what you did?
+* Communication
+    - Is the oral exposition clear and concise?
+    - Are the results clearly written?
+    - Is your code readable?
+* Accuracy
+    - Did you use reasonable statistics?
+    - Does your final code run?
+    - How well do your findings support your conclusions? 'The evidence is inconclusive' is a very possible, and completely acceptable answer.
+
+
+
+
+
+
+
+This page was last updated on `r Sys.time()` Eastern Time.
+
