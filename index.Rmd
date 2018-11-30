@@ -9,17 +9,22 @@ output:
 
 Teacher: [Aldo Solari](https://aldosolari.github.io/)
 
-*Big Data* and *Data Science* have now become recurring terms in media communication. In response to the growing need to analyze data, the profession of the *data scientist* has recently emerged. This course aims to provide new tools for the data scientist. These tools require technical skills such as programming and statistics. They also require professional skills such as communication, teamwork, problem solving, and critical thinking.
+*Big Data* and *Data Science* have now become recurring terms in media communication. In response to the growing need to analyze data, the profession of the *data scientist* has recently emerged. This course aims to provide new tools for the data scientist. These tools require technical skills such as programming and statistics. They also require professional skills such as communication, teamwork, problem solving, and critical thinking. See the [course syllabus](https://aldosolari.github.io/SL/syllabus/syllabus.html) for more information.
 
 The topics covered by this course are
 
-* *Advanced statistical/machine learning models*, e.g. GAMs, boosting algorithms, support vector machines and deep learning
+* *Advanced statistical/machine learning models*, e.g. GAMs, boosting algorithms, support vector machines
 * *Large-scale testing* and *selective inference*
-* *Modern inferential methods for the analysis of high-dimensional data*, e.g.  sample-splitting inference, stability selection, and knockoffs. 
+* *Modern inferential methods for the analysis of high-dimensional data*, e.g.  sample-splitting inference, stability selection, and knockoffs
 
 The final project is to do a novel data analysis and write a blog post about it. See the [#Project](#project) section for more details.
 
-See the **[course syllabus](https://aldosolari.github.io/SL/syllabus/syllabus.html)** for more information. 
+
+| When | Where | Hours |
+|---|---|----|
+| Monday | Lab713 | 13:30-16:30 |
+| Wednesday | Lab713 | 15:30-18:30|
+| Thursday | Lab713 | 12:30-14:30|
 
 
 # **Course Material**
@@ -28,11 +33,27 @@ Most of the course material can be found in the notes linked to below. The notes
 
 | N | Date |  Lecture    | Notes | Slides|
 |--|--|--------------|--------|-------|
-| 1 | TBD | TBD | Notes | Slides |
-| 2 | | | | |
-
-
-    
+| 1 | Dicember 3 | Introduction | Notes | Slides |
+| 2 | Dicember 5 | tbd | Notes | Slides |
+| 3 | Dicember 6 | tbd | Notes | Slides |
+|||||
+| 4 | Dicember 10 | tbd | Notes | Slides |
+| 5 | Dicember 12 | tbd | Notes | Slides |
+| 6 | Dicember 13 | tbd | Notes | Slides |
+|||||
+| 7 | January 7 | tbd | Notes | Slides |
+| 8 | January 9 | tbd | Notes | Slides |
+| 9 | January 10 | tbd | Notes | Slides |
+|||||
+| 10 | January 14 | tbd | Notes | Slides |
+| 11 | January 16 | tbd | Notes | Slides |
+| 12 | January 17 | tbd | Notes | Slides |
+|||||
+| 13 | January 21 | tbd | Notes | Slides |
+| 14 | January 23 | tbd | Notes | Slides |
+| 15 | January 24 | tbd | Notes | Slides |
+|||||
+| 16 | January 28 | tbd | Notes | Slides |    
 
 # **Reading**
 
@@ -41,13 +62,13 @@ Readings should be complete by the following class. There are two primary refere
 - [Computer-Age Statistical Inference](https://web.stanford.edu/~hastie/CASI/) (CASI)
 - [The Elements of Statistical Learning](https://web.stanford.edu/~hastie/ElemStatLearn/) (ESL)
 
-**November tbd** Introduction 
+**December 3** Introduction 
 
 - tbd
 - tbd
 
 
-**tbd**
+**December 5**
 
 - tbd 
 - tbd
