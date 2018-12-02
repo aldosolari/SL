@@ -170,9 +170,262 @@ The topics covered by this course are
 layout: false
 class: inverse, middle, center
 
-# The two cultures
+# Algorithms and inference
 
 ---
+
+# Algorithms and inference
+
+Statistics is the science of *learning from experience*:
+
+* the successes and failures of a new
+experimental drug
+
+* the uncertain measurements of an asteroid’s path toward
+Earth
+
+* Etc.
+
+There are two main aspects of statistical analysis:
+
+* the *algorithmic* aspect
+* the *inferential* aspect
+
+---
+
+# Averaging
+
+* The distinction begins with the
+most basic, and most popular, statistical method, __averaging__
+
+* Suppose we have observed numbers `\(y_1,y_2,\ldots,y_n\)` applying to some phenomenon of
+interest, perhaps the automobile accident rates in the `\(n=50\)` states
+
+* We may assume that `\(y_1,\ldots,y_n\)` are i.i.d. realizations of the random variable `\(Y\)`, and 
+suppose that our __parameter of interest__ is `\(\mathbb{E}(Y)\)`.
+
+* Averaging is the __algorithm__
+`$$\bar{y} = \frac{1}{n}\sum_{i=1}^{n}y_i$$`
+How accurate is that number?
+
+---
+
+# Uncertainty
+
+* The standard error provides an __inference__ on the algorithm's accuracy 
+`$$\widehat{\mathrm{se}} = \sqrt{\frac{1}{n} \frac{\sum_{i=1}^{n}(y_i - \bar{y})^2}{n-1}}$$`
+
+* Of course, `\(\widehat{\mathrm{se}}\)` is itself an algorithm, which could be (and is) subject
+to further inferential analysis concerning its accuracy
+
+* The point is that
+the algorithm comes __first__ and the inference follows at a __second__ level of
+statistical consideration
+
+---
+
+# Kidney data
+
+
+
+```r
+kidney &lt;- read.table("https://web.stanford.edu/~hastie/CASI_files/DATA/kidney.txt", header=TRUE, sep=" ")
+plot(kidney)
+```
+
+&lt;img src="1_Intro_files/figure-html/unnamed-chunk-1-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Question of interest
+
+* Data points `\((x_i,y_i)\)` have
+been observed for `\(n=157\)` healthy volunteers, with `\(x_i\)` the `\(i\)`th volunteer’s
+age in years, and `\(y_i\)` a composite measure of overall kidney function
+
+* Kidney function generally declines with age, as evident in the downward scatter
+of the points
+
+* The rate of decline is an important question in kidney
+transplantation: in the past, potential donors past age 60 were prohibited,
+though, given a shortage of donors, this is no longer enforced
+
+* A potential new donor, aged 65, has appeared, and we wish
+to assess his kidney fitness without subjecting him to an arduous series of
+medical tests
+
+* The new donor has `\((x^*,y^*)=(65,?)\)`. Suppose that in kidney transplantation we need a value &gt; -4.  Is `\(y^* &gt; -4\)` with high probability?
+
+---
+
+# Regression analysis of the kidney data 
+
+Table 1.1 of CASI: regression line `\(y = \hat{\beta}_0 + \hat{\beta}_1 x\)` estimates of kidney fitness and their standard errors for ages = `\(20,30,40,50,60,70,80\)`
+
+
+```r
+fit &lt;- lm(tot ~ age, data=kidney)
+ages &lt;- data.frame(age = seq(20, 80, 10))
+res &lt;- predict(fit, newdata=ages, se.fit = TRUE)
+knitr::kable(data.frame(age=ages$age, estimate=res$fit,se=res$se.fit), format="html" )
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; age &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; estimate &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; se &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.2882585 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2066481 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 30 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5023743 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1549648 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 40 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.2835098 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1473983 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 50 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -1.0693940 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1893143 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 60 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -1.8552781 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2575947 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 70 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -2.6411623 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.3365586 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 80 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -3.4270465 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4202260 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+Figure 1.1 of CASI: Kidney fitness vs age for 157 volunteers. The
+line is a linear regression fit, showing `\(\pm 2\)` standard errors at
+selected values of age
+
+
+```r
+plot(kidney)
+abline(fit, col="darkgreen")
+for (i in 1:nrow(ages)){
+segments(x0=ages$age[i], y0=res$fit[i]-2*res$se.fit[i], y1=res$fit[i]+2*res$se.fit[i], col="darkgreen")
+}
+```
+
+&lt;img src="1_Intro_files/figure-html/unnamed-chunk-3-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+Figure 1.2 of CASI: Local polynomial fit to the
+kidney-fitness data
+
+
+```r
+plot(kidney)
+lines(lowess(kidney, f = 1/3), col="darkgreen")
+```
+
+&lt;img src="1_Intro_files/figure-html/unnamed-chunk-4-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+Regression splines by using natural cubic spline with 8 degrees of freedom
+
+
+
+```r
+require(splines)
+fit = lm(tot ~ ns(age,8), kidney)
+plot(kidney)
+lines(kidney$age, fitted(fit), pch="x",col=2)
+```
+
+&lt;img src="1_Intro_files/figure-html/unnamed-chunk-5-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Confidence and prediction intervals
+
+90% confidence interval for `\(\mathbb{E}(Y^*|x^*=65)\)` 
+
+
+```r
+require(splines)
+predict(fit, newdata=data.frame(age=65), interval = "confidence", level=.9)
+```
+
+```
+        fit       lwr       upr
+1 -2.154428 -2.852738 -1.456117
+```
+
+90% prediction interval for `\(Y^*|x^*=65\)` 
+
+
+```r
+require(splines)
+predict(fit, newdata=data.frame(age=65), interval = "prediction", level=.9)
+```
+
+```
+        fit       lwr       upr
+1 -2.154428 -5.257008 0.9481522
+```
+
+
+---
+
+layout: false
+class: inverse, middle, center
+
+# Variable selection
+
+---
+
+# Simulated data
+
+I've generated data from the Gaussian linear model
+$$ y = N(1_n \beta_0 + X\beta, \sigma^2I_n)$$
+where 
+
+* `\(\underset{n\times 1}{y} = (y_1,\ldots,y_n)'\)` is the response on `\(n\)` observations
+
+* `\(\underset{n\times p}{X}\)` is the design matrix containing the measurements on `\(p\)` variables 
+
+* `\(\underset{p\times 1}{\beta} = (\beta_1,\ldots,\beta_p)'\)` is the vector of coefficients of interest
+
+* `\(\beta_0\)` and `\(\sigma^2\)` are nuisance parameters
+
+* `\(\underset{n\times 1}{1_n} = (1,1,\ldots,1)'\)` is a vector of ones of length `\(n\)` and `\(\underset{n\times n}{I_n}\)` is the identity matrix
+
+---
+
+# Variable selection 
+
+The dataset `vs.Rdata` has `\(n=50\)` and `\(p=31\)`
+
+* The goal is select the relevant variables, i.e. to estimate
+`$$S = \{j \in \{1,\ldots,p\}: \beta_j \neq 0\}$$`
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
