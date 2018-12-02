@@ -64,8 +64,11 @@ There are two primary references:
 * [Computer-Age Statistical Inference](https://web.stanford.edu/~hastie/CASI/) (CASI)
 * [The Elements of Statistical Learning](https://web.stanford.edu/~hastie/ElemStatLearn/) (ESL)
 
+By class:
 
-**December 3** Introduction 
+**December 3** Introduction
+
+  - CASI 1, 1.1 (pages 3-8), 4.3 (pages 45-46)
 
 **December 5**
 
