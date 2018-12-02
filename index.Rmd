@@ -9,7 +9,7 @@ output:
 
 Teacher: [Aldo Solari](https://aldosolari.github.io/)
 
-*Big Data* and *Data Science* have now become recurring terms in media communication. In response to the growing need to analyze data, the profession of the *data scientist* has recently emerged. This course aims to provide new tools for the data scientist. These tools require technical skills such as programming and statistics. They also require professional skills such as communication, teamwork, problem solving, and critical thinking. See the [course syllabus](https://aldosolari.github.io/SL/syllabus/syllabus.html) for more information.
+*Big Data* and *Data Science* have now become recurring terms in media communication. In response to the growing need to analyze data, the profession of the *data scientist* has recently emerged. This course aims to provide new tools for the data scientist. These tools require technical skills such as programming and statistics. They also require professional skills such as communication, teamwork, problem solving, and critical thinking. See the [course syllabus](https://aldosolari.github.io/SL/syllabus/syllabus.html) for further information.
 
 The topics covered by this course are
 
@@ -31,85 +31,87 @@ The final project is to do a novel data analysis and write a blog post about it.
 
 Most of the course material can be found in the notes linked to below. The notes are supplemented by readings which are listed in the [#Reading](#reading) section.
 
-| N | Date |  Lecture    | Notes | Slides|
+| N | Date |  Lecture |  Slides | Extra |
 |--|--|--------------|--------|-------|
-| 1 | Dicember 3 | Introduction | Notes | Slides |
-| 2 | Dicember 5 | tbd | Notes | Slides |
-| 3 | Dicember 6 | tbd | Notes | Slides |
+| 1 | Dicember 3 | Introduction | Slides |  |
+| 2 | Dicember 5 | tbd | Slides | |
+| 3 | Dicember 6 | tbd | Slides | |
 |||||
-| 4 | Dicember 10 | tbd | Notes | Slides |
-| 5 | Dicember 12 | tbd | Notes | Slides |
-| 6 | Dicember 13 | tbd | Notes | Slides |
+| 4 | Dicember 10 | tbd | Slides | |
+| 5 | Dicember 12 | tbd | Slides | |
+| 6 | Dicember 13 | tbd | Slides | |
 |||||
-| 7 | January 7 | tbd | Notes | Slides |
-| 8 | January 9 | tbd | Notes | Slides |
-| 9 | January 10 | tbd | Notes | Slides |
+| 7 | January 7 | tbd | Slides | |
+| 8 | January 9 | tbd | Slides | |
+| 9 | January 10 | tbd | Slides | |
 |||||
-| 10 | January 14 | tbd | Notes | Slides |
-| 11 | January 16 | tbd | Notes | Slides |
-| 12 | January 17 | tbd | Notes | Slides |
+| 10 | January 14 | tbd | Slides | |
+| 11 | January 16 | tbd | Slides | |
+| 12 | January 17 | tbd | Slides | |
 |||||
-| 13 | January 21 | tbd | Notes | Slides |
-| 14 | January 23 | tbd | Notes | Slides |
-| 15 | January 24 | tbd | Notes | Slides |
+| 13 | January 21 | tbd | Slides | |
+| 14 | January 23 | tbd | Slides | |
+| 15 | January 24 | tbd | Slides | |
 |||||
-| 16 | January 28 | tbd | Notes | Slides |    
+| 16 | January 28 | tbd | Slides | | 
+
+All of the course material is on the [github repo](https://github.com/aldosolari/SL). 
 
 # **Reading**
 
-Readings should be complete by the following class. There are two primary references:
+There are two primary references:
 
-- [Computer-Age Statistical Inference](https://web.stanford.edu/~hastie/CASI/) (CASI)
-- [The Elements of Statistical Learning](https://web.stanford.edu/~hastie/ElemStatLearn/) (ESL)
+* [Computer-Age Statistical Inference](https://web.stanford.edu/~hastie/CASI/) (CASI)
+* [The Elements of Statistical Learning](https://web.stanford.edu/~hastie/ElemStatLearn/) (ESL)
+
 
 **December 3** Introduction 
 
-- tbd
-- tbd
-
-
 **December 5**
 
-- tbd 
-- tbd
+
+
+# **Exam**
+
+Exams schedule:
+
+|When | Where | Hour | Type |
+|---|---|---|---|
+| 8/2/2019 | U7/13 | 14:00 | Written and Oral |
+| 21/2/2019 | U7/13 | 14:00 | Written and Oral |
+
+The exam consists of two parts:
+
+- __Written exam__ (open-ended and/or closed-ended questions)
+
+- __Oral exam__, including the __presentation__ of a data science __project__ (homework)
+    - Attending students can form a __team__ (max. 3 persons) and present at the end of the course. In this case the oral exam is optional
+
+The final grade is a weighted average of written exam (1/2) and oral exam (1/2). See the [course syllabus](https://aldosolari.github.io/SL/syllabus/syllabus.html) for further information.
 
 
 
 
 # **Project**
 
-Your final project is to do a novel data analysis to answer a question and write about it. This can be interpreted broadly and the requirements are discussed below.
+Your final project is to do a novel data analysis to answer a question and write a blog post about it on github. It should answer:
 
-The rough outline of the project is: Start with a question. Find data that might get at that question. Play around with the data. Attempt to answer the question. Iterate. Communicate.
+1. What is the question(s) you tried to answer? Why should someone care?
 
-Your project should have one significant aspect to it. Examples might include,
+2. What is the data/how did you get it?
 
-* put together a novel data set (e.g. scrape something from the web)
-* answer an interesting question
-* a sophisticated statistical/machine learning model
-* a really compelling visualization
-* write a shiny app
+3. How did you answer the questions (e.g. what statistical techniques, etc)?
 
-### Grading
+4. What are your findings?
 
-Your project will be graded on
+The following references may help with the project:
 
-* Creativity
-    - The project should take some creativity and effort, i.e. should be more than a matter of copy/pasting code
-    - Why should someone else care about what you did?
-* Communication
-    - Is the oral exposition clear and concise?
-    - Are the results clearly written?
-    - Is your code readable?
-* Accuracy
-    - Did you use reasonable statistics?
-    - Does your final code run?
-    - How well do your findings support your conclusions? 'The evidence is inconclusive' is a very possible, and completely acceptable answer.
+* [Data Science in R: A Case Studies Approach to Computational Reasoning and Problem Solving](http://rdatasciencecases.org/) 
+* [Modern Data Science with R](https://mdsr-book.github.io/) 
+* [FiveThirtyEight](https://fivethirtyeight.com/)
+* [Normal Deviate](https://normaldeviate.wordpress.com/)
 
-
-
-
-
+More informations will be available soon.
 
 
 This page was last updated on `r Sys.time()` Eastern Time.

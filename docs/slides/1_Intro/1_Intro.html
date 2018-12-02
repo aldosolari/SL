@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Course overview</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Aldo Solari" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Course overview
+### Aldo Solari
+
+---
+
+
+
+
+
+# Outline
+
+* Course overview
+* Algorithms and inference
+* Variable selection
+* Jelly beans cause acne?
+* Which party is correlated with economic success?
+
+---
+layout: false
+class: inverse, middle, center
+
+# Course overview
+
+---
+
+# Teacher
+
+Aldo Solari
+
+**E-mail** aldo.solari@unimib.it
+
+**Web page** https://aldosolari.github.io/
+
+**Office hours** Thursday, 17:30-18:30, room 2030, building U7, II floor
+
+**Course page** https://aldosolari.github.io/SL/
+
+| When | Where | Hours |
+|---|---|----|
+| Monday | Lab713 | 13:30-16:30 |
+| Wednesday | Lab713 | 15:30-18:30 |
+| Thursday | Lab713 | 12:30-14:30 |
+
+.center[**Time table**]
+
+---
+
+# The course
+
+* __Big Data__ and __Data Science__ have now become recurring terms in media communication. In response to the growing need to analyze data, the profession of the __data scientist__ has recently emerged
+
+* This course aims to provide __new tools__ for the data scientist
+
+* These tools require __technical skills__ such as 
+    - modern statistical methods
+    - advanced programming
+    
+* They also require __professional skills__ such as 
+    - communication
+    - teamwork
+    - problem solving
+    - critical thinking
+
+---
+
+# Topics
+
+The topics covered by this course are
+
+* __Advanced statistical/machine learning models__
+    - Generalized Additive Models
+    - Support Vector Machines
+    - Boosting algorithms
+    - Ensemble learning
+    
+* __Large-scale testing__ &amp; __selective inference__
+
+* __High-dimensional inference__
+    - sample-splitting inference
+    - stability selection
+    - knockoffs
+
+
+---
+
+# Exam
+
+* The exam consists of two parts:
+
+    - __Written exam__ (open-ended and/or closed-ended questions)
+
+    - __Oral exam__, including the __presentation__ of a data science __project__ (homework)
+        - Attending students can form a __team__ (max. 3 persons) and present at the end of the course. In this case the oral exam is optional
+
+* The final grade is a weighted average of written exam (1/2) and oral exam (1/2)
+
+* See the [course syllabus](https://aldosolari.github.io/SL/syllabus/syllabus.html) for further informations
+
+---
+
+# Project
+
+
+* Your final project is to do a __novel data analysis__ to answer a __question__ and write a __blog post__ about it on github
+
+* The blog post should answer:
+    1. __What is the question(s) you tried to answer? Why should someone care?__
+    
+    2. What is the data/how did you get it?
+    
+    3. How did you answer the questions (e.g. what statistical techniques, etc)?
+    
+    4. __What are your findings?__
+
+---
+
+# An example
+
+* __Project__: [fitteR happieR](https://www.rcharlie.com/img/posts/fitter-happier/album_chart.html) by [RCharlie](https://www.rcharlie.com/)
+
+* __Question__: which is the most depressing Radiohead song?
+
+* __Data__ : 
+    - Spotify API and the R package *spotifyr* to get the *valence* metric (the song's positivity)
+    - Genius Lyrics API and the R package *rvest* to get the *lyrics* (text data)
+
+* __Statistics__ : 
+    - Sentiment analysis on lyrics to get the % of sad words in a lyric 
+    - `$$GloomIndex = \frac{(1-valence)+pctSad*(1+lyricalDensity)}{2}$$`
+
+* __Visualization__ : https://www.rcharlie.com/img/posts/fitter-happier/album_chart.html
+
+* __Answer__: True Love Waits 
+
+---
+
+# An example
+
+* __Project__: [fitteR happieR](https://www.rcharlie.com/img/posts/fitter-happier/album_chart.html) by [RCharlie](https://www.rcharlie.com/)
+
+* __Question__: which is the most depressing Radiohead song?
+
+* __Data__ : 
+    - Spotify API and the R package *spotifyr* to get the *valence* metric (the song's positivity)
+    - Genius Lyrics API and the R package *rvest* to get the *lyrics* (text data)
+
+* __Statistics__ : 
+    - Sentiment analysis on lyrics to get the % of sad words in a lyric 
+    - `$$GloomIndex = \frac{(1-valence)+pctSad*(1+lyricalDensity)}{2}$$`
+
+* __Visualization__ : https://www.rcharlie.com/img/posts/fitter-happier/album_chart.html
+
+* __Answer__: True Love Waits 
+
+---
+
+layout: false
+class: inverse, middle, center
+
+# The two cultures
+
+---
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightLanguage": "R",
+"countIncrementalSlides": false,
+"highlightLines": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
