@@ -33,7 +33,7 @@ Most of the course material can be found in the notes linked to below. The notes
 
 | N | Date |  Lecture |  Slides | Extra |
 |--|--|--------------|--------|-------|
-| 1 | Dicember 3 | Introduction | Slides |  |
+| 1 | Dicember 3 | Introduction | [Slides](docs/slides/1_Intro/1_Intro.html) |  |
 | 2 | Dicember 5 | tbd | Slides | |
 | 3 | Dicember 6 | tbd | Slides | |
 |||||
