@@ -34,7 +34,7 @@ Most of the course material can be found in the notes linked to below. The notes
 | N | Date |  Lecture |  Slides | Extra |
 |--|--|--------------|--------|-------|
 | 1 | Dicember 3 | Introduction | [Slides](docs/slides/1_Intro/1_Intro.html) |  |
-| 2 | Dicember 5 | tbd | Slides | |
+| 2 | Dicember 5 | Splines | [Slides](docs/slides/2_Splines/2_Splines.html) | |
 | 3 | Dicember 6 | tbd | Slides | |
 |||||
 | 4 | Dicember 10 | tbd | Slides | |
@@ -70,7 +70,10 @@ By class:
 
   - CASI 1, 1.1 (pages 3-8), 4.3 (pages 45-46)
 
-**December 5**
+**December 5** Splines
+
+  - ESL 5, 5.1, 5.2, 5.2.1, 5.2.2, 5.4, 5.4.1
+
 
 
 
