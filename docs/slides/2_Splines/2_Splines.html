@@ -167,7 +167,7 @@ large numbers can lead to severe rounding problems
 
 * In contrast, the `\(B\)`-spline basis allows for efficient computations
 
-* __Regression splines__ are linear models with a spline basis
+* The fixed-knot splines are also known as __regression splines__
 
 ---
 
@@ -290,9 +290,9 @@ lines(x, fitted( lm(y ~ ns(x, knots=knots)) ) )
 
 ---
 
-# Natural cubic splines
+# Degrees of freedom
 
-* The number of basis functions used by a natural cubic spline is
+* The number of degrees of freedom consumed by a natural cubic spline is
 `$$\underbrace{4\cdot (K-1)}_{a} + \underbrace{2\cdot 2}_b - \underbrace{3\cdot K}_c = K$$` 
 where 
   - `\(a\)` is the number of free parameters in the interior intervals  `\([\xi_1,\xi_2],[\xi_2,\xi_3],\ldots,[\xi_{K-1},\xi_{K}]\)`
