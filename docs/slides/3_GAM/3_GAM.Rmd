@@ -1,0 +1,167 @@
+---
+title: "**Generalized Additive Models**"
+author: Aldo Solari
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      ratio: '16:9'
+      highlightLanguage: R
+      countIncrementalSlides: false
+      highlightLines: true    
+---
+
+```{r startup, include = FALSE, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(echo = T, eval=T, message=F, warning=F, error=F, 
+                      comment=NA, cache=F, R.options=list(width=220),
+                      fig.align='center', out.width='60%', fig.asp=.7)
+```
+
+
+# Outline
+
+
+* Additive models
+
+* California house prices
+
+* GAMs
+
+---
+
+# Additive models
+
+* The __additive model__ for regression is that the conditional expectation function is a
+sum of __partial response__ functions, one for each predictor variable
+
+* Formally, with $p$ predictors $X=(X_1,\ldots,X_p)'$, an additive model assumes
+$$\mathbb{E}(Y|X=x) = \beta_0 + \sum_{j=1}^{p}f_j(x_j)$$
+
+* This includes the linear model as a special case, when $f_{j}(x_j)=\beta_j x_j$
+
+* The idea is that each predictor makes a separate contribution to the response, and these just
+add up
+
+* We do need to add a restriction to make it __identifiable__; without loss of generality, say that
+$\mathbb{E}(Y) = \beta_0$ and $\mathbb{E}(f_j(X_j)) = 0$
+
+* Fitting additive models is relatively easy from a computational standpoint, as we can employ a simple algorithmic approach called __backfitting__
+
+---
+
+
+* Given: 
+    - $n\times p$ matrix of $p$ predictors 
+    - $n\times 1$ response vector 
+    - small tolerance $\delta > 0$
+    - one-dimensional smoother $s$ (nearest neighbors, splines, etc.) 
+
+* Initialize $\hat{\beta}_0 \leftarrow \bar{y}$ and $\hat{f}_{j} \leftarrow 0$ for $j=1,\ldots,p$
+
+* until (all $|\hat{f}_j - g_j| \leq \delta$ ){
+
+    for $k=1,\ldots, p$ {
+    
+      $y_i^{(k)} = y_i - \sum_{j\neq k} \hat{f}_j(x_{ij})$
+    
+      $g_k \leftarrow s( y^{(k)} \sim x_k)$
+    
+      $g_k \leftarrow g_k - n^{-1} \sum_{i=1}^{n}g_k(x_{ik})$
+    
+      $\hat{f}_{k} \leftarrow g_k$
+      
+      }
+      
+    }
+
+* Return $\hat{\beta}_0, \hat{f}_{1}, \ldots, \hat{f}_{p}$
+
+---
+
+# mgcv
+
+* The `mgcv` R package  is based not on
+backfitting, but rather on something called the *Lanczos
+algorithm*, a way of efficiently calculating truncated matrix
+decompositions that is beyond the scope of this course
+
+* The basic syntax is
+
+```{r, eval=FALSE}
+fit <- gam(y ~ s(x1) + s(x2), data=train)
+```
+
+* One can add arguments to the `s()` function, but the default is to use a __natural cubic spline basis__ and to automatically choose the smoothing parameter $\lambda$ via optimization of the __GCV__
+
+---
+
+# Interaction terms
+
+* One way to think about additive models, and about (possibly) including interaction terms, is to imagine doing a sort of __Taylor series expansion__ of the true regression function
+
+* The zero-th order expansion would be a constant:
+$$f(x)\approx \beta_0$$
+
+* A purely additive model would correspond to a first-order expansion:
+$$f(x)\approx \beta_0 + \sum_{j=1}^{p}f_j(x_j)$$
+
+* Two-way interactions come in when we go to a second-order expansion:
+$$f(x)\approx \beta_0 + \sum_{j=1}^{p}f_j(x_j) + \sum_{j=1}^{p}\sum_{k=j+1}^{p}f_{jk}(x_j,x_k)$$
+
+* For identifiability, we need $\mathbb{E}(f_{jk}(X_j,X_k) ) = 0$
+
+---
+
+# Thin-plate spline
+
+* Suppose we have two input variables, $x$ and $z$, and a single response $y$. How could we do a spline fit?
+
+* One approach is to generalize the spline optimization problem so that we penalize the curvature of the spline surface (no longer a curve)
+
+* The appropriate penalized least-squares objective function to minimize is
+$$\sum_{i=1}^{n}(y_i - f(x_i,z_i))^2 + \lambda \int \left[  \left(\frac{\partial^2 f}{\partial x^2} \right)^2 + 2\left(\frac{\partial^2 f}{\partial x \partial z} \right)^2 + \left(\frac{\partial^2 f}{\partial z^2} \right)^2 \right]$$
+
+* The solution is called a __thin-plate spline__  ( `s(x,z)` in `mgcv` )
+
+* This is appropriate when the two predictors $x$ and $z$ are measured on similar scales
+
+---
+
+# Tensor product spline
+
+* An alternative is use the spline basis functions 
+$$f(x,z) = \sum_{j=1}^{k_x}\sum_{k=1}^{k_z} \beta_{jk} b_{j}(x) b_{k}(z)$$
+
+* Doing all possible multiplications of one set of numbers or functions with another is said to give their outer product or tensor product, so this is known as a __tensor product spline__   ( `te(x,z)` in `mgcv` )
+
+* This is appropriate when the measurement scales of $x$ and $z$ are very different
+
+* We have to chose the number of terms to include for each variable ( $k_x$ and $k_z$)
+
+---
+
+# California house prices
+
+* The Census Bureau divides the U.S. into geographic regions called __tracts__ of a few thousand people each
+
+*  Data from the 2011 American Community Survey, containing information on the housing stock and economic circumstances of every tract in California
+
+    -  __Median_house_value__ : The median value of the housing units in the tract (response)
+    - __POPULATION__, __LATITUDE__, __LONGITUDE__ : The population, latitude and longitude of the tract
+    - __Median_household_income__, __Mean_household_income__ : The median and mean income of households (in dollars, from all sources)
+    - __Total_units__, __Vacant_units__ : The total number of units and the number of vacant units
+    - __Owners__ : The percentage of households which own their home
+    - __Median_rooms__ : The median number of rooms per unit
+    - __Mean_household_size_owners__, __ Mean_household_size_renters__ The mean number of people per household which owns its home, the mean
+number of people per renting household
+
+---
+
+```{r}
+housing <- read.csv("http://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/data/calif_penn_2011.csv")
+housing <- na.omit(housing)
+calif <- housing[housing$STATEFP == 6, ]
+
+```
+
+
