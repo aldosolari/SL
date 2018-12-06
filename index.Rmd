@@ -35,7 +35,7 @@ Most of the course material can be found in the notes linked to below. The notes
 |--|--|--------------|--------|-------|
 | 1 | Dicember 3 | Introduction | [Slides](docs/slides/1_Intro/1_Intro.html) |  |
 | 2 | Dicember 5 | Splines | [Slides](docs/slides/2_Splines/2_Splines.html) | |
-| 3 | Dicember 6 | tbd | Slides | |
+| 3 | Dicember 6 | tbd | [Slides](docs/slides/3_GAM/3_GAM.html) | |
 |||||
 | 4 | Dicember 10 | tbd | Slides | |
 | 5 | Dicember 12 | tbd | Slides | |
