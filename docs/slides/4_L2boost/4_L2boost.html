@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Boosting with squared error loss</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Aldo Solari" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# <strong>Boosting with squared error loss</strong>
+### Aldo Solari
+
+---
+
+
+
+
+
+# Outline
+
+* Boosting
+
+* L2-boosting
+
+---
+
+# Boosting
+
+* Boosting starts by fitting a __base learner__ to the training data
+
+* Next the base learner is re-fitted, but with __more
+weight__ (importance) given to badly fitted/misclassified observations
+
+* This process is repeated until some stopping rule is reached
+
+* We will discuss the following algorithms
+    - __boosting with squared error loss__ (L2-boosting) by using regression trees as weak learners
+    - __boosting with exponential loss__ (AdaBoost.M1) by using classification trees as weak learners
+    - __gradient boosting__ (general formultion)
+
+---
+
+# L2-boosting algorithm for regression trees
+
+* [1.] Initialize `\(\hat{f}(x)= \bar{y}\)` and `\(r_i = y_i - \bar{y}\)` for `\(i=1,\ldots,n\)` 
+
+* [2.] For `\(b=1,2,\ldots, B\)`, repeat:
+
+    - [(a)] Fit a tree `\(\hat{f}^b\)` with `\(d\)` splits to the data `\((x_1,r_1),\ldots, (x_n,r_n)\)`
+    - [(b)] Update `\(\hat{f}\)` by adding in a shrunken version of the new tree:
+`$$\hat{f}(x) \leftarrow \hat{f}(x) + \lambda \hat{f}^b(x)$$`
+    - [(c)] Update the residuals:
+`$$r_i \leftarrow r_i - \lambda \hat{f}^b(x_i)$$`
+
+* [3.] Output the boosted model:
+`$$\hat{f}(x) = \bar{y}+ \sum_{b=1}^{B} \lambda  \hat{f}^b(x)$$`
+
+---
+
+Generate `\(n=100\)` observations from the following model (`set.seed(123)`):
+
+* `\(x_i \sim U(0,2\pi), \quad i=1,\ldots,n\)`
+* `\(y_i|x_i = \sin(x_i) + \varepsilon_i\)`
+* `\(\varepsilon_i  \stackrel{i.i.d.}{\sim}N(0,0.25)\)`
+
+&lt;img src="4_L2boost_files/figure-html/unnamed-chunk-1-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+* Use the L2-boosting algorithm with `\(B=100\)`, `\(\lambda=0.1\)` and `\(d=1\)`
+
+---
+
+# 1.
+
+&lt;img src="4_L2boost_files/figure-html/unnamed-chunk-2-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+
+# 2. `\(b=1\)`
+
+&lt;img src="4_L2boost_files/figure-html/unnamed-chunk-3-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# 2. `\(b=2\)`
+
+&lt;img src="4_L2boost_files/figure-html/unnamed-chunk-4-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# 2. `\(b=5\)`
+
+&lt;img src="4_L2boost_files/figure-html/unnamed-chunk-5-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# 2., `\(b=10\)`
+
+&lt;img src="4_L2boost_files/figure-html/unnamed-chunk-6-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Step [2.], `\(b=B\)`
+
+&lt;img src="4_L2boost_files/figure-html/unnamed-chunk-7-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+
+# Tuning parameters for boosting
+
+
+* The __number of trees__ `\(B\)`: Unlike bagging and random forests, boosting can overfit if `\(B\)` is too large, although this overfitting tends to occur slowly if at all. Use cross-validation to select `\(B\)`
+
+* The __shrinkage parameter__ `\(\lambda\)`: A small positive number, which controls the rate at which boosting learns. Typical values
+are 0.01 or 0.001, and the right choice can depend on the
+problem. Very small `\(\lambda\)` can require using a very large value
+of `\(B\)` in order to achieve good performance
+
+* The __number of splits__ `\(d\)`:
+ It controls the complexity of the boosted ensemble. Often `\(d = 1\)` works
+well, in which case each tree is a __stump__, consisting of a
+single split and resulting in an additive model. More
+generally `\(d\)` is the interaction depth, and controls the
+interaction order of the boosted model, since `\(d\)` splits can
+involve at most `\(d\)` variables
+
+
+---
+
+# gbm()
+
+
+```r
+fit &lt;- gbm(y ~ ., 
+           distribution = "gaussian",
+           data = train,
+           n.trees = B,
+           interaction.depth = d,
+           shrinkage = lambda,
+           bag.fraction = 0.5, # default
+           cv.folds = 0)  # default
+```
+
+* `bag.fraction = 0.5` : grows each new tree on a 50\% random sub-sample of the training data. Apart from speeding up the computations, this has a similar effect to bagging, and results in some variance reduction in the ensemble
+
+* `cv.folds = 0` : no cross-validation
+
+---
+
+# Number of trees 
+
+&lt;img src="images/Fig17_6.png" width="50%" height="50%" style="display: block; margin: auto;" /&gt;
+
+
+.center[Source: Efron and Hastie (2016), Figure 17.6]
+
+---
+
+# Shrinkage parameter 
+
+&lt;img src="images/Fig17_10.png" width="65%" height="65%" style="display: block; margin: auto;" /&gt;
+
+.center[Source: Efron and Hastie (2016), Figure 17.10; `\(\epsilon\)` in the legend is `\(\lambda\)`]
+
+---
+
+# Number of splits 
+
+&lt;img src="images/Fig17_8.png" width="65%" height="65%" style="display: block; margin: auto;" /&gt;
+
+.center[Source: Efron and Hastie (2016), Figure 17.8.
+
+---
+
+# Variable importance 
+
+&lt;img src="images/Fig17_7.png" width="40%" height="40%" style="display: block; margin: auto;" /&gt;
+
+.center[Source: Efron and Hastie (2016), Figure 17.7]
+
+---
+
+# ALS data
+
+* From CASI, Chapter 17: Random Forests and Boosting
+
+* ALS data represent measurements on patients with amyotrophic lateral
+sclerosis (Lou Gehrig’s disease)
+
+* The goal is to predict the rate of progression
+of an ALS functional rating score (FRS)
+
+* There are 1197 training measurements on 369 predictors and the response, with a corresponding test set of size 625 observations
+
+
+---
+
+* Import the data
+
+
+```r
+rm(list=ls())
+# import data
+als &lt;- read.table("http://web.stanford.edu/~hastie/CASI_files/DATA/ALS.txt",header=TRUE)
+```
+
+* Split into training and test sets:
+
+
+```r
+# training and test
+train = als[als$testset==F,-1]
+n = nrow(train)
+test = als[als$testset==T,-1]
+m = nrow(test)
+```
+
+
+* Boosting with Squared-Error Loss by using the R package `gbm`:
+    - Number of iterations `\(B = 500\)`
+    - Shrinkage parameter  `\(\lambda = 0.02\)`
+    - Number of splits `\(d = 4\)` 
+
+---
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightLanguage": "R",
+"countIncrementalSlides": false,
+"highlightLines": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

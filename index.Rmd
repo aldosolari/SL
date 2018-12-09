@@ -27,33 +27,37 @@ The final project is to do a novel data analysis and write a blog post about it.
 | Thursday | Lab713 | 12:30-14:30|
 
 
+# **Latest announcements**
+
+* WebEx room: 
+
 # **Course Material**
 
 Most of the course material can be found in the notes linked to below. The notes are supplemented by readings which are listed in the [#Reading](#reading) section.
 
-| N | Date |  Lecture |  Slides | Extra |
-|--|--|--------------|--------|-------|
-| 1 | Dicember 3 | Introduction | [Slides](docs/slides/1_Intro/1_Intro.html) |  |
-| 2 | Dicember 5 | Splines | [Slides](docs/slides/2_Splines/2_Splines.html) | |
-| 3 | Dicember 6 | tbd | [Slides](docs/slides/3_GAM/3_GAM.html) | |
+| N | Date |  Lecture |  Slides | 
+|--|--|--------------|--------|
+| 1 | Dicember 3 | Introduction | [Slides](docs/slides/1_Intro/1_Intro.html) |  
+| 2 | Dicember 5 | Regression and smoothing splines | [Slides](docs/slides/2_Splines/2_Splines.html) | 
+| 3 | Dicember 6 | Generalized additive models | [Slides](docs/slides/3_GAM/3_GAM.html) | 
+||||
+| 4 | Dicember 10 | Boosting with Squared-Error Loss | [Slides](docs/slides/4_L2boost/4_L2boost.html) | 
+| 5 | Dicember 12 | Boosting algorithms | Slides | 
+| 6 | Dicember 13 | tbd | Slides | 
 |||||
-| 4 | Dicember 10 | tbd | Slides | |
-| 5 | Dicember 12 | tbd | Slides | |
-| 6 | Dicember 13 | tbd | Slides | |
+| 7 | January 7 | tbd | Slides | 
+| 8 | January 9 | tbd | Slides | 
+| 9 | January 10 | tbd | Slides | 
 |||||
-| 7 | January 7 | tbd | Slides | |
-| 8 | January 9 | tbd | Slides | |
-| 9 | January 10 | tbd | Slides | |
+| 10 | January 14 | tbd | Slides | 
+| 11 | January 16 | tbd | Slides | 
+| 12 | January 17 | tbd | Slides | 
 |||||
-| 10 | January 14 | tbd | Slides | |
-| 11 | January 16 | tbd | Slides | |
-| 12 | January 17 | tbd | Slides | |
+| 13 | January 21 | tbd | Slides | 
+| 14 | January 23 | tbd | Slides | 
+| 15 | January 24 | tbd | Slides | 
 |||||
-| 13 | January 21 | tbd | Slides | |
-| 14 | January 23 | tbd | Slides | |
-| 15 | January 24 | tbd | Slides | |
-|||||
-| 16 | January 28 | tbd | Slides | | 
+| 16 | January 28 | tbd | Slides |  
 
 All of the course material is on the [github repo](https://github.com/aldosolari/SL). 
 
@@ -70,10 +74,19 @@ By class:
 
   - CASI 1, 1.1 (pages 3-8), 4.3 (pages 45-46)
 
-**December 5** Splines
+**December 5** Regression and smoothing splines
 
   - ESL 5, 5.1, 5.2, 5.2.1, 5.2.2, 5.4, 5.4.1
+  
+**December 6** Generalized additive models
 
+  - ESL 5.7, 9.1, 9.1.1, 9.1.2, 9.1.3
+
+**December 10** Boosting with squared-error loss
+  - CASI 17.2, 
+  
+**December 13** Boosting algorithms
+  - CASI 17.3, 17.4, 17.5
 
 
 
