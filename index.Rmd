@@ -13,12 +13,11 @@ Teacher: [Aldo Solari](https://aldosolari.github.io/)
 
 The topics covered by this course are
 
-* *Advanced statistical/machine learning models*, e.g. GAMs, boosting algorithms, support vector machines
+* *Statistical learning models*, e.g. GAMs, boosting algorithms
 * *Large-scale testing* and *selective inference*
-* *Modern inferential methods for the analysis of high-dimensional data*, e.g.  sample-splitting inference, stability selection, and knockoffs
+* *High-dimensional inference*, e.g.  sample-splitting inference, stability selection, and knockoffs
 
 The final project is to do a novel data analysis and write a blog post about it. See the [#Project](#project) section for more details.
-
 
 | When | Where | Hours |
 |---|---|----|
@@ -29,11 +28,11 @@ The final project is to do a novel data analysis and write a blog post about it.
 
 # **Latest announcements**
 
-* WebEx room: 
+* None
 
 # **Course Material**
 
-Most of the course material can be found in the notes linked to below. The notes are supplemented by readings which are listed in the [#Reading](#reading) section.
+Most of the course material can be found in the slides linked to below. The slides are supplemented by readings which are listed in the [#Reading](#reading) section.
 
 | N | Date |  Lecture |  Slides | 
 |--|--|--------------|--------|
@@ -41,7 +40,7 @@ Most of the course material can be found in the notes linked to below. The notes
 | 2 | Dicember 5 | Regression and smoothing splines | [Slides](docs/slides/2_Splines/2_Splines.html) | 
 | 3 | Dicember 6 | Generalized additive models | [Slides](docs/slides/3_GAM/3_GAM.html) | 
 ||||
-| 4 | Dicember 10 | Boosting with Squared-Error Loss | [Slides](docs/slides/4_L2boost/4_L2boost.html) | 
+| 4 | Dicember 10 | Boosting with squared-error loss | [Slides](docs/slides/4_L2boost/4_L2boost.html) | 
 | 5 | Dicember 12 | Boosting algorithms | Slides | 
 | 6 | Dicember 13 | tbd | Slides | 
 |||||
@@ -68,7 +67,7 @@ There are two primary references:
 * [Computer-Age Statistical Inference](https://web.stanford.edu/~hastie/CASI/) (CASI)
 * [The Elements of Statistical Learning](https://web.stanford.edu/~hastie/ElemStatLearn/) (ESL)
 
-By class:
+Calendar
 
 **December 3** Introduction
 
@@ -85,8 +84,10 @@ By class:
 **December 10** Boosting with squared-error loss
   - CASI 17.2, 
   
-**December 13** Boosting algorithms
+**December 12** Boosting algorithms
   - CASI 17.3, 17.4, 17.5
+  
+**December 13** 
 
 
 
@@ -109,26 +110,71 @@ The exam consists of two parts:
 The final grade is a weighted average of written exam (1/2) and oral exam (1/2). See the [course syllabus](https://aldosolari.github.io/SL/syllabus/syllabus.html) for further information.
 
 
+# **Final project**
+
+Your final project is to do a __novel data analysis__ to answer a __question__ and write a __blog post__ about it on github. This can be interpreted broadly and the requirements are discussed below.
+
+Examples might include:
+
+* put together a novel data set (e.g. scrape something from the web)
+* answer an interesting question
+* a sophisticated statistical/machine learning model
+* a really compelling visualization
+* write a shiny app
+
+The rough outline of the project is: Start with a question. Find data that might get at that question. Play around with the data. Attempt to answer the question. Iterate. Communicate. At the end you should produce:
+
+1. Blog post
+
+2. Analysis document
 
 
-# **Project**
+## Blog post
 
-Your final project is to do a novel data analysis to answer a question and write a blog post about it on github. It should answer:
+The blog post should answer:
 
-1. What is the question(s) you tried to answer? Why should someone care?
+* What is the question(s) you tried to answer? Why should someone care?
 
-2. What is the data/how did you get it?
+* What are your findings?
 
-3. How did you answer the questions (e.g. what statistical techniques, etc)?
+The blog post should be aimed at a general audience who is not afraid of graphs/a little data. 
 
-4. What are your findings?
+* The post should be 1000-1500 words (unless you made a shiny app)
+    - Include a title and your names
+    - Don’t display R code unless it is used to convey a point
 
-The following references may help with the project:
+* There should be at least 2 visualizations
+    - Make sure to describe the figures somewhere in the text
+    - These plots should be communicatory plots, not exploratory plots
+    
+* The post should be submitted in html (probably written in R Markdown)
+
+## Analysis document
+
+The analysis document should detail the steps you took to develop the blog post. This includes where you got the data, other solutions you tried, the statistical methods you chose and your findings. 
+
+* Overview and Motivation: Provide an overview of the project goals and the motivation for it
+
+* Data: What is the data/how did you get it?
+
+* Statistical methods: How did you answer the questions (e.g. what statistical techniques, etc)? It should include text justifying decisions you made (e.g. why did you remove certain observations, etc.)
+
+* Related Work: Anything that inspired you, such as a paper, a web site,  something we discussed in class, etc. 
+
+All the code used and the data set (both raw and processed) should be posted to github as well.
+
+## Resources
+
+The following blog posts may help with the project:
+
+* Blog posts from [polygraph](http://polygraph.cool/)
+* Blog posts from [FiveThirtyEight](https://fivethirtyeight.com/)
+* Blog posts from [Normal Deviate](https://normaldeviate.wordpress.com/)
+
+and books:
 
 * [Data Science in R: A Case Studies Approach to Computational Reasoning and Problem Solving](http://rdatasciencecases.org/) 
 * [Modern Data Science with R](https://mdsr-book.github.io/) 
-* [FiveThirtyEight](https://fivethirtyeight.com/)
-* [Normal Deviate](https://normaldeviate.wordpress.com/)
 
 More informations will be available soon.
 
