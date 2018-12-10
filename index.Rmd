@@ -143,7 +143,7 @@ The blog post should be aimed at a general audience who is not afraid of graphs/
     - Include a title and your names
     - Don’t display R code unless it is used to convey a point
 
-* There should be at least 2 visualizations
+* There should be at least one visualization
     - Make sure to describe the figures somewhere in the text
     - These plots should be communicatory plots, not exploratory plots
     
@@ -151,7 +151,7 @@ The blog post should be aimed at a general audience who is not afraid of graphs/
 
 ## Analysis document
 
-The analysis document should detail the steps you took to develop the blog post. This includes where you got the data, other solutions you tried, the statistical methods you chose and your findings. 
+The analysis document should detail the steps you took to develop the blog post. This includes where you got the data, other solutions you tried, the statistical methods you chose and your findings. The document should contain the following topics (depending on the project some of these will be more important than others): 
 
 * Overview and Motivation: Provide an overview of the project goals and the motivation for it
 
@@ -161,7 +161,7 @@ The analysis document should detail the steps you took to develop the blog post.
 
 * Related Work: Anything that inspired you, such as a paper, a web site,  something we discussed in class, etc. 
 
-All the code used and the data set (both raw and processed) should be posted to github as well.
+* All the code used to produce the blog post from the raw data should be available on github
 
 ## Resources
 
