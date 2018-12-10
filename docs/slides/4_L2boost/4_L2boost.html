@@ -30,17 +30,34 @@ class: center, middle, inverse, title-slide
 
 # Boosting
 
-* Boosting starts by fitting a __base learner__ to the training data
+* Boosting is a general method for building a complex
+prediction model using simple building components (called __weak learners__)
 
-* Next the base learner is re-fitted, but with __more
+* Boosting was originally proposed (algorithm __Adaboost__) as a means for improving the performance of decision trees in binary classification problems
+
+
+* Boosting starts by fitting a weak learner to the training data
+
+* Next the weak learner is re-fitted, but with __more
 weight__ (importance) given to badly fitted/misclassified observations
 
 * This process is repeated until some stopping rule is reached
 
-* We will discuss the following algorithms
-    - __boosting with squared error loss__ (L2-boosting) by using regression trees as weak learners
-    - __boosting with exponential loss__ (AdaBoost.M1) by using classification trees as weak learners
-    - __gradient boosting__ (general formultion)
+---
+
+# Boosting algorithms
+
+We will discuss the following algorithms:
+
+*  __boosting with squared error loss__ (L2-boosting) by using regression trees as weak learners
+
+*  __boosting with exponential loss__ (AdaBoost.M1) by using classification trees as weak learners
+
+*  __gradient boosting__ (general algorithm)
+
+
+L2-boosting with regression trees builds a model by repeatedly fitting a regression tree to the __residuals__. This is different from random forests because each tree is trying to amend errors
+made by the ensemble of previously grown trees
 
 ---
 
@@ -61,7 +78,7 @@ weight__ (importance) given to badly fitted/misclassified observations
 
 ---
 
-Generate `\(n=100\)` observations from the following model (`set.seed(123)`):
+Set `set.seed(123)`. Generate `\(n=100\)` observations from the following model:
 
 * `\(x_i \sim U(0,2\pi), \quad i=1,\ldots,n\)`
 * `\(y_i|x_i = \sin(x_i) + \varepsilon_i\)`
@@ -81,41 +98,40 @@ Generate `\(n=100\)` observations from the following model (`set.seed(123)`):
 
 ---
 
-# 2. `\(b=1\)`
+# 2. b=1
 
 &lt;img src="4_L2boost_files/figure-html/unnamed-chunk-3-1.png" width="60%" style="display: block; margin: auto;" /&gt;
 
 ---
 
-# 2. `\(b=2\)`
+# 2. b=2
 
 &lt;img src="4_L2boost_files/figure-html/unnamed-chunk-4-1.png" width="60%" style="display: block; margin: auto;" /&gt;
 
 ---
 
-# 2. `\(b=5\)`
+# 2. b=5
 
 &lt;img src="4_L2boost_files/figure-html/unnamed-chunk-5-1.png" width="60%" style="display: block; margin: auto;" /&gt;
 
 ---
 
-# 2., `\(b=10\)`
+# 2. b=10
 
 &lt;img src="4_L2boost_files/figure-html/unnamed-chunk-6-1.png" width="60%" style="display: block; margin: auto;" /&gt;
 
 ---
 
-# Step [2.], `\(b=B\)`
+# 2. b=B
 
 &lt;img src="4_L2boost_files/figure-html/unnamed-chunk-7-1.png" width="60%" style="display: block; margin: auto;" /&gt;
 
 ---
 
-
 # Tuning parameters for boosting
 
 
-* The __number of trees__ `\(B\)`: Unlike bagging and random forests, boosting can overfit if `\(B\)` is too large, although this overfitting tends to occur slowly if at all. Use cross-validation to select `\(B\)`
+* The __number of trees__ `\(B\)`: Unlike bagging and random forests, boosting can overfit if `\(B\)` is too large, although this overfitting tends to occur slowly if at all. We will use cross-validation to select `\(B\)`
 
 * The __shrinkage parameter__ `\(\lambda\)`: A small positive number, which controls the rate at which boosting learns. Typical values
 are 0.01 or 0.001, and the right choice can depend on the
@@ -123,20 +139,19 @@ problem. Very small `\(\lambda\)` can require using a very large value
 of `\(B\)` in order to achieve good performance
 
 * The __number of splits__ `\(d\)`:
- It controls the complexity of the boosted ensemble. Often `\(d = 1\)` works
-well, in which case each tree is a __stump__, consisting of a
-single split and resulting in an additive model. More
+ It controls the complexity of the boosted ensemble. Often `\(d = 1\)` works well, in which case each tree consists of a
+single split (a __stump__), resulting in an __additive model__. More
 generally `\(d\)` is the interaction depth, and controls the
 interaction order of the boosted model, since `\(d\)` splits can
 involve at most `\(d\)` variables
 
-
 ---
 
-# gbm()
+# gbm
 
 
 ```r
+library(gbm)
 fit &lt;- gbm(y ~ ., 
            distribution = "gaussian",
            data = train,
@@ -147,7 +162,7 @@ fit &lt;- gbm(y ~ .,
            cv.folds = 0)  # default
 ```
 
-* `bag.fraction = 0.5` : grows each new tree on a 50\% random sub-sample of the training data. Apart from speeding up the computations, this has a similar effect to bagging, and results in some variance reduction in the ensemble
+* `bag.fraction = 0.5` : grows each new tree on a 50% random sub-sample of the training data. Apart from speeding up the computations, this has a similar effect to bagging, and results in some variance reduction in the ensemble
 
 * `cv.folds = 0` : no cross-validation
 
@@ -157,24 +172,56 @@ fit &lt;- gbm(y ~ .,
 
 &lt;img src="images/Fig17_6.png" width="50%" height="50%" style="display: block; margin: auto;" /&gt;
 
-
-.center[Source: Efron and Hastie (2016), Figure 17.6]
+.center[Efron and Hastie (2016), Figure 17.6: we see that as the number of trees `\(B\)` gets large, the test
+error for boosting starts to increase (overfitting)]
 
 ---
 
 # Shrinkage parameter 
 
-&lt;img src="images/Fig17_10.png" width="65%" height="65%" style="display: block; margin: auto;" /&gt;
+&lt;img src="images/Fig17_10.png" width="60%" height="60%" style="display: block; margin: auto;" /&gt;
 
-.center[Source: Efron and Hastie (2016), Figure 17.10; `\(\epsilon\)` in the legend is `\(\lambda\)`]
+.center[Efron and Hastie (2016), Figure 17.10: Boostedmodels with different shrinkage parameters. The solid curves are
+validation errors, the dashed curves training errors]
 
 ---
 
 # Number of splits 
 
-&lt;img src="images/Fig17_8.png" width="65%" height="65%" style="display: block; margin: auto;" /&gt;
+&lt;img src="images/Fig17_8.png" width="60%" height="60%" style="display: block; margin: auto;" /&gt;
 
-.center[Source: Efron and Hastie (2016), Figure 17.8.
+.center[Efron and Hastie (2016), Figure 17.8: it appears that `\(d=1\)` is inferior to the rest, with `\(d=4\)`
+about the best. With `\(d=7\)`, overfitting begins around 200 trees,
+with `\(d=4\)` around 300, while neither of the other two show
+evidence of overfitting by 500 trees]
+
+---
+
+# Boosted stumps
+
+* Suppose we have a fitted boosted model `\(\hat{f}(x)\)` using `\(B\)` regression trees with `\(d=1\)` 
+
+* Denote by `\(\mathcal{B}_j \subseteq \{1,\ldots,B\}\)` the indices of the trees that made the single split using the predictor `\(x_j\)`, for `\(j=1,\ldots,p\)`
+
+* These `\(\mathcal{B}_j\)` are disjoint (some `\(\mathcal{B}_k\)` can be empty) and `\(\bigcup_{j=1}^{p}\mathcal{B}_j = \{1,\ldots,B\}\)`
+
+*  Then we can write
+$$
+`\begin{aligned}
+\hat{f}(x) &amp;= \bar{y} + \sum_{b=1}^{B} \lambda \hat{f}^{b}(x)\\
+&amp;= \bar{y} + \sum_{j=1}^{p} \sum_{b\in \mathcal{B}_j} \lambda \hat{f}^{b}(x_j) \\
+&amp;= \bar{y} + \sum_{j=1}^{p}  \hat{f}_j(x_j)
+\end{aligned}`
+$$
+
+---
+
+# Boosted stumps 
+
+&lt;img src="images/Fig17_9.png" width="60%" height="60%" style="display: block; margin: auto;" /&gt;
+
+.center[Efron and Hastie (2016), Figure 17.9: Three of the fitted functions, in a boosted stumps model]
+
 
 ---
 
@@ -182,7 +229,10 @@ fit &lt;- gbm(y ~ .,
 
 &lt;img src="images/Fig17_7.png" width="40%" height="40%" style="display: block; margin: auto;" /&gt;
 
-.center[Source: Efron and Hastie (2016), Figure 17.7]
+.center[Efron and Hastie (2016), Figure 17.7: here 267 of the 369 variables were used]
+
+
+
 
 ---
 
@@ -196,38 +246,80 @@ sclerosis (Lou Gehrig’s disease)
 * The goal is to predict the rate of progression
 of an ALS functional rating score (FRS)
 
-* There are 1197 training measurements on 369 predictors and the response, with a corresponding test set of size 625 observations
+* There are `\(n=1197\)` training measurements on `\(p=369\)` predictors and the response, with a corresponding test set of size `\(m=625\)` observations
 
 
 ---
 
-* Import the data
 
 
 ```r
 rm(list=ls())
-# import data
+# data import
 als &lt;- read.table("http://web.stanford.edu/~hastie/CASI_files/DATA/ALS.txt",header=TRUE)
-```
-
-* Split into training and test sets:
-
-
-```r
-# training and test
+# split into training and test
 train = als[als$testset==F,-1]
 n = nrow(train)
 test = als[als$testset==T,-1]
 m = nrow(test)
 ```
 
-
-* Boosting with Squared-Error Loss by using the R package `gbm`:
-    - Number of iterations `\(B = 500\)`
-    - Shrinkage parameter  `\(\lambda = 0.02\)`
-    - Number of splits `\(d = 4\)` 
+Use the function `gbm()` to fit a boosting model for the ALS data by setting 
+* `\(B = 500\)`
+* `\(\lambda = 0.02\)`
+* `\(d = 4\)` 
 
 ---
+
+
+```
+gbm(formula = dFRS ~ ., distribution = "gaussian", data = train, 
+    n.trees = B, interaction.depth = d, shrinkage = nu, bag.fraction = 1, 
+    cv.folds = K)
+A gradient boosted model with gaussian loss function.
+500 iterations were performed.
+The best cross-validation iteration was 292.
+There were 369 predictors of which 136 had non-zero influence.
+```
+
+
+---
+
+&lt;img src="4_L2boost_files/figure-html/unnamed-chunk-16-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+```
+[1] 188
+```
+
+---
+
+&lt;img src="4_L2boost_files/figure-html/unnamed-chunk-17-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="4_L2boost_files/figure-html/unnamed-chunk-18-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+```
+                                          var   rel.inf
+Onset.Delta                       Onset.Delta 30.443296
+alsfrs.score.slope         alsfrs.score.slope  6.051237
+mean.slope.svc.liters   mean.slope.svc.liters  3.774028
+mean.slope.weight           mean.slope.weight  3.098220
+last.slope.weight           last.slope.weight  3.003234
+last.alsfrs.score           last.alsfrs.score  2.939656
+last.slope.bp.systolic last.slope.bp.systolic  2.691271
+mean.slope.fvc.liters   mean.slope.fvc.liters  2.058366
+mean.speech                       mean.speech  2.033955
+max.dressing                     max.dressing  2.012729
+```
+
+---
+
+&lt;img src="4_L2boost_files/figure-html/unnamed-chunk-19-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="4_L2boost_files/figure-html/unnamed-chunk-20-1.png" width="60%" style="display: block; margin: auto;" /&gt;
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
