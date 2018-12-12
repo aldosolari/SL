@@ -13,9 +13,9 @@ Teacher: [Aldo Solari](https://aldosolari.github.io/)
 
 The topics covered by this course are
 
-* *Statistical learning models*, e.g. GAMs, boosting algorithms
+* *Advanced Statistical learning models*, e.g. GAMs, boosting algorithms
 * *Large-scale testing* and *selective inference*
-* *High-dimensional inference*, e.g.  sample-splitting inference, stability selection, and knockoffs
+* *High-dimensional inference*, e.g.  sample-splitting inference, stability selection, knockoffs
 
 The final project is to do a novel data analysis and write a blog post about it. See the [#Project](#project) section for more details.
 
@@ -41,8 +41,8 @@ Most of the course material can be found in the slides linked to below. The slid
 | 3 | Dicember 6 | Generalized additive models | [Slides](docs/slides/3_GAM/3_GAM.html) | 
 ||||
 | 4 | Dicember 10 | Boosting with squared-error loss | [Slides](docs/slides/4_L2boost/4_L2boost.html) | 
-| 5 | Dicember 12 | Boosting algorithms | Slides | 
-| 6 | Dicember 13 | tbd | Slides | 
+| 5 | Dicember 12 | Ensemble learning | [Slides](docs/slides/5_Ensemble/5_Ensemble.html) | 
+| 6 | Dicember 13 | Effective communication | Slides | 
 |||||
 | 7 | January 7 | tbd | Slides | 
 | 8 | January 9 | tbd | Slides | 
@@ -82,12 +82,15 @@ Calendar
   - ESL 5.7, 9.1, 9.1.1, 9.1.2, 9.1.3
 
 **December 10** Boosting with squared-error loss
-  - CASI 17.2, 
+
+  - CASI 17.2
   
-**December 12** Boosting algorithms
-  - CASI 17.3, 17.4, 17.5
+**December 12** Ensemble learning
+
+  - CASI 17.3, 17.4
+  - ESL 8.8, 16.1
   
-**December 13** 
+**December 13** Effective communication
 
 
 
@@ -165,13 +168,15 @@ The analysis document should detail the steps you took to develop the blog post.
 
 ## Resources
 
-The following blog posts may help with the project:
+The following resources may help with the project.
 
-* Blog posts from [polygraph](http://polygraph.cool/)
-* Blog posts from [FiveThirtyEight](https://fivethirtyeight.com/)
-* Blog posts from [Normal Deviate](https://normaldeviate.wordpress.com/)
+Blog posts:
 
-and books:
+* [Polygraph](http://polygraph.cool/)
+* [FiveThirtyEight](https://fivethirtyeight.com/)
+* [Normal Deviate](https://normaldeviate.wordpress.com/)
+
+Books:
 
 * [Data Science in R: A Case Studies Approach to Computational Reasoning and Problem Solving](http://rdatasciencecases.org/) 
 * [Modern Data Science with R](https://mdsr-book.github.io/) 
