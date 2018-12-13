@@ -28,7 +28,7 @@ The final project is to do a novel data analysis and write a blog post about it.
 
 # **Latest announcements**
 
-* 10/12/28: Attending students [form](https://docs.google.com/forms/d/e/1FAIpQLSeFMcHGWhSF9BmMt2naLVKz7gzHKFzrRQDHBQLbJ-NqLPQzkQ/viewform?usp=sf_link)
+* 13/12/28: Teams
 
 # **Course Material**
 
@@ -92,6 +92,8 @@ Calendar
   
 **December 13** Effective communication
 
+  - [so what?](http://www.storytellingwithdata.com/blog/2017/3/22/so-what)
+  - [how to ask](https://stackoverflow.com/help/how-to-ask)
 
 
 # **Exam**
