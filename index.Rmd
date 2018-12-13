@@ -13,7 +13,7 @@ Teacher: [Aldo Solari](https://aldosolari.github.io/)
 
 The topics covered by this course are
 
-* *Advanced Statistical learning models*, e.g. GAMs, boosting algorithms
+* *Advanced statistical/machine learning models*, e.g. GAMs, boosting algorithms
 * *Large-scale testing* and *selective inference*
 * *High-dimensional inference*, e.g.  sample-splitting inference, stability selection, knockoffs
 
@@ -28,7 +28,7 @@ The final project is to do a novel data analysis and write a blog post about it.
 
 # **Latest announcements**
 
-* 13/12/28: Teams
+* 13/12/28: [Teams](https://docs.google.com/forms/d/e/1FAIpQLScHLT3YMW0OikyBLIF8YpJ_23km5Gwoupv0lPCNSBiXm7hnlw/viewform?usp=sf_link)
 
 # **Course Material**
 
