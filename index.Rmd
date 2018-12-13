@@ -42,7 +42,7 @@ Most of the course material can be found in the slides linked to below. The slid
 ||||
 | 4 | Dicember 10 | Boosting with squared-error loss | [Slides](docs/slides/4_L2boost/4_L2boost.html) | 
 | 5 | Dicember 12 | Ensemble learning | [Slides](docs/slides/5_Ensemble/5_Ensemble.html) | 
-| 6 | Dicember 13 | Effective communication | Slides | 
+| 6 | Dicember 13 | Effective communication | [Slides](docs/slides/6_Communication/6_Communication.pdf) | 
 |||||
 | 7 | January 7 | tbd | Slides | 
 | 8 | January 9 | tbd | Slides | 
