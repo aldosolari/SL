@@ -22,6 +22,8 @@ class: center, middle, inverse, title-slide
 
 # Outline
 
+* Heads or tails?
+
 * Microarrays
 
 * Large-scale testing
@@ -30,6 +32,101 @@ class: center, middle, inverse, title-slide
 
 * Bonferroni
 
+
+---
+
+# Checking whether a coin is fair
+
+* A fair coin, when tossed, should have an equal chance of landing *head* H or *tail* T
+
+* A biased coin is more likely to land heads than tails (or the other way around)
+
+* How to check whether a coin is fair?
+
+* Toss a coin 5 times
+
+* Let `\(E\)` the event TTTTT `\(\cup\)` HHHHH, `\(\bar{E}\)` any other result
+
+* Tell me whether you have obtained `\(E\)` or `\(\bar{E}\)`
+
+* Now simulate 
+
+
+```r
+sample(c("T","C"),size=5,replace=T)
+```
+
+---
+
+# One hypothesis
+
+* Null hypothesis `\(H\)`: the coin is fair
+
+* Alternative hypothesis `\(\bar{H}\)`: the coin is biased
+
+* Statistical test: reject the null hypothesis `\(H\)` if `\(E\)` happens
+
+* Type I error: reject the null hypothesis `\(H\)` when it is true
+
+* Probability of type I error
+`$$\alpha = \Pr_{fair}(E) = 2\cdot (1/2)^5 = 6.25\%$$`
+
+---
+
+# Many hypotheses
+
+* `\(i\)`th null hypothesis `\(H_i\)`: the `\(i\)`th coin is fair
+
+* We are testing `\(m\)` null hypothesis `\(H_1,\ldots,H_m\)`
+
+* Let `\(F = \bigcup_{i=1}^{m}E_i\)` the event "at least one event `\(E_i\)` happened"
+
+* If all the coins are fair, i.e. all null hypotheses are true, then the probability of committing *at least* one type I error is
+`$$\Pr_{all\,\,fair}(F) = 1 - [1-\Pr_{fair}(E)]^m = 1 - (0.945)^m$$`
+
+---
+
+
+```r
+m = 100
+PrE = 2*(0.5)^5
+PrF = 1 - (1-PrE)^(1:m)
+plot(1:m, PrF, type="h", ylim=c(0,1))
+```
+
+&lt;img src="7_Large_files/figure-html/unnamed-chunk-2-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+# Mean and variance of the number of type I errors
+
+* Assume that all the `\(m\)` coins are fair
+
+* `\(V = \sum_{i=1}^{m} 1\{E_i\}\)` number of type I errors
+
+* Because `\(E_1,\ldots,E_m\)` are i.i.d. `\(\mathrm{Bernulli}(\Pr(E))\)`, then 
+`$$V \sim \mathrm{Binomial}(m,\Pr(E))$$`
+
+* `\(\mathbb{E}(V) = m \Pr(E)\)`
+
+* `\(\mathbb{V}\mathrm{ar}(V) = m \Pr(E)[1-\Pr(E)]\)`
+
+---
+
+
+```r
+m = 100
+PrE = 2*(0.5)^5
+alpha = 0.1
+IC = sapply(1:m, function(i)
+            qbinom(c(alpha/2,1-(alpha/2)), size=i, prob=PrE)
+)
+plot(1:m,(1:m)*PrE)
+for (i in 1:m) segments(x0=i,x1=i,y0=IC[1,i],y1=IC[2,i])
+```
+
+&lt;img src="7_Large_files/figure-html/unnamed-chunk-3-1.png" width="60%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -145,7 +242,7 @@ prostz &lt;- read.csv("http://web.stanford.edu/~hastie/CASI_files/DATA/prostz.tx
 
 ---
 
-&lt;img src="7_Large_files/figure-html/unnamed-chunk-3-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+&lt;img src="7_Large_files/figure-html/unnamed-chunk-6-1.png" width="60%" style="display: block; margin: auto;" /&gt;
 
 **Figure 15.1 of CASI** Histogram of 6033 z-values, one for each gene
 in the prostate cancer study. If all genes were null the
@@ -175,7 +272,7 @@ fooled
 
 # Hypothesis tests
 
-* Hypothesis tests are not free of error, however, and for every hypothesis test there is a risk of falsely rejecting a hypothesis that is true, i.e.\ a *type I error*, and of failing to reject a hypothesis that is false, i.e.\ a *type II error*
+* Hypothesis tests are not free of error, however, and for every hypothesis test there is a risk of falsely rejecting a hypothesis that is true, i.e. a *type I error*, and of failing to reject a hypothesis that is false, i.e. a *type II error*
 
 * In hypothesis testing, type I errors are traditionally considered *more problematic* than type II errors
 
@@ -228,6 +325,37 @@ rejecting all hypotheses with a `\(p\)`-value below a threshold `\(T\)`
 
 ---
 
+* `\(Z_i \sim N(\mu_i,1)\)`
+
+* `\(H_i: \mu_i \leq 0\)`
+
+* Reject `\(H_i\)` if `\(Z_i &gt; z_{95\%}=1.644854\)`
+
+
+
+```r
+set.seed(123)
+m = 100
+m0 = 50
+setT = sample(1:m, size=m0, replace=F)
+stats &lt;- rnorm(m)
+stats[!setT] &lt;- stats[!setT] + 1
+setR = which(stats &gt; qnorm(.95))
+table( rejected= 1:m %in% setR,
+true = 1:m %in% setT)
+```
+
+```
+        true
+rejected FALSE TRUE
+   FALSE    47   49
+   TRUE      3    1
+```
+
+
+
+---
+
 # Error rates
 
 * Multiple testing methods try to reject as many hypotheses as possible while keeping some measure of type I errors in check 
@@ -257,7 +385,11 @@ $$
 
 * Either FWER or FDR is controlled at level `\(\alpha\)`, which means that the set `\(\mathcal{R}\)` (i.e. the threshold `\(T\)`) is chosen in such a way that the correponding aspect of the distribution of `\(Q\)` is guaranteed to be at most `\(\alpha\)`
 
+* FWER control at `\(\alpha\)`
+`$$\mathrm{FWER} = \mathrm{P}(V &gt; 0) = \mathrm{P}(Q &gt; 0) \leq \alpha$$`
 
+* FDR control at `\(\alpha\)`
+`$$\mathrm{FDR} = \mathrm{E}(Q) \leq \alpha$$`
 
 ---
 
@@ -271,6 +403,64 @@ ones
 * Conversely, if all hypotheses are true, FDR and FWER are identical; because `\(R=V\)` in this case, `\(Q\)` is a Bernoulli random variable, and `\(\mathbb{E}(Q) = \mathrm{Pr}(Q &gt;0)\)`
 
 * Both FDR and FWER are proper generalizations of the concept of type I error to multiple hypotheses; if there is only one hypothesis ( `\(m=1\)` ) the two error rates are identical, and equal to the regular type I error
+
+---
+
+
+```r
+sim &lt;- function(m, m0, mu) {
+stats &lt;- rnorm(m)
+stats[(m0+1):m] &lt;- stats[(m0+1):m] + mu
+setR &lt;- which(stats &gt; qnorm(.95))
+# number of rejections
+R = length(setR)
+# number of type I errors
+V &lt;- sum( setR &lt;= m0 )
+# family-wise error
+FWE &lt;- (V &gt; 0)
+# false discovery proportion
+FDP &lt;- V/max(1,R)
+return(c(R, V, FWE, FDP))
+}
+```
+
+---
+
+
+```r
+set.seed(123)
+res &lt;- replicate(10, sim(100, 50, 1))
+row.names(res) &lt;- c("R","V","V&gt;0", "V/R")
+res
+```
+
+```
+    [,1]       [,2]       [,3] [,4]       [,5]       [,6]       [,7]  [,8]       [,9]      [,10]
+R   15.0 13.0000000 22.0000000 15.0 21.0000000 12.0000000 12.0000000 16.00 17.0000000 13.0000000
+V    3.0  3.0000000  5.0000000  3.0  2.0000000  2.0000000  2.0000000  4.00  2.0000000  3.0000000
+V&gt;0  1.0  1.0000000  1.0000000  1.0  1.0000000  1.0000000  1.0000000  1.00  1.0000000  1.0000000
+V/R  0.2  0.2307692  0.2272727  0.2  0.0952381  0.1666667  0.1666667  0.25  0.1176471  0.2307692
+```
+
+---
+
+
+```r
+set.seed(123)
+res &lt;- replicate(1000, sim(100, 50, 1))
+rowMeans(res[3:4,]) # FWER and FDR
+```
+
+```
+[1] 0.9270000 0.1546277
+```
+
+```r
+plot(table(res[2,])) 
+```
+
+&lt;img src="7_Large_files/figure-html/unnamed-chunk-10-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
 
 ---
 
@@ -311,6 +501,26 @@ which says that for any collection of events `\(E_1, \ldots, E_k\)`, we have
 
 * Because the method of Bonferroni only commits a type I error if `\(q_i \leq \alpha/m\)` for some `\(i\)`, this proves
 FWER control at level `\(\alpha\)` for the Bonferroni method
+
+
+---
+
+# Magnitude of Bonferroni's threshold
+
+* `\(Z_i \sim N(\mu_i,1)\)`
+
+* `\(H_i: \mu_i \leq 0\)`
+
+* Reject `\(H_i\)` if `\(Z_i &gt; z_{1-\alpha/m}\)`
+
+* Holding `\(\alpha\)` fixed, we can show that for large `\(m\)`
+`$$z_{1-\alpha/m}\approx \sqrt{2\log m}(1-\frac{\log \log m}{4 \log m}) \approx \sqrt{2\log m}$$`
+
+* With Bonferroni we reject at least one null hypothesis when
+`$$\max Z_i &gt; \sqrt{2\log m}$$`
+
+* One remarkable fact about all of this is that there is asymptotically no dependence on `\(\alpha\)`. This is a consequence of the fact that if all null hypotheses are true, then 
+`$$\frac{\max_{i} Z_i}{\sqrt{2\log m}} \stackrel{p}{\rightarrow}1$$`
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
