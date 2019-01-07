@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Large-scale testing</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Aldo Solari" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# <strong>Large-scale testing</strong>
+### Aldo Solari
+
+---
+
+
+
+
+
+# Outline
+
+* Microarrays
+
+* Large-scale testing
+
+* Error rates
+
+* Bonferroni
+
+
+---
+
+# The three eras of statistics
+
+From Efron (2012) [Large-Scale Inference](https://statweb.stanford.edu/~ckirby/brad/LSI/monograph_CUP.pdf)
+
+1. **The age of huge census-level data sets** were brought to bear on simple but important questions: 
+  - Are there more male than female births? 
+  - Is the rate of insanity rising?
+
+2. **The classical period** of Pearson, Fisher, Neyman, Hotelling, and their successors, intellectual giants who developed a theory of optimal inference capable of wringing every drop of information out of a scientific experiment. The questions dealt with still tended to be simple
+    - Is treatment A better than treatment B?
+
+3. **The era of scientific mass production**, in which new technologies typified by the *microarray* allow a single team of scientists to produce *high-dimensional data*. But now the flood of data is accompanied by a deluge of questions, perhaps thousands of estimates or hypothesis tests that the statistician is charged with answering together
+
+
+---
+
+# The four eras of data
+
+From Jeff Leek's [post](https://simplystatistics.org/2016/12/16/the-four-eras-of-data/)
+
+1. **The era of not much data** Prior to about 1995, usually we could collect a few measurements at a time. The whole point of statistics was to try to optimaly squeeze information out of a small number of samples - so you see methods like *maximum likelihood* and *minimum variance unbiased estimators* being developed
+
+2. **The era of lots of measurements on a few samples** This one hit hard in biology with the development of the microarray and the ability to measure thousands of genes simultaneously. This is the same statistical problem as in the previous era but with a lot more noise added. Here you see the development of methods for *multiple testing* and *regularized regression* to separate signals from piles of noise
+
+3. **The era of a few measurements on lots of samples** This era is overlapping to some extent with the previous one. Large scale collections of data from EMRs and Medicare are examples where you have a huge number of people (samples) but a relatively modest number of variables measured. Here there is a big focus on statistical methods for knowing how to model different parts of the data with *hierarchical models* and separating signals of varying strength with *model calibration*
+
+4. **The era of all the data on everything** This is an era that currently we as civilians don’t get to participate in. But Facebook, Google, Amazon, the NSA and other organizations have thousands or millions of measurements on hundreds of millions of people. Other than just sheer computing I'm speculating that a lot of the problem is in segmentation (like in era 3) coupled with avoiding crazy overfitting (like in era 2)
+
+---
+
+# Microarrays
+
+* For many statisticians, microarrays provided an introduction to *large-scale data analysis*. These were revolutionary biomedical devices that enabled
+the assessment of individual activity for thousands of genes at once
+
+* Need to carry out thousands of simultaneous
+hypothesis tests, done with the prospect of finding only a few interesting genes among a haystack of null cases
+
+---
+
+# Microarrays
+
+![](https://upload.wikimedia.org/wikipedia/commons/0/0e/Microarray2.gif)
+
+---
+
+# Prostate cancer data
+
+* The prostate cancer data came from a microarray study of
+`\(n=102\)` men, 52 prostate cancer patients and 50 normal controls
+
+* Each man’s gene expression levels were measured on a panel of `\(m=6033\)`
+genes, yielding a `\(102 \times 6033\)` matrix of measurements 
+`$$x_{ji}=\mathrm{activity\,\,of\,\,}i\mathrm{th\,gene\,\,for\,\,}j\mathrm{th\,\,man}$$`
+
+
+
+* The `\(i\)`th null hypothesis, denoted `\(H_i\)`, would state that the mean expression level of the `\(i\)`th gene is the same in both groups of patients
+`$$H_i: \mathbb{E}(X_{i}^{cancer}) = \mathbb{E}(X_{i}^{control})$$`
+
+* For each gene, a two-sample t statistic `\(t_i\)` is computed comparing
+gene `\(i\)` expression levels for the 52 patients with those for the 50
+controls
+
+* Under the null hypothesis `\(H_i\)` that the patients’ and the controls’
+responses come from the same normal distribution of gene `\(i\)` expression
+levels, `\(t_i\)` will follow a standard Student t distribution with 100 degrees of
+freedom
+
+
+---
+
+# Z scores
+
+* The transformation
+`$$z_i = \Phi^{-1}(F_{100}(t_i))$$`
+where `\(F_{100}\)` is the cdf of a `\(t_100\)` distribution and `\(\Phi^{-1}\)` the inverse function of
+a standard normal cdf, makes `\(z_i\)` standard normal under the null hypothesis
+`$$H_i: z_i \sim N(0,1)$$`
+
+
+* Of course the investigators were hoping to spot some non-null genes,
+ones for which the patients and controls respond differently
+
+* A reasonable model for both null and non-null genes is
+`$$z_i \sim N(\mu_i,1)$$`
+`\(\mu_i\)` being the *effect size* for gene i
+
+* Null genes have `\(\mu_i=0\)`, while the
+investigators hoped to find genes with large positive or negative `\(\mu_i\)` effects
+
+---
+
+* `prostmat.csv` is the 6033x102 data matrix discussed at the top of page 33 of CASI.
+
+* The first 50 columns are the genetic activity measurements for the 50 control subjects,
+while the last 52 columns represent the prostate cancer subjects. The data can be read directly into R via the command
+
+
+```r
+prostmat &lt;- read.csv("http://web.stanford.edu/~hastie/CASI_files/DATA/prostmat.csv")
+```
+
+* `prostz.txt` is the vector of 6033 z-values pictured in Figure 3.4 of CASI. These were obtained as decribed on page 272
+
+
+```r
+prostz &lt;- read.csv("http://web.stanford.edu/~hastie/CASI_files/DATA/prostz.txt", header=F)
+```
+
+---
+
+&lt;img src="7_Large_files/figure-html/unnamed-chunk-3-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+**Figure 15.1 of CASI** Histogram of 6033 z-values, one for each gene
+in the prostate cancer study. If all genes were null the
+histogram would track the red curve. For which genes can we
+reject the null hypothesis?
+
+---
+
+# Large-scale testing
+
+* Large-scale testing refers exactly to this situation: having observed a large number `\(m\)` of test statistics, how should we decide which if any of the null hypotheses to reject? 
+
+* Classical testing theory involved only a single
+case, `\(m=1\)`
+
+* A theory of multiple testing arose in the 1960s, "multiple" meaning `\(m\)` between 2 and perhaps 20
+
+* The microarray era produced data
+sets with `\(m\)` in the hundreds, thousands, and now even millions
+
+* The most troubling fact about large-scale testing is how easy it is to be
+fooled
+
+* Running 100 separate hypothesis tests at significance level 0.05 will produce on average about five "significant" results even if each case is actually null
+
+---
+
+# Hypothesis tests
+
+* Hypothesis tests are not free of error, however, and for every hypothesis test there is a risk of falsely rejecting a hypothesis that is true, i.e.\ a *type I error*, and of failing to reject a hypothesis that is false, i.e.\ a *type II error*
+
+* In hypothesis testing, type I errors are traditionally considered *more problematic* than type II errors
+
+* If a rejected hypothesis allows publication of a scientific finding, a type I error brings a *false discovery*, and the risk of publication of a potentially misleading scientific result
+
+* Type II errors, on the other hand, mean missing out on a scientific result. Although unfortunate for the individual researcher, the latter is, in comparison, less harmful to scientific research as a whole
+
+* In hypothesis tests the probability of making a type I error is bounded by `\(\alpha\)`, an acceptable risk of type I errors, conventionally set at 0.05. 
+Problems arise, however, when researchers do not perform a single hypothesis test but *many of them*
+
+* Since each test again has a probability of producing a type I error, performing a large number of hypothesis tests virtually guarantees the presence of type I errors among the findings. Actually, the expected number of type I errors is
+
+`$$\mathbb{E}(\mathrm{number\,\,of\,\,type\,\,I\,\,errors})=\mathrm{number\,\,of\,\,true\,\,null\,\,hypotheses}\times \alpha$$`
+
+---
+
+# Multiple testing
+
+* We have a collection `\(\mathcal{H}=\{H_1, \ldots, H_m\}\)` of null hypotheses, which we would like to reject
+
+* An unknown number `\(m_0\)` of these hypotheses is true, whereas the other `\(m_1 = m-m_0\)` is false. We call the collection of true hypotheses `\(\mathcal{T} \subseteq \mathcal{H}\)` and the remaining collection of false hypotheses `\(\mathcal{F} = \mathcal{H} \setminus \mathcal{T}\)`. We denote the proportion of true hypotheses `\(\pi_0 = m_0/m\)`.
+
+* The goal of a *multiple testing procedure* is to choose a collection `\(\mathcal{R} \subseteq \mathcal{H}\)` of hypotheses to reject 
+
+* If we have `\(p\)`-values `\(p_1,\ldots,p_m\)` for each of the hypotheses `\(H_1,\ldots,H_m\)`, and obvious choice is the collection 
+`$$\mathcal{R} = \{H_i: p_{i}\leq T\}$$`
+rejecting all hypotheses with a `\(p\)`-value below a threshold `\(T\)`
+
+* In this situation, the multiple testing problem reduces to the choice of `\(T\)`
+
+* Ideally, the set of rejected hypotheses `\(\mathcal{R}\)` should coincide with the set `\(\mathcal{F}\)` as much as possible
+
+---
+
+# Errors
+
+* Two types of error can be made: false positives, or type I errors, are the rejected hypotheses that are not false, i.e. `\(\mathcal{R} \cap \mathcal{T}\)`; false negatives or type II errors are the false hypotheses that we failed to reject, i.e. `\(\mathcal{F} \setminus \mathcal{R}\)`
+
+* Rejected hypotheses are sometimes called *discoveries*, hence the terms *true discovery* and *false discovery* are sometimes used for correct and incorrect rejections.
+
+* We can summarize the numbers of errors occurring in a hypothesis testing procedure in a contingency table. We can observe `\(m\)` and `\(R = \#\mathcal{R}\)`, but all quantities in the first two columns of the table are unobservable
+
+|   | true  | false  | total  | 
+|---|---|---|---|
+| rejected  | `\(V\)`  | `\(U\)`  |  `\(R\)` |
+| not rejected   | `\(m_0-V\)`  |  `\(m_1-U\)`  | `\(m-R\)`   |
+| total  | `\(m_0\)`  | `\(m_1\)`  | `\(m\)`  |
+
+* Type I and type II errors are in direct competition with each other, and a trade-off between the two must be made. If we reject more hypotheses, we typically have more type I errors but fewer type II errors
+
+---
+
+# Error rates
+
+* Multiple testing methods try to reject as many hypotheses as possible while keeping some measure of type I errors in check 
+
+* This measure is usually either the number `\(V\)` of type I errors  or the **false discovery proportion** `\(Q\)`, defined as
+`$$Q = \frac{V}{\max(R,1)}$$`
+which is the proportion of false rejections among the rejections, defined as 0 if no rejections are made 
+
+* Most multiple testing methods choose the threshold `\(T\)` as a function of the data so that the set `\(\mathcal{R}\)` of rejected hypotheses is random, and so both `\(V\)` and `\(Q\)` are random variables 
+
+* Different error rates focus on different summaries of the distribution of `\(V\)` and `\(Q\)`
+
+---
+
+# FWER and FDR
+
+* The most popular methods control either the **familywise error** (FWER), given by
+$$
+\mathrm{FWER} = \mathrm{P}(V &gt; 0) = \mathrm{P}(Q &gt; 0)
+$$
+or the **false discovery rate** (FDR), given by
+$$
+\mathrm{FDR} = \mathrm{E}(Q).
+$$
+
+* The FWER focuses on the probability that the rejected set contains any error, whereas FDR looks at the expected proportion of errors among the rejections
+
+* Either FWER or FDR is controlled at level `\(\alpha\)`, which means that the set `\(\mathcal{R}\)` (i.e. the threshold `\(T\)`) is chosen in such a way that the correponding aspect of the distribution of `\(Q\)` is guaranteed to be at most `\(\alpha\)`
+
+
+
+---
+
+# FWER and FDR
+
+* The two error rates FDR and FWER are related. Because `\(0 \leq Q \leq 1\)`, we have `$$\mathbb{E}(Q) \leq \mathrm{Pr}(Q&gt;0)$$` which implies that every FWER-controlling method is automatically also an FDR-controlling method
+
+* Because FDR is smaller than FWER,  it is easier to keep the FDR below a level `\(\alpha\)` than to keep the FWER below the same level, and we can generally expect FDR-based methods to have more power than FWER-based
+ones
+
+* Conversely, if all hypotheses are true, FDR and FWER are identical; because `\(R=V\)` in this case, `\(Q\)` is a Bernoulli random variable, and `\(\mathbb{E}(Q) = \mathrm{Pr}(Q &gt;0)\)`
+
+* Both FDR and FWER are proper generalizations of the concept of type I error to multiple hypotheses; if there is only one hypothesis ( `\(m=1\)` ) the two error rates are identical, and equal to the regular type I error
+
+---
+
+# Bonferroni
+
+* The method of Bonferroni controls FWER at level `\(\alpha\)` by rejecting hypotheses only if they have `\(p\)`-value
+smaller than `\(\alpha/m\)`
+`$$\mathrm{reject\,\,}H_i \mathrm{\,\,if\,\,}p_i \leq \frac{\alpha}{m}$$`
+
+* This single-step adjustment of the significance threshold is the simplest, oldest
+and most well-known multiple testing method, and is attractive because of its simplicity
+
+* However, it is
+also known to be conservative, especially if many hypotheses are false, or if strong positive correlations
+between `\(p\)`-values occur
+
+* The *adjusted* `\(p\)`-value for the Bonferroni procedure is given by `\(\min(mp_i, 1)\)`
+
+---
+
+# Bonferroni proof
+
+* Assumptions on the `\(p\)`-values often involve only the
+`\(p\)`-values of true hypotheses. We denote these by `\(q_1, \ldots, q_{m_0}\)`. By the definition of a `\(p\)`-value, if their
+corresponding hypotheses are true, these `\(p\)`-values are either uniformly distributed between 0 and 1, or
+they can be stochastically greater than uniform, i.e. 
+$$
+\mathrm{Pr}(q_i \leq u ) \leq u
+$$
+
+* To properly motivate the Bonferroni method, we should look at it as a corollary to Boole’s inequality,
+which says that for any collection of events `\(E_1, \ldots, E_k\)`, we have
+`$$\mathrm{P}\big(\bigcup_{i=1}^k E_i\big) \leq \sum_{i=1}^k \mathrm{P}(E_i)$$`
+
+
+* It follows from Boole's inequality that, if `\(q_1, \ldots, q_{m_0}\)` are the `\(p\)`-values of the true null hypotheses, that the probability that there is some `\(i\)` for which `\(q_i \leq \alpha/m\)` is given by
+`$$\mathrm{Pr}\big(\min_i q_i \leq \alpha/m\big) \leq \mathrm{P}\big(\bigcup_{i=1}^{m_0} \{ q_i \leq \alpha/m \}\big) \leq \sum_{i=1}^{m_0} \mathrm{P}( q_i \leq \alpha/m ) = m_0\frac{\alpha}{m} \leq \alpha$$`
+
+* Because the method of Bonferroni only commits a type I error if `\(q_i \leq \alpha/m\)` for some `\(i\)`, this proves
+FWER control at level `\(\alpha\)` for the Bonferroni method
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightLanguage": "R",
+"countIncrementalSlides": false,
+"highlightLines": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

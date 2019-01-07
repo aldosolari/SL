@@ -9,11 +9,11 @@ output:
 
 Teacher: [Aldo Solari](https://aldosolari.github.io/)
 
-*Big Data* and *Data Science* have now become recurring terms in media communication. In response to the growing need to analyze data, the profession of the *data scientist* has recently emerged. This course aims to provide new tools for the data scientist. These tools require technical skills such as programming and statistics. They also require professional skills such as communication, teamwork, problem solving, and critical thinking. See the [course syllabus](https://aldosolari.github.io/SL/syllabus/syllabus.html) for further information.
+*Big Data*, *Deep Learning* and *Data Science* have now become recurring terms in media communication. In response to the growing need to analyze data, the profession of the *data scientist* has recently emerged. This course aims to provide new tools for the data scientist. These tools require technical skills such as programming and statistics. They also require professional skills such as communication, teamwork, problem solving, and critical thinking. See the [course syllabus](https://aldosolari.github.io/SL/syllabus/syllabus.html) for further information.
 
 The topics covered by this course are
 
-* *Advanced statistical/machine learning models*, e.g. GAMs, boosting algorithms
+* *Advanced statistical/machine learning models*, e.g. GAMs, boosting algorithms, ensemble learning
 * *Large-scale testing* and *selective inference*
 * *High-dimensional inference*, e.g.  sample-splitting inference, stability selection, knockoffs
 
@@ -28,7 +28,7 @@ The final project is to do a novel data analysis and write a blog post about it.
 
 # **Latest announcements**
 
-* 13/12/28: [Teams](https://docs.google.com/forms/d/e/1FAIpQLScHLT3YMW0OikyBLIF8YpJ_23km5Gwoupv0lPCNSBiXm7hnlw/viewform?usp=sf_link)
+* No news
 
 # **Course Material**
 
@@ -44,7 +44,7 @@ Most of the course material can be found in the slides linked to below. The slid
 | 5 | Dicember 12 | Ensemble learning | [Slides](docs/slides/5_Ensemble/5_Ensemble.html) | 
 | 6 | Dicember 13 | Effective communication | [Slides](docs/slides/6_Communication/6_Communication.pdf) | 
 |||||
-| 7 | January 7 | tbd | Slides | 
+| 7 | January 7 | Large-scale testing | [Slides](docs/slides/7_Large/7_Large.html) | 
 | 8 | January 9 | tbd | Slides | 
 | 9 | January 10 | tbd | Slides | 
 |||||
@@ -95,6 +95,9 @@ Calendar
   - [so what?](http://www.storytellingwithdata.com/blog/2017/3/22/so-what)
   - [how to ask](https://stackoverflow.com/help/how-to-ask)
 
+**January 7** Large-scale testing
+
+  - CASI 1.2, 15.1
 
 # **Exam**
 
@@ -183,8 +186,14 @@ Books:
 * [Data Science in R: A Case Studies Approach to Computational Reasoning and Problem Solving](http://rdatasciencecases.org/) 
 * [Modern Data Science with R](https://mdsr-book.github.io/) 
 
-More informations will be available soon.
+Newspapers
 
+* [Infodata](http://www.infodata.ilsole24ore.com/?refresh_ce=1), see also [this](https://www.unimib.it/comunicati/ecco-lidentikit-del-cantante-perfetto-rivelano-ascolti-spotify)
+* [Economist](https://www.economist.com/graphic-detail/2018/11/24/tvs-golden-age-is-real)
+
+## Attending students
+
+* [List of partecipants](docs/projects/SLteams.pdf)
 
 This page was last updated on `r Sys.time()` Eastern Time.
 
