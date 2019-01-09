@@ -157,6 +157,23 @@ rowMeans(res[3:4,]) # FWER and FDR
 
 ---
 
+# BH threshold
+
+&lt;img src="8_FDR_files/figure-html/unnamed-chunk-4-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Step-down and step-up
+
+* Holm is a step-down method
+
+* BH is a step-up method
+
+![](images/step.png)
+
+
+---
+
 # BH controls the FDR
 
 * For null p-values i.i.d `\(\mathrm{Uniform}(0,1)\)`, the Benjamini-Hochberg (BH) procedure controls the FDR at level `\(\alpha\)`. More precisely
@@ -232,6 +249,8 @@ we can obtain via Markov's inequality:
 `$$\Pr(Q &gt; \gamma) \leq \frac{\mathbb{E}(Q)}{\gamma}$$`
 
 * FWER, on the other hand, does control for an individual experiment. That is, with FWER control, we have no false discoveries unless we are very unlucky; with FDR control, on average our test will control FDP, but *this time* we may not have done a very good job
+
+
 
 ---
 

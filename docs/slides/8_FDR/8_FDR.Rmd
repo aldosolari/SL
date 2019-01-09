@@ -140,6 +140,33 @@ $$p_{(i)} \leq \frac{i \alpha}{m}$$
 
 ---
 
+# BH threshold
+
+```{r, echo=FALSE}
+zscores <- read.csv("http://web.stanford.edu/~hastie/CASI_files/DATA/prostz.txt", header=F)$V1
+pvalues <- 2*pnorm(abs(zscores), lower.tail = FALSE)
+m = length(pvalues)
+alpha = 0.05
+plot(1:m, sort(pvalues), 
+     xlim=c(0,50), ylim=c(0,.0005),
+     xlab = "index i", ylab="p-value")
+lines(1:m,(1:m*alpha)/m, col=2)
+lines(1:m, rep(alpha/m,m), col=3)
+```
+
+---
+
+# Step-down and step-up
+
+* Holm is a step-down method
+
+* BH is a step-up method
+
+![](images/step.png)
+
+
+---
+
 # BH controls the FDR
 
 * For null p-values i.i.d $\mathrm{Uniform}(0,1)$, the Benjamini-Hochberg (BH) procedure controls the FDR at level $\alpha$. More precisely
@@ -200,6 +227,8 @@ we can obtain via Markov's inequality:
 $$\Pr(Q > \gamma) \leq \frac{\mathbb{E}(Q)}{\gamma}$$
 
 * FWER, on the other hand, does control for an individual experiment. That is, with FWER control, we have no false discoveries unless we are very unlucky; with FDR control, on average our test will control FDP, but *this time* we may not have done a very good job
+
+
 
 ---
 
