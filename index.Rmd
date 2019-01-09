@@ -45,7 +45,7 @@ Most of the course material can be found in the slides linked to below. The slid
 | 6 | Dicember 13 | Effective communication | [Slides](docs/slides/6_Communication/6_Communication.pdf) | 
 |||||
 | 7 | January 7 | Large-scale testing | [Slides](docs/slides/7_Large/7_Large.html) | 
-| 8 | January 9 | tbd | Slides | 
+| 8 | January 9 | The false discovery rate | [Slides]((docs/slides/8_FDR/8_FDR.html)) | 
 | 9 | January 10 | tbd | Slides | 
 |||||
 | 10 | January 14 | tbd | Slides | 
@@ -98,6 +98,10 @@ Calendar
 **January 7** Large-scale testing
 
   - CASI 1.2, 15.1
+  
+**January 9** The false discovery rate
+
+  - CASI 15.2
 
 # **Exam**
 
