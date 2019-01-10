@@ -46,7 +46,7 @@ Most of the course material can be found in the slides linked to below. The slid
 |||||
 | 7 | January 7 | Large-scale testing | [Slides](docs/slides/7_Large/7_Large.html) | 
 | 8 | January 9 | The false discovery rate | [Slides](docs/slides/8_FDR/8_FDR.html) | 
-| 9 | January 10 | tbd | Slides | 
+| 9 | January 10 | Selective inference |[Slides](docs/slides/9_Selective/9_Selective.html) | 
 |||||
 | 10 | January 14 | tbd | Slides | 
 | 11 | January 16 | tbd | Slides | 
@@ -102,6 +102,10 @@ Calendar
 **January 9** The false discovery rate
 
   - CASI 15.2
+
+**January 10** Selective inference
+
+  - CASI 20.1
 
 # **Exam**
 
