@@ -412,14 +412,16 @@ $$\mathrm{FCR} = \mathbb{E}\left( \frac{\mathrm{number\,\,of\,\,selected\,\,CIs\
 
 # Benjamini-Yekutieli (2005)
 
-1. Apply the selection rule and select the parameters $\theta_i$ with $i \in S$
+1. Decide the selection rule before seeing the data
+
+2. Select the parameters $\theta_i$ with $i \in S$ according to the selection rule
 
 2. FCR adjusted CIs are given by
 $$\widetilde{\mathrm{CI}}_i = [T_i - z_{1-\tilde{\alpha}/2}, T_i + z_{1-\tilde{\alpha}/2}], \qquad i \in S$$
 with 
 $$\tilde{\alpha} = \frac{(\#S) \alpha}{m}$$
 
-* If $T_i$'s are independent, then for any selection procedure, the FCR of adjusted CI's obey FCR $\leq \alpha$
+* If $T_i$'s are independent, then for any selection rule, the FCR of adjusted CI's obey FCR $\leq \alpha$
 
 * There also are extensions to PRDS statistics
 
