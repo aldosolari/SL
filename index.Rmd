@@ -49,7 +49,7 @@ Most of the course material can be found in the slides linked to below. The slid
 | 9 | January 10 | Selective inference |[Slides](docs/slides/9_Selective/9_Selective.html) | 
 |||||
 | 10 | January 14 | Sample-splitting inference | [Slides](docs/slides/10_Split/10_Split.html) | 
-| 11 | January 16 | tbd | Slides | 
+| 11 | January 16 | Stability selection | [Slides](docs/slides/11_Stability/11_Stability.html) | 
 | 12 | January 17 | tbd | Slides | 
 |||||
 | 13 | January 21 | tbd | Slides | 
