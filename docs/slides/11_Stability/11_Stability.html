@@ -201,7 +201,7 @@ noise variables should, for example, have the same correlation with the signal v
 Assumption 2. means
 that signal variables should be selected with higher probability
 than noise variables. This assumption is usually
-not very restrictive as we wouuld expect it to hold for any
+not very restrictive as we would expect it to hold for any
 sensible selection procedure
 
 ---
@@ -238,7 +238,7 @@ most situations
 # PFER control
 
 * In general, we would recommend to choose an upper
-bound PFER$_{\max}$ for PFER and specify either `\(q\)` or `\(\pi_{\mathrm{thr}}\)`, 
+bound PFER `\(_{\max}\)` for PFER and specify either `\(q\)` or `\(\pi_{\mathrm{thr}}\)`, 
 preferably `\(q\)`
 
 * The missing parameter can then be computed
@@ -255,6 +255,79 @@ small or too large
 * Note that the PFER can be greater
 than one as it resembles the tolerable expected number
 of falsely selected noise variables
+
+---
+
+# Significance vs prediction
+
+* One should keep in mind that stability selection
+controls the per-family error rate, which is very
+conservative. Specifying the error rate such that `\(\alpha \leq \mathrm{PFER}_{\max} \leq m\alpha\)`, with significance level `\(\alpha\)` and `\(m\)` hypothesis
+tests, might provide a good idea for a sensible
+error control in high-dimensional settings with FWER control
+($\mathrm{PFER}_{\max} = \alpha$) and no multiplicity adjustment
+($\mathrm{PFER}_{\max} = m\alpha$) as the extreme cases
+
+* Furthermore, prediction models might not always benefit
+from stability selection. If the error control is tight, i.e.
+`\(\mathrm{PFER}_{\max}\)` is small, the true positive rate is usually smaller
+than in a cross-validated prediction model without stability
+selection and the prediction accuracy suffers
+
+* Prediction and variable selection are two different
+goals
+
+
+---
+
+# R package stab
+
+
+```r
+library(stabs)
+
+fit &lt;- stabsel(x = X, y = y, fitfun = lars.lasso, cutoff = 0.75,
+PFER = 5, assumption ="none") 
+fit
+```
+
+```
+	Stability Selection without further assumptions
+
+Selected variables:
+X2 X3 X4 X5 
+ 2  3  4  5 
+
+Selection probabilities:
+ X46  X74  X87  X89  X93 X131 X133 X147 X159   X6  X65  X66  X69  X84  X88  X92  X95 X107 X124 X126 X146 X161 X172 X193  X12  X13  X16  X17  X38  X50  X51  X55  X61  X97 X114 X135 X142 X195   X7  X23  X24  X27  X43  X44 
+0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.02 0.02 0.02 0.02 0.02 0.02 0.02 0.02 0.02 0.02 0.02 0.02 0.02 0.02 0.03 0.03 0.03 0.03 0.03 0.03 
+ X52  X60  X64  X70  X71  X73  X91 X110 X115 X118 X137 X145 X160 X168 X191 X196  X18  X31  X34  X39  X40  X49  X54  X72  X80 X100 X101 X103 X108 X119 X123 X130 X139 X166 X176 X177 X180 X185  X20  X32  X45  X75  X85  X86 
+0.03 0.03 0.03 0.03 0.03 0.03 0.03 0.03 0.03 0.03 0.03 0.03 0.03 0.03 0.03 0.03 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.05 0.05 0.05 0.05 0.05 0.05 
+X105 X106 X116 X136 X154 X179 X183 X192  X22  X37  X68  X99 X112 X134 X152 X157 X171 X174 X186 X188  X33  X42  X57  X83 X117 X121 X128 X132 X143 X155 X194 X197   X9  X63  X96  X98 X113 X120 X169 X175 X187 X190 X199 X200 
+0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.06 0.06 0.06 0.06 0.06 0.06 0.06 0.06 0.06 0.06 0.06 0.06 0.07 0.07 0.07 0.07 0.07 0.07 0.07 0.07 0.07 0.07 0.07 0.07 0.08 0.08 0.08 0.08 0.08 0.08 0.08 0.08 0.08 0.08 0.08 0.08 
+ X15  X48 X102 X138  X11  X30  X35 X111 X122 X150 X156 X158 X165  X19  X26  X29  X67 X149 X189  X56 X163  X53   X8  X79  X90 X109 X129 X164  X21  X82  X47  X76  X77  X81 X182  X25  X59 X198 X178 X162 X184  X14 X140 X173 
+0.09 0.09 0.09 0.09 0.10 0.10 0.10 0.10 0.10 0.10 0.10 0.10 0.10 0.11 0.11 0.11 0.11 0.11 0.11 0.12 0.12 0.13 0.14 0.14 0.14 0.14 0.14 0.14 0.15 0.15 0.16 0.16 0.16 0.16 0.16 0.17 0.17 0.17 0.18 0.19 0.19 0.20 0.20 0.20 
+X125  X58 X144 X181 X148 X151 X170  X36 X104 X127  X78  X62  X28 X141 X167 X153  X41  X10   X1  X94   X2   X3   X4   X5 
+0.21 0.23 0.23 0.23 0.27 0.27 0.27 0.28 0.29 0.30 0.32 0.35 0.36 0.37 0.37 0.38 0.40 0.41 0.61 0.62 0.77 0.88 0.97 1.00 
+
+---
+Cutoff: 0.75; q: 22; PFER (*):  4.84 
+   (*) or expected number of low selection probability variables
+PFER (specified upper bound):  5 
+PFER corresponds to signif. level 0.0242 (without multiplicity adjustment)
+```
+
+```r
+plot(fit)
+```
+
+&lt;img src="11_Stability_files/figure-html/unnamed-chunk-4-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+```r
+plot(fit, type="path")
+```
+
+&lt;img src="11_Stability_files/figure-html/unnamed-chunk-4-2.png" width="60%" style="display: block; margin: auto;" /&gt;
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({

@@ -194,7 +194,7 @@ noise variables should, for example, have the same correlation with the signal v
 Assumption 2. means
 that signal variables should be selected with higher probability
 than noise variables. This assumption is usually
-not very restrictive as we wouuld expect it to hold for any
+not very restrictive as we would expect it to hold for any
 sensible selection procedure
 
 ---
@@ -231,7 +231,7 @@ most situations
 # PFER control
 
 * In general, we would recommend to choose an upper
-bound PFER$_{\max}$ for PFER and specify either $q$ or $\pi_{\mathrm{thr}}$, 
+bound PFER $_{\max}$ for PFER and specify either $q$ or $\pi_{\mathrm{thr}}$, 
 preferably $q$
 
 * The missing parameter can then be computed
@@ -249,5 +249,39 @@ small or too large
 than one as it resembles the tolerable expected number
 of falsely selected noise variables
 
+---
 
+# Significance vs prediction
+
+* One should keep in mind that stability selection
+controls the per-family error rate, which is very
+conservative. Specifying the error rate such that $\alpha \leq \mathrm{PFER}_{\max} \leq m\alpha$, with significance level $\alpha$ and $m$ hypothesis
+tests, might provide a good idea for a sensible
+error control in high-dimensional settings with FWER control
+($\mathrm{PFER}_{\max} = \alpha$) and no multiplicity adjustment
+($\mathrm{PFER}_{\max} = m\alpha$) as the extreme cases
+
+* Furthermore, prediction models might not always benefit
+from stability selection. If the error control is tight, i.e.
+$\mathrm{PFER}_{\max}$ is small, the true positive rate is usually smaller
+than in a cross-validated prediction model without stability
+selection and the prediction accuracy suffers
+
+* Prediction and variable selection are two different
+goals
+
+
+---
+
+# R package stab
+
+```{r}
+library(stabs)
+
+fit <- stabsel(x = X, y = y, fitfun = lars.lasso, cutoff = 0.75,
+PFER = 5, assumption ="none") 
+fit
+plot(fit)
+plot(fit, type="path")
+```
 
