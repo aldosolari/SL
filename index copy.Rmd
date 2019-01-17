@@ -1,15 +1,13 @@
 ---
-title: "Statistical Learning"
-description: |
-  Master Degree in Statistics and Economics, University of Milano-Bicocca.
-author:
-  - name: Aldo Solari
-    url: https://aldosolari.github.io/
-    affiliation: DEMS
-    affiliation_url: https://www.unimib.it/
-date: "`r Sys.Date()`"
-output: radix::radix_article
+title: "**Statistical Learning**"
+output:
+  html_document:
+    theme: cosmo
+    toc: yes
+    toc_float: yes
 ---
+
+Teacher: [Aldo Solari](https://aldosolari.github.io/)
 
 *Big Data*, *Deep Learning* and *Data Science* have now become recurring terms in media communication. In response to the growing need to analyze data, the profession of the *data scientist* has recently emerged. This course aims to provide new tools for the data scientist. These tools require technical skills such as programming and statistics. They also require professional skills such as communication, teamwork, problem solving, and critical thinking. See the [course syllabus](https://aldosolari.github.io/SL/syllabus/syllabus.html) for further information.
 
