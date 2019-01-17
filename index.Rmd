@@ -109,9 +109,29 @@ Calendar
 
   - CASI 20.1
   
-**January 15** Sample-splitting inference
+**January 14** Sample-splitting inference
 
   -  [Dezeure et al. (2015) Statistical Science](https://projecteuclid.org/download/pdfview_1/euclid.ss/1449670857), sections 1, 2, 2.1.1
+  
+  
+**January 16** Stability selection
+
+**January 17** tbd
+
+**January 23** Projects presentation: round A
+  - Teams: GS, GreenTeam, LAF, Clothster Analysis, JANUARY, PowerTrasform
+
+**January 24** Projects presentation: round B
+  -  Hermani, The_Regressionists, Anonymous, Robaskol
+  
+**January 28** Projects presentation: round C: 
+  - D, MSF, CaMelos', IGA, Random_Forest_512
+
+
+
+
+
+
 
 
 # **Exam**
