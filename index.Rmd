@@ -72,7 +72,7 @@ There are two primary references:
 * [Computer-Age Statistical Inference](https://web.stanford.edu/~hastie/CASI/) (CASI)
 * [The Elements of Statistical Learning](https://web.stanford.edu/~hastie/ElemStatLearn/) (ESL)
 
-### Calendar:
+Calendar:
 
 **December 3** Introduction
 
@@ -196,13 +196,13 @@ The analysis document should detail the steps you took to develop the blog post.
 
 The following resources may help with the project.
 
-Blog posts:
+Blog posts
 
 * [Polygraph](http://polygraph.cool/)
 * [FiveThirtyEight](https://fivethirtyeight.com/)
 * [Normal Deviate](https://normaldeviate.wordpress.com/)
 
-Books:
+Books
 
 * [Data Science in R: A Case Studies Approach to Computational Reasoning and Problem Solving](http://rdatasciencecases.org/) 
 * [Modern Data Science with R](https://mdsr-book.github.io/) 
@@ -212,10 +212,9 @@ Newspapers
 * [Infodata](http://www.infodata.ilsole24ore.com/?refresh_ce=1), see also [this](https://www.unimib.it/comunicati/ecco-lidentikit-del-cantante-perfetto-rivelano-ascolti-spotify)
 * [Economist](https://www.economist.com/graphic-detail/2018/11/24/tvs-golden-age-is-real)
 
-### Attending students
+Video 
 
-* [List of partecipants](docs/projects/SLteams.pdf)
-
+* [The Fallen of World War II](https://vimeo.com/128373915)
 
 # Exam
 
@@ -236,3 +235,29 @@ The exam consists of two parts:
 
 The final grade is a weighted average of written exam (1/2) and oral exam (1/2). 
 
+### Attending students
+
+* [List of partecipants](docs/projects/SLteams.pdf)
+
+## Acknowledgments {.appendix}
+
+Much of the course content was inspired by other courses:
+
+* [STOR 390: Introduction to Data Science](https://idc9.github.io/stor390/)
+* [36-402: Undergraduate Advanced Data Analysis](http://www.stat.cmu.edu/~cshalizi/uADA/17/)
+* [Stats 300C: Theory of Statistics](https://statweb.stanford.edu/~candes/stats300c/)
+* [BIOS 7600: High Dimensional Data Analysis](http://myweb.uiowa.edu/pbreheny/7600/s16/notes.html)
+
+and on a number of other sources.
+
+## Disclaimer {.appendix}
+
+The course material contains images obtained by routine Google Images searches. 
+Some of these images may perhaps be copyright. They are included here for
+educational noncommercial purposes and are considered
+to be covered by the doctrine of Fair Use. In any event
+they are easily available from Google Images.
+It’s not feasible to give full scholarly credit to the
+creators of these images. We hope they can be satisfied
+with the positive role they are playing in the educational
+process.
