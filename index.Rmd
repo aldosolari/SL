@@ -1,25 +1,28 @@
 ---
 title: "Statistical Learning"
 description: |
-  Master Degree in Statistics and Economics, University of Milano-Bicocca.
+  Master Degree in Statistics and Economics, University of Milano-Bicocca 
 author:
   - name: Aldo Solari
     url: https://aldosolari.github.io/
     affiliation: DEMS
-    affiliation_url: https://www.unimib.it/
+    affiliation_url: https://www.unimib.it/ateneo/dipartimenti-e-scuole/alla-scoperta-%E2%80%A6/dipartimento-economia-metodi-quantitativi-e-strategie-impresa
 date: "`r Sys.Date()`"
-output: radix::radix_article
+output:
+  radix::radix_article:
+    toc: true
+    toc_depth: 1
 ---
 
 *Big Data*, *Deep Learning* and *Data Science* have now become recurring terms in media communication. In response to the growing need to analyze data, the profession of the *data scientist* has recently emerged. This course aims to provide new tools for the data scientist. These tools require technical skills such as programming and statistics. They also require professional skills such as communication, teamwork, problem solving, and critical thinking. See the [course syllabus](https://aldosolari.github.io/SL/syllabus/syllabus.html) for further information.
 
 The topics covered by this course are
 
-* *Advanced statistical/machine learning models*, e.g. GAMs, boosting algorithms, ensemble learning
+* *Advanced statistical/machine learning models*: GAMs, boosting algorithms, ensemble learning
 * *Large-scale testing* and *selective inference*
-* *High-dimensional inference*, e.g.  sample-splitting inference, stability selection, knockoffs
+* *High-dimensional inference*:  sample-splitting inference, stability selection, knockoffs
 
-The final project is to do a novel data analysis and write a blog post about it. See the [#Project](#project) section for more details.
+The final project is to do a novel data analysis and write a blog post about it. See the [#Final](#final) section for more details.
 
 | When | Where | Hours |
 |---|---|----|
@@ -28,11 +31,11 @@ The final project is to do a novel data analysis and write a blog post about it.
 | Thursday | Lab713 | 12:30-14:30|
 
 
-# **Latest announcements**
+# Latest announcements
 
 * No news
 
-# **Course Material**
+# Course Material
 
 Most of the course material can be found in the slides linked to below. The slides are supplemented by readings which are listed in the [#Reading](#reading) section.
 
@@ -52,24 +55,24 @@ Most of the course material can be found in the slides linked to below. The slid
 |||||
 | 10 | January 14 | Sample-splitting inference | [Slides](docs/slides/10_Split/10_Split.html) | 
 | 11 | January 16 | Stability selection | [Slides](docs/slides/11_Stability/11_Stability.html) | 
-| 12 | January 17 | tbd | Slides | 
+| 12 | January 17 | Knockoffs | Slides | 
 |||||
-| 13 | January 21 | tbd | Slides | 
-| 14 | January 23 | tbd | Slides | 
-| 15 | January 24 | tbd | Slides | 
+| 13 | January 21 | Projects discussion | - | 
+| 14 | January 23 | Projects presentation | - | 
+| 15 | January 24 | Projects presentation | - | 
 |||||
-| 16 | January 28 | tbd | Slides |  
+| 16 | January 28 | Projects presentation | - |  
 
 All of the course material is on the [github repo](https://github.com/aldosolari/SL). 
 
-# **Reading**
+# Reading
 
 There are two primary references:
 
 * [Computer-Age Statistical Inference](https://web.stanford.edu/~hastie/CASI/) (CASI)
 * [The Elements of Statistical Learning](https://web.stanford.edu/~hastie/ElemStatLearn/) (ESL)
 
-Calendar
+### Calendar:
 
 **December 3** Introduction
 
@@ -116,44 +119,27 @@ Calendar
   
 **January 16** Stability selection
 
-**January 17** tbd
+- [Meinshausen and Bühlmann (2010) JRSS-B](https://stat.ethz.ch/~nicolai/stability.pdf)
 
-**January 23** Projects presentation: round A
+**January 17** Knockoffs
+
+- Fixed-X knockoffs: [Barber and Candès (2016) AOS](https://statweb.stanford.edu/~candes/papers/FDR_regression.pdf)
+- Model-X knockoffs: [Candès et al. (2018) JRSSB](https://statweb.stanford.edu/~candes/papers/MF_knockoffs.pdf)
+
+**January 23** Projects presentation
+
   - Teams: GS, GreenTeam, LAF, Clothster Analysis, JANUARY, PowerTrasform
 
-**January 24** Projects presentation: round B
-  -  Hermani, The_Regressionists, Anonymous, Robaskol
+**January 24** Projects presentation
+
+  - Teams: Hermani, The_Regressionists, Anonymous, Robaskol
   
-**January 28** Projects presentation: round C: 
-  - D, MSF, CaMelos', IGA, Random_Forest_512
+**January 28** Projects presentation: 
+
+  - Teams: D, MSF, CaMelos', IGA, Random_Forest_512, BoxCox
 
 
-
-
-
-
-
-
-# **Exam**
-
-Exams schedule:
-
-|When | Where | Hour | Type |
-|---|---|---|---|
-| 8/2/2019 | U7/13 | 14:00 | Written and Oral |
-| 21/2/2019 | U7/13 | 14:00 | Written and Oral |
-
-The exam consists of two parts:
-
-- __Written exam__ (open-ended and/or closed-ended questions)
-
-- __Oral exam__, including the __presentation__ of a data science __project__ (homework)
-    - Attending students can form a __team__ (max. 3 persons) and present at the end of the course. In this case the oral exam is optional
-
-The final grade is a weighted average of written exam (1/2) and oral exam (1/2). See the [course syllabus](https://aldosolari.github.io/SL/syllabus/syllabus.html) for further information.
-
-
-# **Final project**
+# Final project
 
 Your final project is to do a __novel data analysis__ to answer a __question__ and write a __blog post__ about it on github. This can be interpreted broadly and the requirements are discussed below.
 
@@ -172,7 +158,7 @@ The rough outline of the project is: Start with a question. Find data that might
 2. Analysis document
 
 
-## Blog post
+### Blog post
 
 The blog post should answer:
 
@@ -192,7 +178,7 @@ The blog post should be aimed at a general audience who is not afraid of graphs/
     
 * The post should be submitted in html (probably written in R Markdown)
 
-## Analysis document
+### Analysis document
 
 The analysis document should detail the steps you took to develop the blog post. This includes where you got the data, other solutions you tried, the statistical methods you chose and your findings. The document should contain the following topics (depending on the project some of these will be more important than others): 
 
@@ -206,7 +192,7 @@ The analysis document should detail the steps you took to develop the blog post.
 
 * All the code used to produce the blog post from the raw data should be available on github
 
-## Resources
+### Resources
 
 The following resources may help with the project.
 
@@ -226,9 +212,27 @@ Newspapers
 * [Infodata](http://www.infodata.ilsole24ore.com/?refresh_ce=1), see also [this](https://www.unimib.it/comunicati/ecco-lidentikit-del-cantante-perfetto-rivelano-ascolti-spotify)
 * [Economist](https://www.economist.com/graphic-detail/2018/11/24/tvs-golden-age-is-real)
 
-## Attending students
+### Attending students
 
 * [List of partecipants](docs/projects/SLteams.pdf)
 
-This page was last updated on `r Sys.time()` Eastern Time.
+
+# Exam
+
+Exams schedule:
+
+|When | Where | Hour | Type |
+|---|---|---|---|
+| 8/2/2019 | U7/13 | 14:00 | Written and Oral |
+| 21/2/2019 | U7/13 | 14:00 | Written and Oral |
+| - | - | - | - |
+
+The exam consists of two parts:
+
+- __Written exam__ (open-ended and/or closed-ended questions)
+
+- __Oral exam__, including the __presentation__ of a data science __project__ (homework)
+    - Attending students can form a __team__ (max. 3 persons) and present at the end of the course. In this case the oral exam is optional
+
+The final grade is a weighted average of written exam (1/2) and oral exam (1/2). 
 
