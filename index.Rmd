@@ -192,6 +192,28 @@ The analysis document should detail the steps you took to develop the blog post.
 
 * All the code used to produce the blog post from the raw data should be available on github
 
+
+### Grading
+
+| Dimension | details | 
+|---|---|
+| Project | States the objective, able to identify relevant questions |
+|  | Creativity | 
+|  | Effort | 
+| Blog | Is the post written well and clearly?  |
+| | Material included is relevant to the overall message/purpose? |
+|  | Quality of figures  |
+| Statistics | Statistical methods and/or critical thinking adequate? |
+|  | Is the data analysis well grounded? |
+|  | How well do the findings support the conclusions?   |
+| Communication | Does the main point come through? |
+|  | Were the main ideas presented in an orderly and clear manner? |
+|  | Did the talk maintain the interest of the audience? |
+|  | Were the slides (or another instrument) appropriate and helpful to the audience? |
+|  | Were the presenters responsive to audience questions? |
+
+
+
 ### Resources
 
 The following resources may help with the project.
@@ -209,7 +231,7 @@ Books
 
 Newspapers
 
-* [Infodata](http://www.infodata.ilsole24ore.com/?refresh_ce=1), see also [this](https://www.unimib.it/comunicati/ecco-lidentikit-del-cantante-perfetto-rivelano-ascolti-spotify)
+* [Infodata](http://www.infodata.ilsole24ore.com/?refresh_ce=1)
 * [Economist](https://www.economist.com/graphic-detail/2018/11/24/tvs-golden-age-is-real)
 
 Video 
@@ -220,11 +242,14 @@ Video
 
 Exams schedule:
 
-|When | Where | Hour | Type |
-|---|---|---|---|
-| 8/2/2019 | U7/13 | 14:00 | Written and Oral |
-| 21/2/2019 | U7/13 | 14:00 | Written and Oral |
-| - | - | - | - |
+| N.ro |When | Where | Hour | Type |
+|---|---|---|---|---|
+| 1 | 8/2/2019 | U7/13 | 14:00 | Written and Oral |
+| 2 | 21/2/2019 | U7/13 | 14:00 | Written and Oral |
+| 3 | - | - | - | - |
+| 4 | - | - | - | - |
+| 5 | - | - | - | - |
+| 6 | - | - | - | - |
 
 The exam consists of two parts:
 
@@ -241,14 +266,16 @@ The final grade is a weighted average of written exam (1/2) and oral exam (1/2).
 
 ## Acknowledgments {.appendix}
 
-Much of the course content was inspired by other courses:
+Much of the course content was inspired by the following courses:
 
 * [STOR 390: Introduction to Data Science](https://idc9.github.io/stor390/)
 * [36-402: Undergraduate Advanced Data Analysis](http://www.stat.cmu.edu/~cshalizi/uADA/17/)
+* [Generalized Additive Models](https://m-clark.github.io/generalized-additive-models/)
 * [Stats 300C: Theory of Statistics](https://statweb.stanford.edu/~candes/stats300c/)
 * [BIOS 7600: High Dimensional Data Analysis](http://myweb.uiowa.edu/pbreheny/7600/s16/notes.html)
 
-and on a number of other sources.
+
+and on a number of other sources. 
 
 ## Disclaimer {.appendix}
 
