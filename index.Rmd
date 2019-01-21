@@ -123,12 +123,11 @@ Calendar:
 
 **January 17** Knockoffs
 
-- Fixed-X knockoffs: [Barber and Candès (2016) AOS](https://statweb.stanford.edu/~candes/papers/FDR_regression.pdf)
 - Model-X knockoffs: [Candès et al. (2018) JRSSB](https://statweb.stanford.edu/~candes/papers/MF_knockoffs.pdf)
 
 **January 23** Projects presentation
 
-  - Teams: GS, GreenTeam, LAF, Clothster Analysis, JANUARY, PowerTrasform
+  - Teams: GS, GreenTeam, Humans, Clothster Analysis, JANUARY, PowerTrasform
 
 **January 24** Projects presentation
 
