@@ -55,7 +55,7 @@ Most of the course material can be found in the slides linked to below. The slid
 |||||
 | 10 | January 14 | Sample-splitting inference | [Slides](docs/slides/10_Split/10_Split.html) | 
 | 11 | January 16 | Stability selection | [Slides](docs/slides/11_Stability/11_Stability.html) | 
-| 12 | January 17 | Knockoffs | Slides | 
+| 12 | January 17 | Knockoffs | [Slides](docs/slides/12_Knockoffs/12_Knockoffs.html) | 
 |||||
 | 13 | January 21 | Projects discussion | - | 
 | 14 | January 23 | Projects presentation | - | 
