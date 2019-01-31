@@ -33,7 +33,7 @@ The final project is to do a novel data analysis and write a blog post about it.
 
 # Latest announcements
 
-* Final projects: https://docs.google.com/forms/d/e/1FAIpQLScUDwNs3UTWha-ga9URsWyQAZ2iWkG-8Tg2R7IwUkb-_Dmp5Q/viewform?usp=sf_link
+* I gruppi che hanno presentato i loro progetti sono pregati di inviare una mail per gruppo contenente il link al blog e ai documenti di analisi entro il 4/2/2018. I progetti verranno pubblicati su questo sito: si veda la sezione Blog
 
 # Course Material
 
@@ -259,9 +259,44 @@ The exam consists of two parts:
 
 The final grade is a weighted average of written exam (1/2) and oral exam (1/2). 
 
-### Attending students
 
-* [List of partecipants](docs/projects/SLteams.pdf)
+# Blogs
+
+[List of partecipants](docs/projects/SLteams.pdf)
+
+- Anonymous
+
+- BoxCox
+
+- [CaMelos’](https://alicegiampino.github.io/SL/) [ Appendix [a](https://alicegiampino.github.io/SL/metodologia.html),  [b](https://github.com/AliceGiampino/SL) ]
+
+- Clothster Analysis
+
+- D                  
+
+- [GreenTeam](https://elisapirotta.github.io/SL/SL_BLOG.html)
+
+- GS
+
+- Hermani
+
+- [Humans](https://fabiomarigo7.github.io/popolarita-nel-calcio/) [ Appendix [a](https://github.com/fabiomarigo7/popolarita-nel-calcio/tree/master/source) ]
+
+- IGA
+
+- JANUARY
+
+- [MSF](https://martinacaronte.shinyapps.io/projectsl2/) [ Appendix [a](https://sarasixti.github.io/SLproject/European_history_docanalysis.html), [b](https://sarasixti.github.io/SLproject/European_history_docanalysis_p2.html), [c](https://sarasixti.github.io/SLproject/European_history_docanalysis_p3.html) ]
+
+- PowerTrasform
+
+- Random_Forest_512
+
+- Robaskol
+
+- [The_Regressionists](https://chiaracrippa.github.io/blog/index.html) [ Appendix [a](https://chiaracrippa.github.io/blog/document/Analysis%20document.pdf), [b](https://github.com/ChiaraCrippa/blog/tree/master/code%20and%20results) ]
+
+
 
 ## Acknowledgments {.appendix}
 
@@ -275,6 +310,9 @@ Much of the course content was inspired by the following courses:
 
 
 and on a number of other sources. 
+
+
+
 
 ## Disclaimer {.appendix}
 
