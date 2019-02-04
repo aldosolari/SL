@@ -278,9 +278,10 @@ The final grade is a weighted average of written exam (1/2) and oral exam (1/2).
 
 - GS
 
-- Hermani
+- [Hermani](https://cacio95.github.io/StatisticalLearningProject/Birraebasket.html) [ Appendix [a]( https://cacio95.github.io/StatisticalLearningProject/report/Birraebasket-report.html), [b]() ]
 
-- [Humans](https://fabiomarigo7.github.io/popolarita-nel-calcio/) [ Appendix [a](https://github.com/fabiomarigo7/popolarita-nel-calcio/tree/master/source) ]
+
+- [Humans](https://fabiomarigo7.github.io/popolarita-nel-calcio/) [ Appendix [a](https://github.com/fabiomarigo7/popolarita-nel-calcio/tree/master/source), [b](https://github.com/cacio95/StatisticalLearningProject) ]
 
 - [IGA]( https://alessandrapellegata.shinyapps.io/meteoriti/) [ Appendix [a](https://alessandra-pellegata.github.io/SL_Project/Meteoriti_DocAnalysis.html), [b](https://github.com/alessandra-pellegata/SL_Project) ] 
 
