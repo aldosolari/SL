@@ -264,19 +264,19 @@ The final grade is a weighted average of written exam (1/2) and oral exam (1/2).
 
 [List of partecipants](docs/projects/SLteams.pdf)
 
-- Anonymous
+- [Anonymous](https://susannapanizza.shinyapps.io/DoveAndiamoAMangiare/) [ Appendix [a](https://marcoabbiati.github.io/SL/Documento_di_analisi.html), [b](https://github.com/marcoabbiati/SL) ]
 
 - [BoxCox](https://danieleparimbelli95.github.io/SLproject/Blog_Post.html) [ Appendix [a](https://danieleparimbelli95.github.io/SLproject/Analysis_Document.html), [b](https://danieleparimbelli95.github.io/SLproject/Code.html) ]
 
 - [CaMelos’](https://alicegiampino.github.io/SL/) [ Appendix [a](https://alicegiampino.github.io/SL/metodologia.html),  [b](https://github.com/AliceGiampino/SL) ]
 
-- Clothster Analysis
+- [Clothster Analysis](https://clothsteranalysis.wordpress.com/) [ Appendix [a](https://github.com/ArguirovK/ClothsterAnalysis), [b](https://arguirovk.github.io/ClothsterAnalysis/ClusterRMD.html), [c](https://drive.google.com/file/d/1HLafJEPtmLbN_5p6D9ZS92JQpfWW-Rd-/view), [d](https://drive.google.com/open?id=1EASe_oh9KcCFD-ig5IoKVaaHFGShw_77)  ]
 
 - [D](https://daniloperrini1.github.io/stat-learning/tuft.html) [ Appendix [a](https://daniloperrini1.github.io/stat-learning/slide_presentazione.pdf), [b](https://daniloperrini1.github.io/stat-learning/screen_app.png), [c](https://daniloperrini1.github.io/stat-learning/codice_completo.R) ]                
 
 - [GreenTeam]( https://nicholasmissineo.github.io//progetto_statistical_learning//SL_BLOG.html) [ Appendix [a](https://nicholasmissineo.github.io//progetto_statistical_learning//Analysis_document.html), [b](https://github.com/nicholasmissineo/progetto_statistical_learning) ]
 
-- GS
+- [GS](https://convnets578736054.wordpress.com/) [ Appendix [a](marcellosbordi.github.io/ConvNets.pdf) ]
 
 - [Hermani](https://cacio95.github.io/StatisticalLearningProject/Birraebasket.html) [ Appendix [a]( https://cacio95.github.io/StatisticalLearningProject/report/Birraebasket-report.html), [b]() ]
 
@@ -289,7 +289,7 @@ The final grade is a weighted average of written exam (1/2) and oral exam (1/2).
 
 - [MSF](https://martinacaronte.shinyapps.io/projectsl2/) [ Appendix [a](https://sarasixti.github.io/SLproject/European_history_docanalysis.html), [b](https://sarasixti.github.io/SLproject/European_history_docanalysis_p2.html), [c](https://sarasixti.github.io/SLproject/European_history_docanalysis_p3.html) ]
 
-- [PowerTrasform](https://github.com/Damiano95/SL) [ Appendix [a]( https://github.com/Damiano95/SL/blob/master/Codici%20e%20document%20analysis/Document_Analysis.pdf
+- [PowerTrasform](https://github.com/Damiano95/SL/blob/master/Codici%20e%20document%20analysis/Screen%20progetto.pdf) [ Appendix [a]( https://github.com/Damiano95/SL/blob/master/Codici%20e%20document%20analysis/Document_Analysis.pdf
 ) ]
 
 - [Random_Forest_512](https://giacomosaccaggi.github.io/Films/)
