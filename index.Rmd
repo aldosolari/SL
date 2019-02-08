@@ -264,6 +264,9 @@ The final grade is a weighted average of written exam (1/2) and oral exam (1/2).
 
 [List of partecipants](docs/projects/SLteams.pdf)
 
+[Evaluation (to be completed)](docs/projects/blogs.html)
+
+
 - [Anonymous](https://susannapanizza.shinyapps.io/DoveAndiamoAMangiare/) [ Appendix [a](https://marcoabbiati.github.io/SL/Documento_di_analisi.html), [b](https://github.com/marcoabbiati/SL) ]
 
 - [BoxCox](https://danieleparimbelli95.github.io/SLproject/Blog_Post.html) [ Appendix [a](https://danieleparimbelli95.github.io/SLproject/Analysis_Document.html), [b](https://danieleparimbelli95.github.io/SLproject/Code.html) ]
