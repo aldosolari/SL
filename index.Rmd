@@ -33,7 +33,7 @@ The final project is to do a novel data analysis and write a blog post about it.
 
 # Latest announcements
 
-* I gruppi che hanno presentato i loro progetti sono pregati di inviare una mail per gruppo contenente il link al blog e ai documenti di analisi entro il 4/2/2018. I progetti verranno pubblicati su questo sito: si veda la sezione Blogs
+* no news
 
 # Course Material
 
@@ -260,11 +260,18 @@ The exam consists of two parts:
 The final grade is a weighted average of written exam (1/2) and oral exam (1/2). 
 
 
+### Past exams:
+
+* Statistical Learning 08/02/2019 : [Marks](exams/esiti_SL080219.pdf)
+
+* Data Science 08/02/2019 : [Marks](exams/esiti_DS080219.pdf)
+
+
 # Blogs
 
 [List of partecipants](docs/projects/SLteams.pdf)
 
-[Evaluation (to be completed)](docs/projects/blogs.html)
+[Evaluation](docs/projects/blogs.html)
 
 
 - [Anonymous](https://susannapanizza.shinyapps.io/DoveAndiamoAMangiare/) [ Appendix [a](https://marcoabbiati.github.io/SL/Documento_di_analisi.html), [b](https://github.com/marcoabbiati/SL) ]
