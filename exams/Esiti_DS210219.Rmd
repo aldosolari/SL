@@ -1,0 +1,29 @@
+---
+title: "Data Science"
+output:
+  pdf_document: default
+date: "Esiti - 21 Febbraio 2019"
+---
+
+```{r startup, include = FALSE, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(echo = F, eval=T, message=F, warning=F, error=F, comment=NA, cache=F, R.options=list(width=220))
+```
+
+| Matricola | Cognome | Nome | Esito SL | Esito DM | Da registare | 
+|----|----|----|----|----|----|----|----|
+| 746144 |	ARGUIROV |	KRISTOFER | 20 | 20.38 | 20 |
+| 794517 |	BEKOLLARI |	FATJONA | 23.25 | 17.42 | 20 |
+| 789451 |	CARONTE	| MARTINA | 27.2 | 30.11 | 29 |
+| 790625	| CURRI	| JOANA | 19.5 | Insuf. | Insuf. |
+| 778001 |	GAFFURI RIVA |	ANDREA | 29.5  | 21.09 | 25 |
+| 794981 |	GREGORI |	LORENZO | 22.95 | 23.62  | 23 |
+| 790237 |	MARIGO |	FABIO | 25.45 | 26.80 | 26 |
+| 791050 |	MISSINEO	| NICHOLAS GIUSEPPE | 26.1 | 25.93 | 26 |
+| 791877 |	PIROTTA	| ELISA | 25.1 | 28.41 | 27 |
+| 833063 |	SACCAGGI |	GIACOMO | 20 | Assente | Assente |
+| 789554 |	SOMASCHINI	| BEATRICE | 29.2 | 27.11 | 28 |
+| 790444 |	SPATARO	| ANNA | Insuff. | Assente | Insuff. |
+
+
+
+Si prega di comunicare l’eventuale rifiuto del voto entro le ore 16:00 di Lunedì 11 Marzo 2019. 
