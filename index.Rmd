@@ -33,7 +33,7 @@ The final project is to do a novel data analysis and write a blog post about it.
 
 # Latest announcements
 
-* no news
+* No news.
 
 # Course Material
 
