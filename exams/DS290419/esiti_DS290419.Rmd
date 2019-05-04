@@ -1,0 +1,24 @@
+---
+title: "Data Science"
+output:
+  pdf_document: default
+date: "Esiti - 29 Aprile 2019"
+---
+
+```{r startup, include = FALSE, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(echo = F, eval=T, message=F, warning=F, error=F, comment=NA, cache=F, R.options=list(width=220))
+```
+
+| Matricola | Cognome | Nome | Esito SL | Esito DM | Da registare | 
+|----|----|----|----|----|----|----|----|
+| 790312 |	BUZZINI |	ROBERTO |  24.05 |  23.01 | 24 |
+| 790458 |	FLORIANI |	GIACOMO |  19.7 | 22.87 | 21 |
+| 834096 |	MANDELLI |	LETIZIA | 29.2 |  28.51 | 29 |
+| 789256 |	MELOGRANA |	FEDERICO | 31.95 | 25.5 | 29 |
+| 778609 |	PELLEGATA |	ALESSANDRA | 28.05 |  23.29 | 26 |
+| 783774 |	PERRINI |	DANILO | 24.3 | 21.03 | 23 |
+
+
+
+
+Si prega di comunicare l’eventuale rifiuto del voto entro le ore 14:00 del 6 Maggio 2019. 
