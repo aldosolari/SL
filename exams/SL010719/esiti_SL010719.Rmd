@@ -1,0 +1,29 @@
+---
+title: "Statistical Learning"
+output:
+  pdf_document: default
+date: "Prova d'esame del 1 Luglio 2019"
+---
+
+```{r startup, include = FALSE, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(echo = F, eval=T, message=F, warning=F, error=F, comment=NA, cache=F, R.options=list(width=220))
+```
+
+**STATISTICAL LEARNING (MODULO DATA SCIENCE)**
+
+| Matricola | Cognome | Nome | Scritto  | Progetto | Esito | 
+|----|----|----|----|----|----|----|----|
+| 797372 |	CASAMASSIMA |	DARIO | 14 | 17 | 31 |
+| 789879 |	GHIOLDI	| NICOLO' | 9 | 14.7 | 23.7 |
+| 790510 |	PANIZZA |	SUSANNA | 14.5 | 17 | 31.5 |
+
+
+**STATISTICAL LEARNING M**
+
+| Matricola | Cognome | Nome | Scritto  | Progetto | Esito | 
+|----|----|----|----|----|----|----|----|
+| 795646 |	ABBIATI |	MARCO | 15 | 17 | 30L |
+
+
+Per la visione del compito si prega di contattare il docente via mail.
+Si prega di comunicare l’eventuale rifiuto del voto entro le ore 14:00 del 2 Luglio 2019. 
