@@ -278,6 +278,8 @@ The final grade is a weighted average of written exam (1/2) and oral exam (1/2).
 
 * Data Science 05/07/2019 : [Marks](exams/DS050719/esiti_DS050719.pdf)
 
+* Data Science 16/07/2019 : [Marks](exams/DS160719/esiti_DS160719.pdf)
+
 
 # Blogs
 
