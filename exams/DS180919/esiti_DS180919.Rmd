@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = F, eval=T, message=F, warning=F, error=F, comment=N
 | 835166 | MODAFERRI | GIORGIA |  19.25 | 20.65  | 20 |
 | 835078 | PIOVESANA | DARIO |  19 | 19.97  | 19 |
 | 823968 | PISANIELLO | SARA |  26 | Assente  | Assente |
-| 833063 | SACCAGGI | GIACOMO |  20 | 22.2  | 20 |
+| 833063 | SACCAGGI | GIACOMO |  20 | 22.2  | 21 |
 
 
 Si prega di comunicare l’eventuale rifiuto del voto entro le ore 14:00 del giorno 20 Settembre 2019. 
