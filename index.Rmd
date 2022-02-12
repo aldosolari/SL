@@ -43,6 +43,15 @@ Corso di Laurea Magistrale in Scienze Statistiche ed Economiche, Università deg
 </tr>
 
 <tr>
+<td>Introduzione al corso.</td>
+<td>[SLIDES](). </td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+
+<tr>
 <td>Prediction, Estimation, and Attribution.</td>
 <td> [SLIDES](). </td>
 <td> [R CODE]()</td>
@@ -145,6 +154,9 @@ Corso di Laurea Magistrale in Scienze Statistiche ed Economiche, Università deg
 
 ## Modalità d'esame.
 
+* La modalità di verifica consiste in una prova scritta in laboratorio. Lo studente (oppure il docente) può richiedere la prova orale.
+
+* La prova scritta ha come obiettivo la verifica delle abilità di analisi dei dati e di programmazione e la comprensione degli aspetti matematico-statistici degli argomenti trattati. 
 
 
 **Calendario degli esami**.
