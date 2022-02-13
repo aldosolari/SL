@@ -53,8 +53,8 @@ Corso di Laurea Magistrale in Scienze Statistiche ed Economiche, Università deg
 
 <tr>
 <td>Prediction, Estimation, and Attribution.</td>
-<td> [SLIDES](). </td>
-<td> [R CODE]()</td>
+<td> [SLIDES](docs/SLIDES/EfronPEA.pdf). </td>
+<td> [R CODE](https://github.com/aldosolari/SL/blob/master/docs/RCODE/EfronPEA.R)</td>
 <td> CASI §1 </td>
 <td></td>
 </tr>

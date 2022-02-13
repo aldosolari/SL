@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.8)  12 FEB 2022 18:13
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.8)  13 FEB 2022 19:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1515,7 +1515,7 @@ File: images/1996_Efron-office.jpg Graphic file (type bmp)
 File: images/Figure_2.jpg Graphic file (type bmp)
 <images/Figure_2.jpg>
 
-Overfull \hbox (37.19104pt too wide) in paragraph at lines 2--3
+Overfull \hbox (37.19104pt too wide) in paragraph at lines 12--13
 [][]  
  []
 
@@ -1532,7 +1532,130 @@ Overfull \hbox (37.19104pt too wide) in paragraph at lines 2--3
  (./EfronPEA.vrb
 File: images/Figure_1.pdf Graphic file (type pdf)
 <use images/Figure_1.pdf>
+
+Overfull \hbox (12.53764pt too wide) in paragraph at lines 5--6
+ []\TU/LinLibertine_R.otf(0)/m/n/10.95 https://github.com/aldosolari/SL/blob/ma
+ster/docs/RCODE/EfronPEA.R 
+ []
+
 ) [13
+
+]
+\openout4 = `EfronPEA.vrb'.
+
+ (./EfronPEA.vrb) [14
+
+]
+\openout4 = `EfronPEA.vrb'.
+
+ (./EfronPEA.vrb) [15
+
+]
+\openout4 = `EfronPEA.vrb'.
+
+ (./EfronPEA.vrb) [16
+
+]
+\openout4 = `EfronPEA.vrb'.
+
+
+(./EfronPEA.vrb) [17
+
+]
+\openout4 = `EfronPEA.vrb'.
+
+ (./EfronPEA.vrb) [18
+
+]
+\openout4 = `EfronPEA.vrb'.
+
+ (./EfronPEA.vrb) [19
+
+]
+\openout4 = `EfronPEA.vrb'.
+
+
+(./EfronPEA.vrb) [20
+
+]
+\openout4 = `EfronPEA.vrb'.
+
+ (./EfronPEA.vrb
+File: images/Figure_3.pdf Graphic file (type pdf)
+<use images/Figure_3.pdf>
+) [21
+
+]
+\openout4 = `EfronPEA.vrb'.
+
+ (./EfronPEA.vrb
+File: images/Figure_4.pdf Graphic file (type pdf)
+<use images/Figure_4.pdf>
+) [22
+
+]
+\openout4 = `EfronPEA.vrb'.
+
+
+(./EfronPEA.vrb
+File: images/rf_vip.pdf Graphic file (type pdf)
+<use images/rf_vip.pdf>
+) [23
+
+]
+\openout4 = `EfronPEA.vrb'.
+
+ (./EfronPEA.vrb)
+Overfull \vbox (0.58153pt too high) detected at line 382
+ []
+
+[24
+
+]
+\openout4 = `EfronPEA.vrb'.
+
+ (./EfronPEA.vrb) [25
+
+]
+\openout4 = `EfronPEA.vrb'.
+
+ (./EfronPEA.vrb) [26
+
+]
+\openout4 = `EfronPEA.vrb'.
+
+ (./EfronPEA.vrb) [27
+
+]
+\openout4 = `EfronPEA.vrb'.
+
+
+(./EfronPEA.vrb
+File: images/Figure_5.pdf Graphic file (type pdf)
+<use images/Figure_5.pdf>
+) [28
+
+]
+\openout4 = `EfronPEA.vrb'.
+
+ (./EfronPEA.vrb
+File: images/Figure_6.pdf Graphic file (type pdf)
+<use images/Figure_6.pdf>
+) [29
+
+]
+\openout4 = `EfronPEA.vrb'.
+
+ (./EfronPEA.vrb) [30
+
+]
+\openout4 = `EfronPEA.vrb'.
+
+
+(./EfronPEA.vrb
+File: images/rf_vip_prostate.pdf Graphic file (type pdf)
+<use images/rf_vip_prostate.pdf>
+) [31
 
 ]
 \tf@nav=\write6
@@ -1544,24 +1667,23 @@ File: images/Figure_1.pdf Graphic file (type pdf)
 \tf@snm=\write8
 \openout8 = `EfronPEA.snm'.
 
-
-
+ 
 AED: lastpage setting LastPage
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 201.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 201.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 460.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 460.
 (./EfronPEA.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 201.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 201.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 460.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 460.
 Package rerunfilecheck Info: File `EfronPEA.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 43261 strings out of 479418
- 1007000 string characters out of 5884585
- 1416636 words of memory out of 5000000
- 59969 multiletter control sequences out of 15000+600000
- 538043 words of font info for 66 fonts, out of 8000000 for 9000
+ 43414 strings out of 479418
+ 1009912 string characters out of 5884585
+ 1419068 words of memory out of 5000000
+ 60075 multiletter control sequences out of 15000+600000
+ 538124 words of font info for 69 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  63i,11n,100p,797b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on EfronPEA.pdf (13 pages).
+Output written on EfronPEA.pdf (31 pages).
