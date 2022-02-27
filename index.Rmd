@@ -39,7 +39,7 @@ Corso di Laurea Magistrale in Scienze Statistiche ed Economiche, Università deg
 <td>**MATERIALE**</td>
 <td>**DIDATTICO**</td>
 <td>**LIBRO DI TESTO**</td>
-<td></td>
+<td>**ESERCIZI**</td>
 </tr>
 
 <tr>
@@ -56,7 +56,7 @@ Corso di Laurea Magistrale in Scienze Statistiche ed Economiche, Università deg
 <td> [SLIDES](docs/SLIDES/EfronPEA.pdf). </td>
 <td> [R CODE](https://github.com/aldosolari/SL/blob/master/docs/RCODE/EfronPEA.R)</td>
 <td> CASI §1 </td>
-<td></td>
+<td> [ESERCIZI](docs/EXERCISES/EfronPEA.pdf).</td>
 </tr>
 
 <tr>
@@ -64,7 +64,7 @@ Corso di Laurea Magistrale in Scienze Statistiche ed Economiche, Università deg
 <td> [SLIDES](). </td>
 <td> [R CODE]()</td>
 <td> CASI §7.1, §7.2</td>
-<td></td>
+<td>[ESERCIZI](docs/EXERCISES/JamesStein.pdf).</td>
 </tr>
 
 <tr>
@@ -164,13 +164,12 @@ Corso di Laurea Magistrale in Scienze Statistiche ed Economiche, Università deg
 || Sessione || Data || Luogo || Orario ||
 |-|-|-|-|-|-|-|-|-|-|
 ||  || ||  ||  || ||
+|| Primaverile || 26 Aprile 2022 || - ||  14:30  ||
+|| Estiva || 24 Giugno 2022 || - || 8:30  ||
+|| Estiva || 14 Luglio 2022 || - || 14:30 ||
+|| Estiva || - || -  || - ||
 || Invernale || -|| - || -  ||
 || Invernale || - || - || - ||
-|| Primaverile || - || - ||  -  ||
-|| Estiva || - || - || -  ||
-|| Estiva || - || - || - ||
-|| Estiva || - || -  || - ||
-
  
 ## Libri di testo.
 
