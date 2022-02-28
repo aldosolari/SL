@@ -44,10 +44,10 @@ Corso di Laurea Magistrale in Scienze Statistiche ed Economiche, Università deg
 
 <tr>
 <td>Introduzione al corso.</td>
-<td>[SLIDES](). </td>
+<td>[SLIDES](docs/SLIDES/Introduction.pdf). </td>
 <td></td>
 <td></td>
-<td></td>
+<td>[ESERCIZI](docs/EXERCISES/Introduction.pdf).</td>
 </tr>
 
 
@@ -79,7 +79,7 @@ Corso di Laurea Magistrale in Scienze Statistiche ed Economiche, Università deg
 <td>Smoothing spline.</td>
 <td> [SLIDES](). </td>
 <td> [R CODE]()</td>
-<td> ADA §7, ESL §5.1-§5.5, CASL §4.2, §4.5, §4.6  </td>
+<td> ANS §5.5, ESL §5.1-§5.5, CASL §4.2, §4.5, §4.6,  </td>
 <td></td>
 </tr>
 
@@ -99,6 +99,7 @@ Corso di Laurea Magistrale in Scienze Statistiche ed Economiche, Università deg
 <td></td>
 </tr>
 
+
 <tr>
 <td>Sparse Modeling and the Lasso.</td>
 <td> [SLIDES](). </td>
@@ -107,6 +108,7 @@ Corso di Laurea Magistrale in Scienze Statistiche ed Economiche, Università deg
 <td></td>
 </tr>
 
+
 <tr>
 <td>Best Subsets Selection.</td>
 <td> [SLIDES](). </td>
@@ -114,7 +116,6 @@ Corso di Laurea Magistrale in Scienze Statistiche ed Economiche, Università deg
 <td> ESL §3.3, §3.4.3, CASL §7.1-§7.3 </td>
 <td></td>
 </tr>
-
 
 <tr>
 <td>Data splitting for variable selection.</td>
@@ -182,7 +183,9 @@ The Lasso and Generalizations. CRC Press [SLS]
 
 * Lewis, Kane, Arnold (2019) A Computational Approach to Statistical Learning. Chapman And Hall/Crc. [CASL]
 
-* Shalizi (2021). Advanced Data Analysis
-from an Elementary Point of View. [ADA]
+<!-- * Shalizi (2021). Advanced Data Analysis -->
+<!-- from an Elementary Point of View. [ADA] -->
 
 * Wainwright (2019) High-Dimensional Statistics: A Non-Asymptotic Viewpoint. Cambridge University Press [HDS]
+
+* Wasserman (2006) All of Nonparametric Statistics. Springer [ANS]
