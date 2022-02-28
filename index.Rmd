@@ -76,20 +76,20 @@ Corso di Laurea Magistrale in Scienze Statistiche ed Economiche, Università deg
 </tr>
 
 <tr>
-<td>Splines.</td>
+<td>Smoothing spline.</td>
 <td> [SLIDES](). </td>
 <td> [R CODE]()</td>
 <td> ADA §7, ESL §5.1-§5.5, CASL §4.2, §4.5, §4.6  </td>
 <td></td>
 </tr>
 
-<tr>
-<td>Additive models.</td>
-<td> [SLIDES](). </td>
-<td> [R CODE]()</td>
-<td> ADA §8, CASL §6</td>
-<td></td>
-</tr>
+<!-- <tr> -->
+<!-- <td>Additive models.</td> -->
+<!-- <td> [SLIDES](). </td> -->
+<!-- <td> [R CODE]()</td> -->
+<!-- <td> ADA §8, CASL §6</td> -->
+<!-- <td></td> -->
+<!-- </tr> -->
 
 <tr>
 <td>Classical versus high-dimensional theory.</td>
