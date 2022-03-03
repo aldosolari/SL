@@ -61,8 +61,8 @@ Corso di Laurea Magistrale in Scienze Statistiche ed Economiche, Università deg
 
 <tr>
 <td>James-Stein estimation.</td>
-<td> [SLIDES](). </td>
-<td> [R CODE]()</td>
+<td> [SLIDES](docs/SLIDES/JamesStein.pdf). </td>
+<td> [R CODE](https://github.com/aldosolari/SL/blob/master/docs/RCODE/JamesStein.R)</td>
 <td> CASI §7.1, §7.2</td>
 <td>[ESERCIZI](docs/EXERCISES/JamesStein.pdf).</td>
 </tr>
