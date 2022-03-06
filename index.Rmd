@@ -72,7 +72,7 @@ Corso di Laurea Magistrale in Scienze Statistiche ed Economiche, Università deg
 <td> [SLIDES](docs/SLIDES/Ridge.pdf). </td>
 <td> [R CODE](https://github.com/aldosolari/SL/blob/master/docs/RCODE/Ridge.R)</td>
 <td> CASI §7.3, ESL §3.4.1, CASL §3 </td>
-<td></td>
+<td>[ESERCIZI](docs/EXERCISES/Ridge.pdf).</td>
 </tr>
 
 <tr>
