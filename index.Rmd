@@ -69,8 +69,8 @@ Corso di Laurea Magistrale in Scienze Statistiche ed Economiche, Università deg
 
 <tr>
 <td>Ridge regression.</td>
-<td> [SLIDES](). </td>
-<td> [R CODE]()</td>
+<td> [SLIDES](docs/SLIDES/Ridge.pdf). </td>
+<td> [R CODE](https://github.com/aldosolari/SL/blob/master/docs/RCODE/Ridge.R)</td>
 <td> CASI §7.3, ESL §3.4.1, CASL §3 </td>
 <td></td>
 </tr>
@@ -101,10 +101,10 @@ Corso di Laurea Magistrale in Scienze Statistiche ed Economiche, Università deg
 
 
 <tr>
-<td>Sparse Modeling and the Lasso.</td>
+<td>Sparse Modeling: Lasso and Best Subsets Selection.</td>
 <td> [SLIDES](). </td>
 <td> [R CODE]()</td>
-<td> CASI §16, ESL §3.4.2, SLS §2, §4 </td>
+<td> CASI §16, ESL §3.3, §3.4.2, §3.4.3 SLS §2, §4 CASL §7.1-§7.3 </td>
 <td></td>
 </tr>
 
