@@ -3,6 +3,27 @@
 #=======================================
 
 #---------------------------------------
+# Galileo data
+#---------------------------------------
+
+rm(list=ls())
+
+time = 1:8
+distance = c(33,130,298,526,824,1192,1620,2104)
+D = data.frame(time, distance)
+
+fit_Aristotle <- lm(distance ~ 0 + time, D)
+fit_Galileo <- lm(distance ~ 0 + time + I(time^2), D)
+
+#pdf("Figure_Galileo.pdf")
+plot(D)
+lines(fitted(fit_Aristotle))
+lines(fitted(fit_Galileo), col=2)
+legend("topleft", col=1:2, c("Aristotle", "Galileo"), lty=1)
+#dev.off()
+
+
+#---------------------------------------
 # cholesterol data
 #---------------------------------------
 
@@ -44,7 +65,6 @@ rm(list=ls())
 library(MASS)
 library(tidymodels)
 library(rpart.plot)
-library(vip)
 
 #--- pre-processing of Venables & Ripley -----
 
@@ -159,12 +179,6 @@ rf_fit_best <- fit(rf_wflow_best, dataset)
 augment(rf_fit_best, new_data = dataset) %>%
   accuracy(truth = low, estimate = .pred_class)
 
-#pdf("rf_vip.pdf")
-rf_fit_best %>% 
-  extract_fit_parsnip() %>% 
-  vip() 
-#dev.off()
-
 rf_res_best <- rf_wflow_best %>% 
   fit_resamples(resamples = dataset_folds, control = keep_pred) 
 
@@ -175,7 +189,7 @@ collect_metrics(compare_models) %>%
   mutate(wflow_id = gsub("(workflow_variables_)", "", wflow_id)) %>%
   filter(.metric == "accuracy")
 
-rf_accuracy <- collect_metrics(rf_res_best ) %>% filter(.metric == "accuracy") %>% select(mean)
+rf_accuracy <- collect_metrics(rf_res_best) %>% filter(.metric == "accuracy") %>% dplyr::select(mean)
   
 #pdf("Figure_4.pdf")
 OOB <- rf_fit_best[["fit"]][["fit"]][["fit"]][["err.rate"]][,"OOB"]
@@ -235,7 +249,7 @@ plot(sort(importance_genes[important_genes], decreasing = T), type="h", ylab="Im
 set.seed(123)
 n_rm_imp <- 100
 rf_rm_imp <- randomForest(y ~ ., data = train[,-important_genes[1:n_rm_imp]], ntree=n_tree)
-yhat_rm_imp <- predict(rf_rm_imp, test, type="vote")
+yhat_rm_imp <- predict(rf_rm_imp, test[,-important_genes[1:n_rm_imp]], type="vote")
 mean(ifelse(yhat_rm_imp[,"cancer"] > 0.5,"cancer","control")!=test$y)
 
 
@@ -250,8 +264,8 @@ watchlist <- list(train=dtrain, test=dtest)
 
 set.seed(123)
 bst <- xgb.train(data=dtrain, 
-                 max_depth=4, 
-                 eta=0.01, 
+                 max_depth=1, 
+                 eta=0.025, 
                  nthread = 4, 
                  nrounds=n_tree, 
                  watchlist=watchlist, 
@@ -264,7 +278,7 @@ bst_test_errs <- bst$evaluation_log$test_error
 plot(1:n_tree, bst_test_errs, type="l",
      xlab = "# of trees",
      ylab = "error rate")
-legend(x=n_tree * .8, y= bst_test_errs[n_tree] * 1.1 , legend = "4%", bty="n")
+legend(x=n_tree * .8, y= bst_test_errs[n_tree] * 1.1 , legend = "6%", bty="n")
 #dev.off()
 
 #---------------------------------------
