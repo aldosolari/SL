@@ -8,9 +8,10 @@
 
 rm(list=ls())
 
-p <- 5
+p <- 10
 mu_ss = seq(0,2*p, length=100)
 bound_JS <- p - (p-2) / (1 + mu_ss / (p-2) )
+oracle <- p*mu_ss / (p + mu_ss)
 
 #pdf("Figure_JSbound.pdf")
 plot(mu_ss, bound_JS, type="l", 
@@ -19,7 +20,8 @@ plot(mu_ss, bound_JS, type="l",
      ylab = "Risk", 
      main = paste("p = ", p))
 abline(h=p, lty=2)
-legend("bottomright", c("MLE","JS (bound)"), lty=2:1)
+lines(mu_ss, oracle, lty=3)
+legend("bottomright", c("MLE","JS (bound)","oracle"), lty=c(2,1,3))
 #dev.off()
 
 
