@@ -58,6 +58,31 @@ pairs(ridge(y, X, lambda=c(0, 0.1, 1, 10, 1000)), radius=0.5)
 #dev.off()
 
 #---------------------------------------
+# OVERFITTING 
+#---------------------------------------
+
+rm(list=ls())
+
+y = c(-1,0)
+X = matrix(c(.75,.5, 1,.5),ncol=2)
+coef(lm(y~0+X))
+
+#pdf("Figure_overfitting.pdf")
+plot(y[1],y[2], xlim=c(-3,3), ylim=c(-1,3), asp=1, xlab=expression(y[1]), ylab=expression(y[2]))
+text(y[1],y[2], expression(y), pos=1)
+text(2.5,1,expression(paste(beta[1], "= 4")), col=2)
+text(2.5,0.5,expression(paste(beta[2], "= -4")), col=4)
+abline(h=0)
+abline(v=0)
+arrows(x0=0,y0=0, x1=X[1,1], y1=X[2,1], length = 0.1, col=2, lwd=3)
+text(X[1,1], X[2,1], expression(x[1]), pos=3)
+for (k in 2:4) arrows(x0=0,y0=0, x1=k*X[1,1], y1=k*X[2,1], length = 0.1 , col=2)
+arrows(x0=0,y0=0, x1=X[1,2], y1=X[2,2], length = 0.1, col=4, lwd=3)
+text(X[1,2], X[2,2], expression(x[2]), pos=4)
+for (k in 1:4) arrows(x0=4*X[1,1],y0=4*X[2,1], x1=4*X[1,1]-k*X[1,2], y1=4*X[2,1]-k*X[2,2], length = 0.1 , col=4)
+#dev.off()
+
+#---------------------------------------
 # MY RIDGE 
 #---------------------------------------
 
@@ -136,41 +161,6 @@ lines(lambdas, MSE[3,], col=3)
 legend("bottomright", c("MSE","Bias2","Var"), col=1:3, lty=1)
 #dev.off()
 
-
-#---------------------------------------
-# CROSS-VALIDATION
-#---------------------------------------
-
-rm(list=ls())
-
-library(readr)
-library(glmnet)
-
-dataset <- read_csv("https://hastie.su.domains/CASI_files/DATA/diabetes.csv")[,-1]
-X <- data.matrix(dataset[,-11])
-y <- dataset$prog
-n <- nrow(X)
-p <- ncol(X)
-Z <- scale(X, center=T, scale=sqrt(n*diag(var(X)*(n-1)/n)))[,]
-colnames(Z)<- names(dataset)[-1]
-
-cv_fit <- cv.glmnet(Z, y, alpha = 0, standardize = FALSE, nfolds=n, grouped=FALSE)
-#pdf("Figure_ridge_cv.pdf")
-plot(cv_fit)
-#dev.off()
-l_min <- cv_fit$lambda.min
-
-l <- seq(0,0.25, length.out = 100)
-fit <- glmnet(Z, y, alpha = 0, family="gaussian", standardize = FALSE, lambda = l)
-
-#pdf("Figure_ridge_Diabetes.pdf")
-matplot(l, t(coef(fit)[-1,length(l):1]), type = "l", lty=1, 
-        xlab=expression(lambda), ylab=expression(hat(beta)[lambda]), 
-        xlim = c(-.01, 0.25), col=1:p) 
-text(x=-.01, y=coef(fit)[-1,length(l)], labels =names(dataset)[-1], cex=0.5)
-abline(v=l_min, lty=3)
-#dev.off()
-
 #---------------------------------------
 # EPE
 #---------------------------------------
@@ -233,6 +223,40 @@ points(rep(-.0015,p), beta, col=1:p, pch=19)
 #dev.off()
 
 #---------------------------------------
+# CROSS-VALIDATION
+#---------------------------------------
+
+rm(list=ls())
+
+library(readr)
+library(glmnet)
+
+dataset <- read_csv("https://hastie.su.domains/CASI_files/DATA/diabetes.csv")[,-1]
+X <- data.matrix(dataset[,-11])
+y <- dataset$prog
+n <- nrow(X)
+p <- ncol(X)
+Z <- scale(X, center=T, scale=sqrt(n*diag(var(X)*(n-1)/n)))[,]
+colnames(Z)<- names(dataset)[-1]
+
+cv_fit <- cv.glmnet(Z, y, alpha = 0, standardize = FALSE, nfolds=n, grouped=FALSE)
+#pdf("Figure_ridge_cv.pdf")
+plot(cv_fit)
+#dev.off()
+l_min <- cv_fit$lambda.min
+
+l <- seq(0,0.25, length.out = 100)
+fit <- glmnet(Z, y, alpha = 0, family="gaussian", standardize = FALSE, lambda = l)
+
+#pdf("Figure_ridge_Diabetes.pdf")
+matplot(l, t(coef(fit)[-1,length(l):1]), type = "l", lty=1, 
+        xlab=expression(lambda), ylab=expression(hat(beta)[lambda]), 
+        xlim = c(-.01, 0.25), col=1:p) 
+text(x=-.01, y=coef(fit)[-1,length(l)], labels =names(dataset)[-1], cex=0.5)
+abline(v=l_min, lty=3)
+#dev.off()
+
+#---------------------------------------
 # KERNEL TRICK
 #---------------------------------------
 
@@ -248,7 +272,7 @@ X <- scale(X_raw, center=T, scale=sqrt(diag(var(X_raw)*(n-1)/n)))[,]
 
 lambda = 1
 
-X2 = cbind(X,do.call(cbind, lapply(1:p, function(i) X[,i] *  apply(X,2,identity)) ))
+X2 = cbind(X, do.call(cbind, lapply(1:p, function(i) X[,i] *  apply(X,2,identity)) ))
 K2 <- X2 %*% t(X2)
 yhat2 = K2 %*% solve(K2 + lambda*diag(n)) %*% y
 
