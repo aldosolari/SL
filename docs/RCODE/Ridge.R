@@ -68,7 +68,8 @@ X = matrix(c(.75,.5, 1,.5),ncol=2)
 coef(lm(y~0+X))
 
 #pdf("Figure_overfitting.pdf")
-plot(y[1],y[2], xlim=c(-3,3), ylim=c(-1,3), asp=1, xlab=expression(y[1]), ylab=expression(y[2]))
+plot(y[1],y[2], xlim=c(-3,3), ylim=c(-1,3), asp=1, xlab=expression(u[1]), ylab=expression(u[2]))
+arrows(x0=0,y0=0, x1=y[1], y1=y[2], length = 0.1, lwd=2)
 text(y[1],y[2], expression(y), pos=1)
 text(2.5,1,expression(paste(beta[1], "= 4")), col=2)
 text(2.5,0.5,expression(paste(beta[2], "= -4")), col=4)
@@ -160,6 +161,7 @@ lines(lambdas, MSE[2,], col=2)
 lines(lambdas, MSE[3,], col=3)
 legend("bottomright", c("MSE","Bias2","Var"), col=1:3, lty=1)
 #dev.off()
+
 
 #---------------------------------------
 # EPE
