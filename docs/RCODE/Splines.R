@@ -23,7 +23,14 @@ lines(x, fitted(lm(y ~ poly(x,15))), lwd=2)
 legend("bottomright", col=2:1, c("f(x)",expression(hat(f)(x))), lty=1)
 #dev.off()
 
-D = 3
+
+#pdf("Figure_hatmatrix.pdf")
+X = model.matrix(lm(y ~ poly(x,degree=15)))
+S = X %*% solve(crossprod(X)) %*% t(X)
+filled.contour(apply(S, 2, rev), asp=1, xaxt="n", yaxt="n", xlab="columns", ylab="rows", levels=c(min(S),-0.001,0.001,max(S)), col=c("red", "white", "blue"))
+#dev.off()
+
+M = 3
 knots = seq(0.1, 0.9, by=.1)
 x_cut = cut(x, c(-Inf,knots,Inf) )
 #pdf("Figure_piece_poly.pdf")
@@ -32,15 +39,23 @@ lines(x, f_x, col=2, lwd=2)
 abline(v=knots, lty=2)
 for (i in 1:length(levels(x_cut)) ){
   subset = (x_cut==levels(x_cut)[i])
-  lines(x[subset], fitted(lm(y[subset] ~ poly(x[subset],D))), lwd=2 )
+  lines(x[subset], fitted(lm(y[subset] ~ poly(x[subset],M))), lwd=2 )
 }
 #dev.off()
 
 K = length(knots)
 n = length(x)
-B = matrix(NA,ncol=D+K+1, nrow=n)
-B[,1:(D+1)] = cbind(1,poly(x,D, raw=TRUE))
-B[,(D+2):(D+K+1)] = sapply(1:K, function(k) ifelse(x >= knots[k], (x-knots[k])^D, 0))
+B = matrix(NA,ncol=M+K+1, nrow=n)
+B[,1:(M+1)] = cbind(1,poly(x,M, raw=TRUE))
+B[,(M+2):(M+K+1)] = sapply(1:K, function(k) ifelse(x >= knots[k], (x-knots[k])^M, 0))
+
+
+#pdf("Figure_smoothingmatrix.pdf")
+S = B %*% solve(crossprod(B)) %*% t(B)
+filled.contour(apply(S, 2, rev), asp=1, xaxt="n", yaxt="n", xlab="columns", ylab="rows", levels=c(min(S),-0.001,0.001,max(S)), col=c("red", "white", "blue"))
+#dev.off()
+
+
 #pdf("Figure_tpowerbasis.pdf")
 plot(x,y,col="gray")
 abline(v=knots, lty=2)
@@ -64,6 +79,7 @@ abline(v=knots, lty=2)
 y_hat = apply(B_scaled, 1, sum)
 lines(x,y_hat, lwd=2)
 #dev.off()
+
 
 
 nat_spline_x <- function(x, knots){
@@ -100,61 +116,93 @@ y_hat <- B %*% solve(crossprod(B)) %*% crossprod(B, y)
 lines(x,y_hat, lwd=2)
 #dev.off()
 
-max(svd(B)$d) / min(svd(B)$d)
 
-bspline_x <- function(x, knots, order=1L){
-    K <- length(knots)
-    k <- knots
-    k <- c(rep(min(x), order + 1L), k,
-           rep(max(x), order + 1L))
-    b <- function(x, j, d){
-      if (d == 0L) {
-        return(as.numeric(k[j] <= x & x <= k[j + 1L]))
-      } else {
-        r <- (x - k[j]) / (k[j + d] - k[j]) * b(x, j, d - 1)
-        if (is.nan(r)) r <- 0
-        r <- r + (k[j + d + 1] - x) / (k[j + d + 1] - k[j + 1]) * b(x, j + 1, d - 1)
-        if (is.nan(r)) r <- 0
-        r
-      }
-    }
-    B <- matrix(0, ncol=(K + order), nrow=length(x))
-    for (j in seq(1L, (K + order)))
-    {
-      for (i in seq(1L, length(x)))
-      {
-        B[i, j] <- b(x[i], j, order)
-      }
-    }
-    B
-  }
+fit_ns <- lm(y ~ 0+B)
+y_hat_ns <- predict(fit_ns, se = TRUE)
 
-B <- cbind(1,bspline_x(x, knots, order = D))
-max(svd(B)$d) / min(svd(B)$d)
+X = matrix(NA,ncol=M+K+1, nrow=n)
+X[,1:(M+1)] = cbind(1,poly(x,M, raw=TRUE))
+X[,(M+2):(M+K+1)] = sapply(1:K, function(k) ifelse(x >= knots[k], (x-knots[k])^M, 0))
+fit_cs <- lm(y ~ 0+X)
+y_hat_cs <- predict(fit_cs, se = TRUE)
 
-y_hat <- B %*% solve(crossprod(B)) %*% crossprod(B, y)
-
-#pdf("Figure_bbasis.pdf")
-plot(x,y,col="gray")
-abline(v=knots, lty=2)
-for (i in 1:ncol(B)) lines(x,B[,i], col=i, lwd=2)
+#pdf("Figure_standard_error.pdf")
+plot(x, y_hat_cs$se.fit, type="l", 
+     ylim=c(0.02,max(y_hat_cs$se.fit)),
+     ylab="Standard error", lwd=2)
+lines(x, y_hat_ns$se.fit, lwd=2, col=4)
+legend("top", c("cubic spline", "natural cubic spline"), lty=1, col=c(1,4), lwd=2)
 #dev.off()
 
-X = matrix(NA,ncol=D+K+1, nrow=n)
-X[,1:(D+1)] = cbind(1,poly(x,D, raw=TRUE))
-X[,(D+2):(D+K+1)] = sapply(1:K, function(k) ifelse(x >= knots[k], (x-knots[k])^D, 0))
-y_t <- X %*% solve(crossprod(X)) %*% crossprod(X, y)
-y_b <- B %*% solve(crossprod(B)) %*% crossprod(B, y)
-max(abs(y_t - y_b))
 
 #pdf("Figure_smooth_spline.pdf")
 overfit <- smooth.spline(x, y, all.knots=T, spar = 0)
 fit_smooth <- smooth.spline(x, y, all.knots=T, cv=TRUE)
+fit_smooth
 plot(x,y,col="gray")
 lines(x, overfit$y, col="gray")
 lines(x, f_x, col=2, lwd=2)
 lines(x, fit_smooth$y, col=4, lwd=2)
 #dev.off()
+
+max(svd(B)$d) / min(svd(B)$d)
+
+
+tpower <- function(x, t, deg){
+  (x - t) ^ deg * (x > t)
+}
+
+bbase <- function(x, xl, xr, ndx, deg){
+  dx <- (xr - xl) / ndx
+  knots <- seq(xl - deg * dx, xr + deg * dx, by = dx)
+  P <- outer(x, knots, tpower, deg)
+  n <- dim(P)[2]
+  Delta <- diff(diag(n), diff = deg + 1) / (gamma(deg + 1) * dx ^ deg)
+  B <- (-1) ^ (deg + 1) * P %*% t(Delta)
+  B
+}
+
+
+xl=min(x)
+xr=max(x)
+ndx=10
+bdeg=3
+
+B <- bbase(x, xl, xr, ndx, bdeg)
+knots_all <- seq(xl - bdeg * (xr - xl) / ndx, xr + bdeg * (xr - xl) / ndx, by = (xr - xl) / ndx)
+#pdf("Figure_bspline.pdf")
+plot(knots_all,rep(0,length(knots_all)),pch=19, ylab=expression(B[j](x)), xlab="x")
+abline(v=knots_all, lty=2)
+for (i in 1:ncol(B)) lines(x,B[,i], col=i, lwd=2)
+#dev.off()
+
+rowSums(B)
+
+max(svd(B)$d) / min(svd(B)$d)
+
+y_hat <- B %*% solve(crossprod(B)) %*% crossprod(B, y)
+
+lambda <- 0.18
+O <- 2
+
+D <- diag(ncol(B))
+for (k in 1:O) D <- diff(D)
+beta_hat <- solve(t(B) %*% B + lambda * t(D) %*% D, t(B) %*% y)
+y_hat <- B %*% beta_hat
+
+RSS <- sum((y - y_hat)^2)
+tr_S <- sum(diag(solve(t(B) %*% B + lambda * t(D) %*% D) %*% (t(B) %*% B)))
+GCV <- (1/n) * ( RSS / ( 1 - tr_S / nrow(B) )^2 )
+
+
+plot(x,y ,col="gray")
+lines(x, f_x, col=2, lwd=2)
+abline(v=knots_all, lty=2)
+lines(x,y_hat, lwd=2)
+
+library(JOPS)
+fit <- psNormal(x, y, nseg = 10, bdeg = 3, pord = 2, lambda=lambda)
+sum(abs(fit$muhat - y_hat))
 
 #---------------------------------------
 # MCYCLE 
@@ -162,17 +210,6 @@ lines(x, fit_smooth$y, col=4, lwd=2)
 
 rm(list=ls())
 
-library(MASS)
-library(splines)
-
-dataset <- mcycle %>% 
-  rename(x = times, y = accel) %>%
-  arrange(x)
-
-x_grid= seq(min(dataset$x), max(dataset$x), length.out=1000)
-plot(y~x, dataset, col="gray") 
-fit_poly <- lm(y ~ poly(x,15), dataset)
-lines(x_grid, predict(fit_poly, newdata=data.frame(x=x_grid)), lwd=2)
-
-fit_smooth <- smooth.spline(dataset$x, dataset$y, all.knots=T)
-
+data(mcycle)
+x = mcycle$times
+y = mcycle$accel
