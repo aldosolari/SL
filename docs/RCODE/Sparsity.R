@@ -1,0 +1,200 @@
+#=======================================
+# SPARSITY
+#=======================================
+
+
+#---------------------------------------
+# TOY EXAMPLE
+#---------------------------------------
+
+rm(list=ls())
+
+y = seq(-8,8,length.out = 401)
+lambda = 1
+mu_hat_0 = y*(abs(y) > sqrt(2*lambda))
+mu_hat_1 = (y+sign(lambda-y)*lambda)*(abs(y) > lambda)
+mu_hat_2 = (1/(1+2*lambda))*y
+
+#pdf("Figure_toy.pdf")
+plot(y, mu_hat_0, pch=19, asp=1, col=2, xlim=c(-4,4), ylim=c(-4,4), ylab=expression(hat(mu)))
+abline(a=0,b=1, lty=3)
+abline(h=0, lty=3)
+abline(v=0, lty=3)
+points(y, mu_hat_1, pch=19, col=3 )
+points(y, mu_hat_2, pch=19, col=4 )
+legend("topleft", c("l0","l1","l2"), col=c(2,3,4), pch=19)
+#dev.off()
+
+#---------------------------------------
+# ORTHOGONAL CASE
+#---------------------------------------
+
+rm(list=ls())
+
+n = 400
+p = 4
+set.seed(123)
+Z <- matrix(rnorm(n*p), ncol = p)
+X <- svd(Z)$u
+round(crossprod(X), 10)
+beta = c(2,rep(0,p-1))
+y <- X %*% beta + rnorm(n)
+Xty <- crossprod(X, y)
+lambdas = seq(0,7, length.out = 500)
+beta_hat_0 = sapply(1:length(lambdas), function(i)
+             Xty * (abs(Xty) > sqrt(2*lambdas[i])) )
+beta_hat_1 = sapply(1:length(lambdas), function(i)
+  (Xty+sign(lambdas[i]-Xty)*lambdas[i])*(abs(Xty) > lambdas[i]) )
+beta_hat_2 = sapply(1:length(lambdas), function(i)
+             Xty * (1/(1+lambdas[i])) )
+
+pdf("Figure_orthogonal.pdf")
+matplot(lambdas, t(beta_hat_2), type="l", lty=1, lwd=2, col=4,
+        ylab=expression(hat(beta)), xlab=expression(lambda))
+matlines(lambdas, t(beta_hat_1), col=3, lty=1,lwd=2)
+matlines(lambdas, t(beta_hat_0), col=2, lty=1, lwd=2)
+points(rep(0,p),Xty, pch=19)
+legend("topright", c("BSS","Ridge","Lasso"), col=c(2,4,3), lty=1, lwd=2)
+dev.off()
+
+#---------------------------------------
+# PROSTATE
+#---------------------------------------
+
+rm(list=ls())
+
+library(readr)
+library(tidyverse)
+
+dataset <- read_delim("https://hastie.su.domains/ElemStatLearn/datasets/prostate.data", 
+                       "\t", escape_double = FALSE, trim_ws = TRUE)
+
+train <- dataset %>%  filter(train) %>% select(-X1,-train) %>% rename(y = lpsa)
+n <- nrow(train)
+p <- ncol(train)
+
+#--- BSS ----------
+
+library(leaps)
+
+fit_BSS <- regsubsets(y~.,train, nvmax=p)
+summary_BSS <-summary(fit_BSS)
+summary_BSS$outmat
+
+fit_all <- regsubsets(y~.,train, nvmax=p, nbest=2^p, really.big = TRUE)
+rss_all <- summary(fit_all)$rss
+size_all <- apply(summary(fit_all)$which,1,sum)
+rss_0 <- sum(summary(lm(y~1,train))$residuals^2)
+#pdf("Figure_RSS_BSS.pdf")
+plot(c(1,size_all)-1,c(rss_0,rss_all), xlab="Subset size", ylab="RSS", pch=19)
+points(0:(p-1), c(rss_0,summary_BSS$rss), col=2, pch=19)
+lines(0:(p-1), c(rss_0,summary_BSS$rss), col=2)
+#dev.off()
+
+#pdf("Figure_BIC_BSS.pdf")
+plot(fit_BSS, scale="bic")
+#dev.off()
+
+#--- Forward Stepwise ----------
+
+library(MASS)
+fit_null <- lm(y ~1, data = train)
+fit_full <- lm(y ~., data = train)
+stepAIC(fit_null, 
+        scope=list(upper=fit_full),
+        direction = "forward", 
+        k=0, trace = TRUE)
+
+train_std <- data.frame(scale(train, center =TRUE, scale = sqrt(diag(var(train)*((n-1)/n)) ))[,])
+
+fit_FS <- regsubsets(y~ .,train_std, intercept=FALSE, nvmax=p, method = "forward")
+summary_FS <- summary(fit_FS)
+
+RSQ <- summary_FS$rsq
+beta_hat_mat <- matrix(0, nrow=p, ncol=p-1)
+colnames(beta_hat_mat) <- names(train)[-9]
+for (i in 1:(p-1) ){
+beta_hat_mat[i+1, names(coef(fit_FS, i))]<- coef(fit_FS, i)
+}
+#pdf("Figure_R2_FS.pdf")
+matplot(c(0,RSQ), beta_hat_mat, type="l", lwd=2, lty=1, xlab=expression(R^2), ylab=expression(hat(beta)))
+abline(v=RSQ, lty=3)
+#dev.off()
+
+X_std = as.matrix(train_std[,-9])
+y_std = train_std[,9]
+
+
+#--- Lasso ----------
+
+library(lars)
+library(glmnet)
+
+
+fit_lasso <- lars(x=X_std,y=y_std,type="lasso",intercept=FALSE,  normalize = FALSE)
+
+#pdf("Figure_R2_Lasso.pdf")
+matplot(fit_lasso$R2, fit_lasso$beta, type="l", lty=1, , ylab=expression(hat(beta)), xlab=expression(R^2), lwd=2)
+abline(v=fit_lasso$R2[-1], lty=3)
+axis(3, at=fit_lasso$R2, labels=c(round(fit_lasso$lambda,1),0))
+#dev.off()
+
+
+
+
+#--- Forward Stagewise ----------
+
+forward_stagewise <- function(X,y,eps=0.01, itr = 100){
+  
+  n = nrow(X)
+  p = ncol(X)
+  r = y
+  beta = rep(0,p)
+  beta_mat <- matrix(0,ncol=p,nrow=itr)
+  
+  for (b in 1:itr){
+  
+  max_correlation = 0
+  best_predictor = 0
+  
+  for (j in 1:p){
+      current_correlation = max( abs(cor(r, X)) )
+      if (current_correlation > max_correlation){
+          best_predictor = which.max( abs(cor(r, X)) )
+          max_correlation = current_correlation
+      }
+  }
+
+  delta = eps * sign(crossprod(X[, best_predictor], r))
+  beta[best_predictor] = beta[best_predictor] + delta
+  
+  beta_mat[b,] <- beta
+  
+  for (i in 1:n) r[i] = r[i] - delta * X[i, best_predictor]
+  }
+  return(beta_mat)
+  
+}
+
+beta_hat_i <- forward_stagewise(X_std,y_std,eps=0.005, itr = 400)
+L1_norm <- apply(beta_hat_i,1,function(x) sum(abs(x)))
+#pdf("Figure_PATH_FSeps.pdf")
+matplot(L1_norm, beta_hat_i, type="s", lty=1, xlab="L1 norm", ylab="Coefficients", lwd=2)
+#dev.off()
+
+fit_lasso <- glmnet(X_std,y_std,intercept=FALSE,standardize = FALSE)
+#pdf("Figure_PATH_lasso.pdf")
+plot(fit_lasso, lwd=2)
+#dev.off()
+
+K <- 10
+cv_lasso <- cv.glmnet(X_std,y_std,intercept=FALSE,standardize = FALSE, nfolds = K)
+#pdf("Figure_CV_lasso.pdf")
+plot(cv_lasso)
+#dev.off()
+
+cv_lasso$lambda.1se
+coef(cv_lasso, s="lambda.1se")
+
+cv_lasso$lambda.min
+coef(cv_lasso, s="lambda.min")
