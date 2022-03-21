@@ -48,14 +48,14 @@ beta_hat_1 = sapply(1:length(lambdas), function(i)
 beta_hat_2 = sapply(1:length(lambdas), function(i)
              Xty * (1/(1+lambdas[i])) )
 
-pdf("Figure_orthogonal.pdf")
+#pdf("Figure_orthogonal.pdf")
 matplot(lambdas, t(beta_hat_2), type="l", lty=1, lwd=2, col=4,
         ylab=expression(hat(beta)), xlab=expression(lambda))
 matlines(lambdas, t(beta_hat_1), col=3, lty=1,lwd=2)
 matlines(lambdas, t(beta_hat_0), col=2, lty=1, lwd=2)
 points(rep(0,p),Xty, pch=19)
 legend("topright", c("BSS","Ridge","Lasso"), col=c(2,4,3), lty=1, lwd=2)
-dev.off()
+#dev.off()
 
 #---------------------------------------
 # PROSTATE
@@ -187,14 +187,35 @@ fit_lasso <- glmnet(X_std,y_std,intercept=FALSE,standardize = FALSE)
 plot(fit_lasso, lwd=2)
 #dev.off()
 
+X = as.matrix(train[,-9])
+y = as.matrix(train[,9])
+
 K <- 10
-cv_lasso <- cv.glmnet(X_std,y_std,intercept=FALSE,standardize = FALSE, nfolds = K)
+set.seed(123)
+cv_fit <- cv.glmnet(X,y,nfolds = K)
 #pdf("Figure_CV_lasso.pdf")
-plot(cv_lasso)
+plot(cv_fit)
 #dev.off()
 
-cv_lasso$lambda.1se
-coef(cv_lasso, s="lambda.1se")
+cv_fit$lambda.1se
+coef(cv_fit, s="lambda.1se")
 
-cv_lasso$lambda.min
-coef(cv_lasso, s="lambda.min")
+cv_fit$lambda.min
+coef(cv_fit, s="lambda.min")
+
+set.seed(123)
+fit_relax <- glmnet(X,y, relax = TRUE)
+
+#pdf("Figure_relaxed_lasso.pdf")
+plot(fit_relax, gamma = 0, lwd=2)
+#dev.off()
+
+set.seed(123)
+cv_fit_relax <- cv.glmnet(X, y, relax = TRUE)
+print(cv_fit_relax)
+plot(cv_fit_relax, se.bands = FALSE)
+
+cv_fit_relax0 <- cv.glmnet(X, y, gamma = 0, relax = TRUE)
+#pdf("Figure_cv_relaxed0_lasso.pdf")
+plot(cv_fit_relax0)
+#dev.off()
