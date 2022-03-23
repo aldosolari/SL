@@ -98,7 +98,7 @@ Corso di Laurea Magistrale in Scienze Statistiche ed Economiche, Università deg
 <td> [SLIDES](docs/SLIDES/Sparsity.pdf). </td>
 <td> [R CODE](https://github.com/aldosolari/SL/blob/master/docs/RCODE/Sparsity.R)</td>
 <td> CASI §16, ESL §3.3-§3.4.3, CASL §7.1-§7.3 </td>
-<td></td>
+<td>[ESERCIZI](docs/EXERCISES/Sparsity.pdf)</td>
 </tr>
 
 

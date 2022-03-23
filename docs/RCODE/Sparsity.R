@@ -46,7 +46,7 @@ beta_hat_0 = sapply(1:length(lambdas), function(i)
 beta_hat_1 = sapply(1:length(lambdas), function(i)
   (Xty+sign(lambdas[i]-Xty)*lambdas[i])*(abs(Xty) > lambdas[i]) )
 beta_hat_2 = sapply(1:length(lambdas), function(i)
-             Xty * (1/(1+lambdas[i])) )
+             Xty * (1/(1+2*lambdas[i])) )
 
 #pdf("Figure_orthogonal.pdf")
 matplot(lambdas, t(beta_hat_2), type="l", lty=1, lwd=2, col=4,
@@ -219,3 +219,14 @@ cv_fit_relax0 <- cv.glmnet(X, y, gamma = 0, relax = TRUE)
 #pdf("Figure_cv_relaxed0_lasso.pdf")
 plot(cv_fit_relax0)
 #dev.off()
+
+
+library(gglasso)
+
+data(bardet)
+group1 <- rep(1:20, each = 5)
+fit_ls <- gglasso(x = bardet$x, y = bardet$y, group = group1, loss = "ls")
+plot(fit_ls)
+cvfit_ls <- cv.gglasso(x = bardet$x, y = bardet$y, group = group1, loss = "ls")
+plot(cvfit_ls)
+coef(cvfit_ls, s = "lambda.min")
