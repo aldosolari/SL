@@ -69,7 +69,7 @@ library(tidyverse)
 dataset <- read_delim("https://hastie.su.domains/ElemStatLearn/datasets/prostate.data", 
                        "\t", escape_double = FALSE, trim_ws = TRUE)
 
-train <- dataset %>%  filter(train) %>% select(-X1,-train) %>% rename(y = lpsa)
+train <- dataset %>%  filter(train) %>% dplyr::select(-X1,-train) %>% rename(y = lpsa)
 n <- nrow(train)
 p <- ncol(train)
 
@@ -153,24 +153,14 @@ forward_stagewise <- function(X,y,eps=0.01, itr = 100){
   beta_mat <- matrix(0,ncol=p,nrow=itr)
   
   for (b in 1:itr){
-  
-  max_correlation = 0
-  best_predictor = 0
-  
-  for (j in 1:p){
-      current_correlation = max( abs(cor(r, X)) )
-      if (current_correlation > max_correlation){
-          best_predictor = which.max( abs(cor(r, X)) )
-          max_correlation = current_correlation
-      }
-  }
-
-  delta = eps * sign(crossprod(X[, best_predictor], r))
-  beta[best_predictor] = beta[best_predictor] + delta
-  
-  beta_mat[b,] <- beta
-  
-  for (i in 1:n) r[i] = r[i] - delta * X[i, best_predictor]
+    
+    current_correlation = max( abs(cor(r, X)) )
+    best_predictor = which.max( abs(cor(r, X)) )
+    delta = eps * sign(cor(X[, best_predictor], r))
+    beta[best_predictor] = beta[best_predictor] + delta
+    beta_mat[b,] <- beta
+    
+    for (i in 1:n) r[i] = r[i] - delta * X[i, best_predictor]
   }
   return(beta_mat)
   
@@ -219,6 +209,10 @@ cv_fit_relax0 <- cv.glmnet(X, y, gamma = 0, relax = TRUE)
 #pdf("Figure_cv_relaxed0_lasso.pdf")
 plot(cv_fit_relax0)
 #dev.off()
+
+#---------------------------------------
+# GROUP LASSO
+#---------------------------------------
 
 rm(list=ls())
 
