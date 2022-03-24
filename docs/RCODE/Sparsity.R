@@ -220,6 +220,7 @@ cv_fit_relax0 <- cv.glmnet(X, y, gamma = 0, relax = TRUE)
 plot(cv_fit_relax0)
 #dev.off()
 
+rm(list=ls())
 
 library(gglasso)
 
@@ -230,3 +231,86 @@ plot(fit_ls)
 cvfit_ls <- cv.gglasso(x = bardet$x, y = bardet$y, group = group1, loss = "ls")
 plot(cvfit_ls)
 coef(cvfit_ls, s = "lambda.min")
+
+#---------------------------------------
+# HITTERS
+#---------------------------------------
+
+rm(list=ls())
+
+library(tidymodels)
+library(ISLR)
+
+Hitters <- as_tibble(Hitters) %>%
+  filter(!is.na(Salary))
+
+set.seed(123)
+Hitters_split <- initial_split(Hitters, strata = "Salary")
+
+Hitters_train <- training(Hitters_split)
+Hitters_test <- testing(Hitters_split)
+
+library(leaps)
+fit_BSS <- regsubsets(Salary~.,Hitters_train)
+summary_BSS<-summary(fit_BSS)
+head(summary_BSS$outmat, 10)
+
+predict.regsubsets =function(object ,newdata ,id ,...){
+  form=as.formula(object$call[[2]])
+  mat=model.matrix(form, newdata)
+  coefi =coef(object, id=id)
+  xvars =names(coefi)
+  mat[,xvars]%*%coefi
+}
+
+yhat_BSS_Cp = predict.regsubsets(fit_BSS, newdata=Hitters_test, id=which.min(summary_BSS$cp))
+RMSE_BSS_Cp = sqrt(mean( (yhat_BSS_Cp - Hitters_test$Salary)^2 ))
+RMSE_BSS_Cp
+
+Hitters_fold <- vfold_cv(Hitters_train, v = 10)
+
+elasticnet_recipe <- 
+  recipe(formula = Salary ~ ., data = Hitters_train) %>% 
+  step_novel(all_nominal_predictors()) %>% 
+  step_dummy(all_nominal_predictors()) %>% 
+  step_zv(all_predictors()) %>% 
+  step_normalize(all_predictors())
+
+elasticnet_spec <- 
+  linear_reg(penalty = tune(), mixture = tune()) %>% 
+  set_mode("regression") %>% 
+  set_engine("glmnet") 
+
+elasticnet_workflow <- workflow() %>% 
+  add_recipe(elasticnet_recipe) %>% 
+  add_model(elasticnet_spec)
+
+tuning_grid <- grid_regular(parameters(penalty(range = c(-1, 2)), mixture(range = c(0, 1))), levels = c(50, 3))
+
+tuning_grid %>% 
+  ggplot(aes(x = mixture, y = penalty)) +
+  geom_point() +
+  scale_y_log10() +
+  theme_bw()
+
+tune_res <- tune_grid(
+  elasticnet_workflow,
+  resamples = Hitters_fold, 
+  grid = tuning_grid
+)
+
+autoplot(tune_res) +
+  theme_bw()
+
+best_tuning <- select_best(tune_res, metric = "rmse")
+
+elasticnet_final <- finalize_workflow(elasticnet_workflow, best_tuning)
+
+elasticnet_final_fit <- fit(elasticnet_final, data = Hitters_train)
+
+elasticnet_final_fit %>%
+  extract_fit_engine() %>%
+  plot(xvar = "lambda")
+
+augment(elasticnet_final_fit, new_data = Hitters_test) %>%
+  rmse(truth = Salary, estimate = .pred)
