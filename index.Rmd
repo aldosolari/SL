@@ -104,10 +104,10 @@ Corso di Laurea Magistrale in Scienze Statistiche ed Economiche, Università deg
 
 <tr>
 <td>Data splitting for variable selection.</td>
-<td> [SLIDES](). </td>
-<td> [R CODE]()</td>
-<td>  </td>
-<td></td>
+<td> [SLIDES](docs/SLIDES/Split.pdf). </td>
+<td> [R CODE](https://github.com/aldosolari/SL/blob/master/docs/RCODE/Split.R)</td>
+<td> CASI §15.1, CASI §15.2 </td>
+<td>[ESERCIZI](docs/EXERCISES/Split.pdf)</td>
 </tr>
 
 <tr>
