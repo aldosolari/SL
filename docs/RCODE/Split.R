@@ -67,26 +67,37 @@ table(varType[S_tilde])
 # P-VALUE LOTTERY
 #---------------------------------------
 
-B <- 10
+B <- 25
 pval_matrix <- matrix(1,ncol=p,nrow=B)
+pval_matrix_tilde <- pval_matrix
+
+set.seed(123)
 for (i in 1:B) {
   split <- as.logical(sample(rep(0:1, each=n/2)))
   fit <- cv.glmnet(X[split,], y[split])
   M_hat <- which( coef(fit, s=fit$lambda.1se)[-1] != 0 )
   fit <- lm(y[!split]~X[!split, M_hat])
   pval_matrix[i, M_hat] <- summary(fit)$coeff[-1,4]
+  pval_matrix_tilde[i, M_hat] <- p.adjust(pval_matrix[i, M_hat], "holm") 
 }
 #pdf("Figure_plottery.pdf")
-hist(pval_matrix[,S[1]], main=paste(B,"random splits"), xlab="p-value")
+hist(pval_matrix[,S[1]], main=paste(B,"random splits"), xlab="p-value", 20)
 #dev.off()
 
+#pdf("Figure_pmedian.pdf")
+boxplot(pval_matrix_tilde[,S], label=S)
+abline(h=alpha/2, lty=3)
+#dev.off()
+pval_aggr <- pmin(2*apply(pval_matrix_tilde,2,median),1)
+sum(pval_aggr <= alpha)
 
 #---------------------------------------
 # MULTI-SPLIT
 #---------------------------------------
 
-B = 50
+B = 25
 library(hdi)
+set.seed(123)
 fit <- multi.split(x=X, y=y, B=B, fraction=0.5,
                    model.selector = lasso.cv,	 
                    ci = TRUE, ci.level = 1- alpha, 
