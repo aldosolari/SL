@@ -112,10 +112,10 @@ Corso di Laurea Magistrale in Scienze Statistiche ed Economiche, Università deg
 
 <tr>
 <td>Stability selection.</td>
-<td> [SLIDES](). </td>
-<td> [R CODE]()</td>
-<td>  </td>
-<td></td>
+<td> [SLIDES](docs/SLIDES/Stability.pdf). </td>
+<td> [R CODE](https://github.com/aldosolari/SL/blob/master/docs/RCODE/Stability.R)</td>
+<td> </td>
+<td>[ESERCIZI](docs/EXERCISES/Stability.pdf)</td>
 </tr>
 
 <tr>
