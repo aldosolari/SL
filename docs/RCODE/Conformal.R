@@ -162,6 +162,38 @@ abline(h=1-alpha, lwd=2,col=2)
 #dev.off()
 
 #---------------------------------------
+# ORACLE
+#---------------------------------------
+
+mu_x = 1
+sigma_x = 1
+mu_y = 2
+sigma_y = 1
+rho = 0.8
+
+set.seed(123)
+n = 10^3
+x_i = sort( rnorm(n, mean=mu_x, sd=sigma_x) )
+mu_yIx = mu_y + rho * (sigma_x / sigma_y) * (x_i - mu_x)
+sigma_yIx = sqrt( (sigma_y)^2 * (1-rho^2) )
+y_i = rnorm(n, mu_yIx, sd = sigma_yIx)
+
+q1_x_i = qnorm(alpha/2, mean=mu_yIx, sd = sigma_yIx )
+q2_x_i = qnorm(1-alpha/2, mean=mu_yIx, sd = sigma_yIx )
+
+#pdf("Figure_oracle.pdf")
+plot(x_i,y_i, xlab="x", ylab="y")
+polygon(c(x_i,rev(x_i)), 
+        c(q1_x_i,rev(q2_x_i)),
+        col=rgb(1, 0, 0,0.5), border=NA)
+#dev.off()
+
+coverage = y_i >= q1_x_i & y_i <= q2_x_i
+coverage_tab <- aggregate(coverage, by=list(cut(x_i,quantile(x_i, probs=seq(0,1,0.1)))), mean)
+barplot(coverage_tab[,2], names.arg=coverage_tab[,1], ylim=c(0,1), ylab="Coverage", xlab="x", xaxt="n")
+
+
+#---------------------------------------
 # QUANTILE CONFORMAL
 #---------------------------------------
 
@@ -220,15 +252,80 @@ C = split_conformal_quantile(x, y, x_new,
                              alpha = 0.1,
                              m = 49)
 
-pdf("Figure_conformal_quantile.pdf")
+#pdf("Figure_conformal_quantile.pdf")
 plot(y~x)
 lines(x, sin(x), lwd=2)
 polygon(c(x_new,rev(x_new)), 
         c(C$lo,rev(C$up)),
         col=rgb(1, 0, 0,0.5), border=NA)
-dev.off()
+#dev.off()
+
+#---------------------------------------
+# MULTI SPLIT
+#---------------------------------------
+
+multi_split <- function(C_mat, tau=0.5){
+
+ n0 = nrow(C_mat)/2
+ B = ncol(C_mat)
+ Y = cbind(C_mat[1:n0,,drop=F],C_mat[(n0+1):(2*n0),,drop=F])
+ H = matrix(rep(rep(1:0,each=B),n0), byrow=T, ncol=2*B)
+ tr <- tau*B + .001
+ lo <- rep(NA,n0)
+ up <- rep(NA,n0)  
+  
+for (i in 1:n0){
+  
+  y = Y[i,,drop=FALSE]
+  h = H[i,,drop=FALSE]
+  o = order(y,2-h)
+  ys <- y[o]
+  hs <- h[o]
+  
+  count <- 0
+  leftend <- 0
+  
+  for (j in 1:(2*B) ){
+    if ( hs[j]==1 ) {
+      count <- count + 1
+      if ( count > tr && (count - 1) <= tr) { 
+        leftend <- ys[j] 
+      }
+    } else {
+      if ( count > tr && (count - 1) <= tr) {
+        rightend <- ys[j]
+        lo[i] <- leftend
+        up[i] <- rightend
+      }
+      count <- count - 1
+    }
+  }
+}  
+
+ return(list(lo=lo,up=up))
+}
 
 
+set.seed(123)
 
+n = 100
+x = sort(runif(n,0,2*pi))
+y = sin(x) + x*pi/30*rnorm(n)
 
+n_new = 1
+x_new = runif(n_new,0,2*pi)
+
+B = 10
+C_mat = replicate(B,unlist(split_conformal_quantile(x, y, x_new,
+                                                    alpha = 0.1,
+                                                    m = 49)))
+
+C_multi = multi_split(C_mat,tau=0.5)
+
+plot(NULL, xlim=c(1,B), ylim=c(min(C_mat[1,]), max(C_mat[2,])), ylab="C", xlab="split")
+for (b in 1:B){
+  segments(x0=b,x1=b,y0=C_mat[1,b],y1=C_mat[2,b])
+}
+abline(h=C_multi$lo)
+abline(h=C_multi$up)
 
