@@ -26,7 +26,8 @@ Corso di Laurea Magistrale in Scienze Statistiche ed Economiche, Università deg
 * L13 (31 Marzo 2022 8:30 - 11:30 LAB715) 3h
 * L14 (4 Aprile 2022 14:30 - 17:30 LAB715) 3h
 * L15 (5 Aprile 2022 10:30 - 12:30 LAB715) 2h
-* L16 (7 Aprile 2022 8:30 - 11:30 LAB715) 3h
+* ~~L16 (7 Aprile 2022 8:30 - 11:30 LAB715) 3h~~
+* L16 (11 Aprile 2022 14:30 - 17:30 LAB715) 3h
 
 
 
