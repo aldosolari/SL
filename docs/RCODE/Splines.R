@@ -2,9 +2,8 @@
 # SPLINES
 #=======================================
 
-
 #---------------------------------------
-# EXAMPLE
+# Example
 #---------------------------------------
 
 rm(list=ls())
@@ -22,7 +21,6 @@ lines(x, f_x, col=2, lwd=2)
 lines(x, fitted(lm(y ~ poly(x,15))), lwd=2)
 legend("bottomright", col=2:1, c("f(x)",expression(hat(f)(x))), lty=1)
 #dev.off()
-
 
 #pdf("Figure_hatmatrix.pdf")
 X = model.matrix(lm(y ~ poly(x,degree=15)))
@@ -42,6 +40,11 @@ for (i in 1:length(levels(x_cut)) ){
   lines(x[subset], fitted(lm(y[subset] ~ poly(x[subset],M))), lwd=2 )
 }
 #dev.off()
+
+
+#---------------------------------------
+# Regression splines
+#---------------------------------------
 
 K = length(knots)
 n = length(x)
@@ -80,7 +83,9 @@ y_hat = apply(B_scaled, 1, sum)
 lines(x,y_hat, lwd=2)
 #dev.off()
 
-
+#---------------------------------------
+# nat_spline_x function
+#---------------------------------------
 
 nat_spline_x <- function(x, knots){
   
@@ -134,6 +139,9 @@ lines(x, y_hat_ns$se.fit, lwd=2, col=4)
 legend("top", c("cubic spline", "natural cubic spline"), lty=1, col=c(1,4), lwd=2)
 #dev.off()
 
+#---------------------------------------
+# Smoothing spline
+#---------------------------------------
 
 #pdf("Figure_smooth_spline.pdf")
 overfit <- smooth.spline(x, y, all.knots=T, spar = 0)
@@ -145,8 +153,11 @@ lines(x, f_x, col=2, lwd=2)
 lines(x, fit_smooth$y, col=4, lwd=2)
 #dev.off()
 
-max(svd(B)$d) / min(svd(B)$d)
+#---------------------------------------
+# B-splines
+#---------------------------------------
 
+max(svd(B)$d) / min(svd(B)$d)
 
 tpower <- function(x, t, deg){
   (x - t) ^ deg * (x > t)
@@ -182,6 +193,10 @@ max(svd(B)$d) / min(svd(B)$d)
 
 y_hat <- B %*% solve(crossprod(B)) %*% crossprod(B, y)
 
+#---------------------------------------
+# P-splines
+#---------------------------------------
+
 lambda <- 0.18
 O <- 2
 
@@ -205,7 +220,7 @@ fit <- psNormal(x, y, nseg = 10, bdeg = 3, pord = 2, lambda=lambda)
 sum(abs(fit$muhat - y_hat))
 
 #---------------------------------------
-# MCYCLE 
+# mcycle data 
 #---------------------------------------
 
 rm(list=ls())

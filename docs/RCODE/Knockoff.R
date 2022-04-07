@@ -2,6 +2,10 @@
 # KNOCKOFF FILTER
 #=======================================
 
+#---------------------------------------
+# Fixed-X knockoff
+#---------------------------------------
+
 rm(list=ls())
 
 n <- 1000
@@ -29,7 +33,7 @@ y_raw <- X %*% beta + rnorm(n,mean=0,sd=sqrt(sigma2))
 y <- normc(y_raw, center=T)
 
 #---------------------------------------
-# KNOCKOFF CONSTRUCTION
+# Knockoff construction
 #---------------------------------------
 
 X_svd = svd(X)
@@ -50,7 +54,7 @@ crossprod(X,Xtilde)[1:3,1:3]
 #Xtilde = create.fixed(X,method="sdp")$Xk
 
 #---------------------------------------
-# KNOCKOFF STATISTICS
+# Knockoff statistics
 #---------------------------------------
 
 XX <- cbind(X,Xtilde)
@@ -75,7 +79,7 @@ orig = 1:p
 W = pmax(Z[orig], Z[orig+p]) * sign(Z[orig] - Z[orig+p])
 
 #---------------------------------------
-# KNOCKOFF FDP ESTIMATE
+# Knockoff FDP estimate
 #---------------------------------------
 
 tau = 2
@@ -120,7 +124,7 @@ sum(W[N] >= tau_hat) / sum(W >= tau_hat)
 
 
 #---------------------------------------
-# VARIABLE IMPORTANCE STATISTICS
+# Variable importance statistics
 #---------------------------------------
 
 library(ranger)
@@ -149,7 +153,6 @@ table(varType[S_hat_tau])
 (1 + sum(W <= -tau)) / length(S_hat_tau)
 sum(W[N] >= tau) / sum(W >= tau)
 
-
 taus = sort(c(0, abs(W)))
 
 FDP_hat = sapply(taus, function(tau)
@@ -172,7 +175,7 @@ table(varType[S_hat])
 sum(W[N] >= tau_hat) / sum(W >= tau_hat)
 
 #---------------------------------------
-# MODEL-X KNOCKOFF
+# Model-X knockoff
 #---------------------------------------
 
 library(knockoff)

@@ -43,7 +43,7 @@ coverage[i] = C[,2] <= y_new & y_new <= C[,3]
 mean(coverage)
 
 #---------------------------------------
-# MODEL MISS-SPECIFICATION
+# Model miss-specification
 #---------------------------------------
 
 C = predict(lm(y ~ x, train), 
@@ -85,7 +85,7 @@ abline(h=1-alpha, lwd=2,col=2)
 
 
 #---------------------------------------
-# SPLIT CONFORMAL
+# Split conformal
 #---------------------------------------
 
 split_conformal = function(x, y, x_new, m, alpha=0.1,
@@ -162,7 +162,7 @@ abline(h=1-alpha, lwd=2,col=2)
 #dev.off()
 
 #---------------------------------------
-# ORACLE
+# Oracle
 #---------------------------------------
 
 mu_x = 1
@@ -194,7 +194,7 @@ barplot(coverage_tab[,2], names.arg=coverage_tab[,1], ylim=c(0,1), ylab="Coverag
 
 
 #---------------------------------------
-# QUANTILE CONFORMAL
+# Quantile split conformal 
 #---------------------------------------
 
 split_conformal_quantile = function(x, y, x_new, m,
@@ -261,7 +261,7 @@ polygon(c(x_new,rev(x_new)),
 #dev.off()
 
 #---------------------------------------
-# MULTI SPLIT
+# Multi split conformal
 #---------------------------------------
 
 multi_split <- function(C_mat, tau=0.5){

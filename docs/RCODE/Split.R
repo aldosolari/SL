@@ -3,7 +3,7 @@
 #=======================================
 
 #---------------------------------------
-# NAIVE TWO-STEP PROCEDURE
+# Naive two-step procedure
 #---------------------------------------
 
 rm(list=ls())
@@ -42,7 +42,7 @@ S_hat_typeI <- length(setdiff(S_hat,S))
 S_hat_typeII <- length(setdiff(S,S_hat))
 
 #---------------------------------------
-# SINGLE-SPLIT
+# Single split
 #---------------------------------------
 
 set.seed(123)
@@ -64,7 +64,7 @@ S_tilde <- M_hat[pval_tilde[M_hat] <= alpha]
 table(varType[S_tilde])
 
 #---------------------------------------
-# P-VALUE LOTTERY
+# P-value lottery
 #---------------------------------------
 
 B <- 25
@@ -92,7 +92,7 @@ pval_aggr <- pmin(2*apply(pval_matrix_tilde,2,median),1)
 sum(pval_aggr <= alpha)
 
 #---------------------------------------
-# MULTI-SPLIT
+# Multi split
 #---------------------------------------
 
 B = 25
@@ -107,7 +107,7 @@ table(varType[S_hat])
 confint(fit)[S_hat,]
 
 #---------------------------------------
-# SIMULATION
+# Simulation naive two-step procedure
 #---------------------------------------
 
 sim_naive <- function(n,p,s,SNR,rho=0,alpha=0.05){

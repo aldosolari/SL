@@ -4,7 +4,7 @@
 
 
 #---------------------------------------
-# TOY EXAMPLE
+# Toy example
 #---------------------------------------
 
 rm(list=ls())
@@ -26,7 +26,7 @@ legend("topleft", c("l0","l1","l2"), col=c(2,3,4), pch=19)
 #dev.off()
 
 #---------------------------------------
-# ORTHOGONAL CASE
+# Orthogonal case
 #---------------------------------------
 
 rm(list=ls())
@@ -58,7 +58,7 @@ legend("topright", c("BSS","Ridge","Lasso"), col=c(2,4,3), lty=1, lwd=2)
 #dev.off()
 
 #---------------------------------------
-# PROSTATE
+# Prostate data
 #---------------------------------------
 
 rm(list=ls())
@@ -140,8 +140,6 @@ axis(3, at=fit_lasso$R2, labels=c(round(fit_lasso$lambda,1),0))
 #dev.off()
 
 
-
-
 #--- Forward Stagewise ----------
 
 forward_stagewise <- function(X,y,eps=0.01, itr = 100){
@@ -177,6 +175,10 @@ fit_lasso <- glmnet(X_std,y_std,intercept=FALSE,standardize = FALSE)
 plot(fit_lasso, lwd=2)
 #dev.off()
 
+#---------------------------------------
+# Lasso cross-validation
+#---------------------------------------
+
 X = as.matrix(train[,-9])
 y = as.matrix(train[,9])
 
@@ -192,6 +194,10 @@ coef(cv_fit, s="lambda.1se")
 
 cv_fit$lambda.min
 coef(cv_fit, s="lambda.min")
+
+#---------------------------------------
+# Relaxed lasso
+#---------------------------------------
 
 set.seed(123)
 fit_relax <- glmnet(X,y, relax = TRUE)
@@ -211,7 +217,7 @@ plot(cv_fit_relax0)
 #dev.off()
 
 #---------------------------------------
-# GROUP LASSO
+# Group lasso
 #---------------------------------------
 
 rm(list=ls())
@@ -227,7 +233,7 @@ plot(cvfit_ls)
 coef(cvfit_ls, s = "lambda.min")
 
 #---------------------------------------
-# HITTERS
+# Hitters data
 #---------------------------------------
 
 rm(list=ls())

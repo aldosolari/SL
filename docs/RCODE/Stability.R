@@ -55,6 +55,10 @@ matplot(log(Lambda), t(pi_hat),
 tau = 0.6
 abline(h=tau)
 
+#----------------------------------------
+# Complementary pairs stability selection
+#----------------------------------------
+
 library(stabs)
 fit <- stabsel(x = X, y = y, fitfun = glmnet.lasso, q = 50,
                cutoff=0.6, assumption ="none") 

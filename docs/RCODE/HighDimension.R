@@ -4,7 +4,7 @@
 
 
 #---------------------------------------
-# LOGISTIC REGRESSION
+# Logistic regression
 #---------------------------------------
 
 rm(list=ls())
@@ -68,9 +68,8 @@ hist(summary(fit)$coeff[2:((p/2)+1),4], freq=F, 20, xlab="P-values", main="")
 #dev.off()
 
 
-
 #---------------------------------------
-# LDA
+# Linear discriminant analysis
 #---------------------------------------
 
 rm(list=ls())
