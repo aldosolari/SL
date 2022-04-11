@@ -157,7 +157,7 @@ Tale materiale verrà reso disponibile tramite la piattaforma "esami informatizz
 
 Esempio di prova d'esame:
 
-* 11 Aprile 2022 [Testo](docs/EXERCISES/SL11042022_testo.pdf) [Soluzione](docs/EXERCISES/SL11042022_testo.pdf) 
+* 11 Aprile 2022 [Testo](docs/EXERCISES/SL11042022_testo.pdf) [Soluzione](docs/EXERCISES/SL11042022_soluzione.pdf) 
 
 
 **Calendario degli esami**.
