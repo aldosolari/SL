@@ -77,7 +77,7 @@ Corso di Laurea Magistrale in Scienze Statistiche ed Economiche, Università deg
 </tr>
 
 <tr>
-<td>Smoothing spline.</td>
+<td>Smoothing splines.</td>
 <td> [SLIDES](docs/SLIDES/Splines.pdf). </td>
 <td> [R CODE](https://github.com/aldosolari/SL/blob/master/docs/RCODE/Splines.R)</td>
 <td> ESL §5.1-§5.5, CASL §4.2, §4.5, §4.6 </td>
@@ -141,9 +141,23 @@ Corso di Laurea Magistrale in Scienze Statistiche ed Economiche, Università deg
 
 ## Modalità d'esame.
 
-* La modalità di verifica consiste in una prova scritta in laboratorio. Lo studente (oppure il docente) può richiedere la prova orale.
+La modalità di verifica consiste in una prova scritta in laboratorio. Lo studente (oppure il docente) può richiedere la prova orale. La prova scritta ha come obiettivo la verifica delle abilità di analisi dei dati e di programmazione e la comprensione degli aspetti matematico-statistici degli argomenti trattati.
 
-* La prova scritta ha come obiettivo la verifica delle abilità di analisi dei dati e di programmazione e la comprensione degli aspetti matematico-statistici degli argomenti trattati. 
+La prova si svolgerà in laboratorio, con accesso alla piattaforma "esami informatizzati". Per partecipare alla prova è necessario iscriversi all'appello. 
+
+Durante la prova sarà possibile utilizzare il software R / Rstudio, con le **librerie R** disponibili (ovvero quelle installate sul computer). Durante la prova non sarà disponibile il collegamento ad internet (quindi non sarà possibile installare nuove librerie). 
+
+La prova è a libro-aperto. Durante la prova verranno resi disponibili i seguenti files:
+
+* Slides [.PDF](docs/SLIDES/SL_slides.pdf)
+
+* Codice R [.PDF](https://github.com/aldosolari/SL/blob/master/docs/RCODE/SL_Rcode.pdf) [.HTML](https://github.com/aldosolari/SL/blob/master/docs/RCODE/SL_Rcode.html)  
+
+Tale materiale verrà reso disponibile tramite la piattaforma "esami informatizzati" il giorno dell'esame. E' inoltre possibile portare il proprio materiale (appunti, libri di testo etc.) ma solo in formato **cartaceo**. 
+
+Esempio di prova d'esame:
+
+* 11 Aprile 2022 [Testo](docs/EXERCISES/SL11042022_testo.pdf) [Soluzione](docs/EXERCISES/SL11042022_testo.pdf) 
 
 
 **Calendario degli esami**.
