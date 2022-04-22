@@ -147,6 +147,8 @@ La prova si svolgerà in laboratorio, con accesso alla piattaforma "esami inform
 
 Durante la prova sarà possibile utilizzare il software R / Rstudio, con le **librerie R** disponibili (ovvero quelle installate sul computer). Durante la prova non sarà disponibile il collegamento ad internet (quindi non sarà possibile installare nuove librerie). 
 
+* Librerie R installate [.TXT](https://github.com/aldosolari/SL/blob/master/docs/RCODE/librerie_R_installate.txt)
+
 La prova è a libro-aperto. Durante la prova verranno resi disponibili i seguenti files:
 
 * Slides [.PDF](docs/SLIDES/SL_slides.pdf)
