@@ -162,6 +162,8 @@ Esempio di prova d'esame:
 * 11 Aprile 2022 [Testo](docs/EXERCISES/SL11042022_testo.pdf) [Soluzione](docs/EXERCISES/SL11042022_soluzione.pdf) 
 
 
+
+
 **Calendario degli esami**.
 
 || Sessione || Data || Luogo || Orario ||
@@ -173,6 +175,11 @@ Esempio di prova d'esame:
 || Estiva || - || -  || - ||
 || Invernale || -|| - || -  ||
 || Invernale || - || - || - ||
+ 
+## Appelli
+
+* 26 Aprile 2022 [Testo](docs/EXERCISES/SL260422_testo.pdf) [Soluzione](docs/EXERCISES/SL260422_soluzione.pdf)
+ 
  
 ## Libri di testo.
 
