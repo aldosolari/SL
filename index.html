@@ -10,6 +10,19 @@
 
 <title>Statistical Learning</title>
 
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
 <style type="text/css"></style>
 
 
@@ -24,7 +37,8 @@
 
 
 
-<p>Corso di Laurea Magistrale in Scienze Statistiche ed Economiche, Università degli Studi di Milano-Bicocca, A.A. 2021/22.</p>
+<p>Corso di Laurea Magistrale in Scienze Statistiche ed Economiche,
+Università degli Studi di Milano-Bicocca, A.A. 2021/22.</p>
 <div id="calendario-delle-lezioni." class="section level2">
 <h2>Calendario delle lezioni.</h2>
 <ul>
@@ -90,7 +104,8 @@ Prediction, Estimation, and Attribution.
 <a href="docs/SLIDES/EfronPEA.pdf">SLIDES</a>.
 </td>
 <td>
-<a href="https://github.com/aldosolari/SL/blob/master/docs/RCODE/EfronPEA.R">R CODE</a>
+<a href="https://github.com/aldosolari/SL/blob/master/docs/RCODE/EfronPEA.R">R
+CODE</a>
 </td>
 <td>
 CASI §1, §Epilogue
@@ -107,7 +122,8 @@ James-Stein estimation.
 <a href="docs/SLIDES/JamesStein.pdf">SLIDES</a>.
 </td>
 <td>
-<a href="https://github.com/aldosolari/SL/blob/master/docs/RCODE/JamesStein.R">R CODE</a>
+<a href="https://github.com/aldosolari/SL/blob/master/docs/RCODE/JamesStein.R">R
+CODE</a>
 </td>
 <td>
 CASI §7.1, §7.2
@@ -124,7 +140,8 @@ Ridge regression.
 <a href="docs/SLIDES/Ridge.pdf">SLIDES</a>.
 </td>
 <td>
-<a href="https://github.com/aldosolari/SL/blob/master/docs/RCODE/Ridge.R">R CODE</a>
+<a href="https://github.com/aldosolari/SL/blob/master/docs/RCODE/Ridge.R">R
+CODE</a>
 </td>
 <td>
 CASI §7.3, ESL §3.4.1, CASL §3
@@ -141,7 +158,8 @@ Smoothing splines.
 <a href="docs/SLIDES/Splines.pdf">SLIDES</a>.
 </td>
 <td>
-<a href="https://github.com/aldosolari/SL/blob/master/docs/RCODE/Splines.R">R CODE</a>
+<a href="https://github.com/aldosolari/SL/blob/master/docs/RCODE/Splines.R">R
+CODE</a>
 </td>
 <td>
 ESL §5.1-§5.5, CASL §4.2, §4.5, §4.6
@@ -158,7 +176,8 @@ Classical versus high-dimensional theory.
 <a href="docs/SLIDES/HighDimension.pdf">SLIDES</a>.
 </td>
 <td>
-<a href="https://github.com/aldosolari/SL/blob/master/docs/RCODE/HighDimension.R">R CODE</a>
+<a href="https://github.com/aldosolari/SL/blob/master/docs/RCODE/HighDimension.R">R
+CODE</a>
 </td>
 <td>
 HDS §1.1-§1.3
@@ -175,7 +194,8 @@ Sparse Modeling: Best Subset and the Lasso.
 <a href="docs/SLIDES/Sparsity.pdf">SLIDES</a>.
 </td>
 <td>
-<a href="https://github.com/aldosolari/SL/blob/master/docs/RCODE/Sparsity.R">R CODE</a>
+<a href="https://github.com/aldosolari/SL/blob/master/docs/RCODE/Sparsity.R">R
+CODE</a>
 </td>
 <td>
 CASI §16, ESL §3.3-§3.4.3, CASL §7.1-§7.3
@@ -192,7 +212,8 @@ Data splitting for variable selection.
 <a href="docs/SLIDES/Split.pdf">SLIDES</a>.
 </td>
 <td>
-<a href="https://github.com/aldosolari/SL/blob/master/docs/RCODE/Split.R">R CODE</a>
+<a href="https://github.com/aldosolari/SL/blob/master/docs/RCODE/Split.R">R
+CODE</a>
 </td>
 <td>
 CASI §15.1, CASI §15.2
@@ -209,7 +230,8 @@ Stability selection.
 <a href="docs/SLIDES/Stability.pdf">SLIDES</a>.
 </td>
 <td>
-<a href="https://github.com/aldosolari/SL/blob/master/docs/RCODE/Stability.R">R CODE</a>
+<a href="https://github.com/aldosolari/SL/blob/master/docs/RCODE/Stability.R">R
+CODE</a>
 </td>
 <td>
 </td>
@@ -225,7 +247,8 @@ Knockoff filter.
 <a href="docs/SLIDES/Knockoff.pdf">SLIDES</a>.
 </td>
 <td>
-<a href="https://github.com/aldosolari/SL/blob/master/docs/RCODE/Knockoff.R">R CODE</a>
+<a href="https://github.com/aldosolari/SL/blob/master/docs/RCODE/Knockoff.R">R
+CODE</a>
 </td>
 <td>
 </td>
@@ -241,7 +264,8 @@ Conformal prediction.
 <a href="docs/SLIDES/Conformal.pdf">SLIDES</a>.
 </td>
 <td>
-<a href="https://github.com/aldosolari/SL/blob/master/docs/RCODE/Conformal.R">R CODE</a>
+<a href="https://github.com/aldosolari/SL/blob/master/docs/RCODE/Conformal.R">R
+CODE</a>
 </td>
 <td>
 </td>
@@ -253,18 +277,32 @@ Conformal prediction.
 </div>
 <div id="modalità-desame." class="section level2">
 <h2>Modalità d’esame.</h2>
-<p>La modalità di verifica consiste in una prova scritta in laboratorio. Lo studente (oppure il docente) può richiedere la prova orale. La prova scritta ha come obiettivo la verifica delle abilità di analisi dei dati e di programmazione e la comprensione degli aspetti matematico-statistici degli argomenti trattati.</p>
-<p>La prova si svolgerà in laboratorio, con accesso alla piattaforma “esami informatizzati”. Per partecipare alla prova è necessario iscriversi all’appello.</p>
-<p>Durante la prova sarà possibile utilizzare il software R / Rstudio, con le <strong>librerie R</strong> disponibili (ovvero quelle installate sul computer). Durante la prova non sarà disponibile il collegamento ad internet (quindi non sarà possibile installare nuove librerie).</p>
+<p>La modalità di verifica consiste in una prova scritta in laboratorio.
+Lo studente (oppure il docente) può richiedere la prova orale. La prova
+scritta ha come obiettivo la verifica delle abilità di analisi dei dati
+e di programmazione e la comprensione degli aspetti
+matematico-statistici degli argomenti trattati.</p>
+<p>La prova si svolgerà in laboratorio, con accesso alla piattaforma
+“esami informatizzati”. Per partecipare alla prova è necessario
+iscriversi all’appello.</p>
+<p>Durante la prova sarà possibile utilizzare il software R / Rstudio,
+con le <strong>librerie R</strong> disponibili (ovvero quelle installate
+sul computer). Durante la prova non sarà disponibile il collegamento ad
+internet (quindi non sarà possibile installare nuove librerie).</p>
 <ul>
 <li>Librerie R installate <a href="https://github.com/aldosolari/SL/blob/master/docs/RCODE/Librerie_R_installate.txt">.TXT</a></li>
 </ul>
-<p>La prova è a libro-aperto. Durante la prova verranno resi disponibili i seguenti files:</p>
+<p>La prova è a libro-aperto. Durante la prova verranno resi disponibili
+i seguenti files:</p>
 <ul>
 <li><p>Slides <a href="docs/SLIDES/SL_slides.pdf">.PDF</a></p></li>
-<li><p>Codice R <a href="https://github.com/aldosolari/SL/blob/master/docs/RCODE/SL_Rcode.pdf">.PDF</a> <a href="https://github.com/aldosolari/SL/blob/master/docs/RCODE/SL_Rcode.html">.HTML</a></p></li>
+<li><p>Codice R <a href="https://github.com/aldosolari/SL/blob/master/docs/RCODE/SL_Rcode.pdf">.PDF</a>
+<a href="https://github.com/aldosolari/SL/blob/master/docs/RCODE/SL_Rcode.html">.HTML</a></p></li>
 </ul>
-<p>Tale materiale verrà reso disponibile tramite la piattaforma “esami informatizzati” il giorno dell’esame. E’ inoltre possibile portare il proprio materiale (appunti, libri di testo etc.) ma solo in formato <strong>cartaceo</strong>.</p>
+<p>Tale materiale verrà reso disponibile tramite la piattaforma “esami
+informatizzati” il giorno dell’esame. E’ inoltre possibile portare il
+proprio materiale (appunti, libri di testo etc.) ma solo in formato
+<strong>cartaceo</strong>.</p>
 <p>Esempio di prova d’esame:</p>
 <ul>
 <li>11 Aprile 2022 <a href="docs/EXERCISES/SL11042022_testo.pdf">Testo</a> <a href="docs/EXERCISES/SL11042022_soluzione.pdf">Soluzione</a></li>
@@ -376,24 +414,30 @@ Conformal prediction.
 <div id="appelli" class="section level2">
 <h2>Appelli</h2>
 <ul>
-<li>26 Aprile 2022 <a href="docs/EXERCISES/SL26042022_testo.pdf">Testo</a> <a href="docs/EXERCISES/SL26042022_soluzione.pdf">Soluzione</a></li>
+<li><p>26 Aprile 2022 <a href="docs/EXERCISES/SL26042022_testo.pdf">Testo</a> <a href="docs/EXERCISES/SL26042022_soluzione.pdf">Soluzione</a></p></li>
+<li><p>24 Giugno 2022 <a href="docs/EXERCISES/SL24062022_testo.pdf">Testo</a> <a href="docs/EXERCISES/SL24062022_soluzione.pdf">Soluzione</a></p></li>
 </ul>
 </div>
 <div id="libri-di-testo." class="section level2">
 <h2>Libri di testo.</h2>
 <ul>
-<li><p>Efron, Hastie (2016) Computer-Age Statistical Inference: Algorithms, Evidence, and Data Science. Cambridge University Press [CASI]</p></li>
-<li><p>Hastie, Tibshirani, Friedman (2009). The Elements of Statistical Learning. Springer [ESL]</p></li>
+<li><p>Efron, Hastie (2016) Computer-Age Statistical Inference:
+Algorithms, Evidence, and Data Science. Cambridge University Press
+[CASI]</p></li>
+<li><p>Hastie, Tibshirani, Friedman (2009). The Elements of Statistical
+Learning. Springer [ESL]</p></li>
 </ul>
 <!-- * Hastie, Tibshirani, Wainwright (2015). Statistical Learning with Sparsity: -->
 <!-- The Lasso and Generalizations. CRC Press [SLS] -->
 <ul>
-<li>Lewis, Kane, Arnold (2019) A Computational Approach to Statistical Learning. Chapman And Hall/Crc. [CASL]</li>
+<li>Lewis, Kane, Arnold (2019) A Computational Approach to Statistical
+Learning. Chapman And Hall/Crc. [CASL]</li>
 </ul>
 <!-- * Shalizi (2021). Advanced Data Analysis -->
 <!-- from an Elementary Point of View. [ADA] -->
 <ul>
-<li>Wainwright (2019) High-Dimensional Statistics: A Non-Asymptotic Viewpoint. Cambridge University Press [HDS]</li>
+<li>Wainwright (2019) High-Dimensional Statistics: A Non-Asymptotic
+Viewpoint. Cambridge University Press [HDS]</li>
 </ul>
 <!-- * Wasserman (2006) All of Nonparametric Statistics. Springer [ANS] -->
 </div>
