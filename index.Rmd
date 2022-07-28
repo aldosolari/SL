@@ -178,9 +178,11 @@ Esempio di prova d'esame:
  
 ## Appelli
 
-* 26 Aprile 2022 [Testo](docs/EXERCISES/SL26042022_testo.pdf) [Soluzione](docs/EXERCISES/SL26042022_soluzione.pdf)
+* 26 Aprile 2022 [Soluzione](docs/EXERCISES/SL26042022_soluzione.pdf)
  
-* 24 Giugno 2022 [Testo](docs/EXERCISES/SL24062022_testo.pdf) [Soluzione](docs/EXERCISES/SL24062022_soluzione.pdf)
+* 24 Giugno 2022 [Soluzione](docs/EXERCISES/SL24062022_soluzione.pdf)
+ 
+* 14 Luglio 2022 [Soluzione](docs/EXERCISES/SL14072022_soluzione.pdf)
  
  
 ## Libri di testo.
