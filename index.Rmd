@@ -170,9 +170,9 @@ Esempio di prova d'esame:
 |-|-|-|-|-|-|-|-|-|-|
 ||  || ||  ||  || ||
 || Primaverile || 26 Aprile 2022 || - ||  14:30  ||
-|| Estiva || 24 Giugno 2022 || - || 8:30  ||
-|| Estiva || 14 Luglio 2022 || - || 14:30 ||
-|| Estiva || - || -  || - ||
+|| Estiva || 24 Giugno 2022 || LAB717 || 8:30  ||
+|| Estiva || 14 Luglio 2022 || LAB713 || 14:30 ||
+|| Estiva || 14 Settembre 2022 || LAB713 || 14:30 ||
 || Invernale || -|| - || -  ||
 || Invernale || - || - || - ||
  
@@ -183,6 +183,8 @@ Esempio di prova d'esame:
 * 24 Giugno 2022 [Soluzione](docs/EXERCISES/SL24062022_soluzione.pdf)
  
 * 14 Luglio 2022 [Soluzione](docs/EXERCISES/SL14072022_soluzione.pdf)
+ 
+* 14 Settembre 2022 [Soluzione](docs/EXERCISES/SL14092022_soluzione.pdf)
  
  
 ## Libri di testo.
