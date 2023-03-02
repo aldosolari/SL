@@ -7,29 +7,27 @@ output: markdowntemplates::minimal
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Corso di Laurea Magistrale in Scienze Statistiche ed Economiche, Università degli Studi di Milano-Bicocca, A.A. 2021/22.
+Corso di Laurea Magistrale in Scienze Statistiche ed Economiche, Università degli Studi di Milano-Bicocca, A.A. 2022/23.
 
 
 ## Calendario delle lezioni.
-* L01 (1 Marzo 2022 10:30 - 12:30 LAB715) 2h
-* L02 (7 Marzo 2022 14:30 - 17:30 LAB715) 3h
-* L03 (8 Marzo 2022 10:30 - 12:30 LAB715) 2h
-* L04 (10 Marzo 2022 8:30 - 11:30 LAB715) 3h
-* L05 (14 Marzo 2022 14:30 - 17:30 LAB715) 3h
-* L06 (15 Marzo 2022 10:30 - 12:30 LAB715) 2h
-* L07 (17 Marzo 2022 8:30 - 11:30 LAB715) 3h
-* L08 (21 Marzo 2022 14:30 - 17:30 LAB715) 3h
-* L09 (22 Marzo 2022 10:30 - 12:30 LAB715) 2h
-* L10 (24 Marzo 2022 8:30 - 11:30 LAB715) 3h
-* L11 (28 Marzo 2022 14:30 - 17:30 LAB715) 3h
-* L12 (29 Marzo 2022 10:30 - 12:30 LAB715) 2h
-* L13 (31 Marzo 2022 8:30 - 11:30 LAB715) 3h
-* L14 (4 Aprile 2022 14:30 - 17:30 LAB715) 3h
-* L15 (5 Aprile 2022 10:30 - 12:30 LAB715) 2h
-* ~~L16 (7 Aprile 2022 8:30 - 11:30 LAB715) 3h~~
-* L16 (11 Aprile 2022 14:30 - 17:30 LAB715) 3h
-
-
+* L01 (7 Marzo 2023 8:30 - 10:30 U6-33) 2h
+* L02 (8 Marzo 2023 8:30 - 11:30 U6-33) 3h
+* L03 (9 Marzo 2023 11:30 - 14:30 LAB716) 3h
+* L04 (14 Marzo 2023 8:30 - 10:30 U6-33) 2h
+* L05 (15 Marzo 2023 8:30 - 11:30 U6-33) 3h
+* L06 (16 Marzo 2023 11:30 - 14:30 LAB716) 3h
+* L07 (21 Marzo 2023 8:30 - 10:30 U6-33) 2h
+* L08 (22 Marzo 2023 8:30 - 11:30 U6-33) 3h
+* L09 (23 Marzo 2023 11:30 - 14:30 LAB716) 3h
+* L10 (27 Marzo 2023 8:30 - 10:30 U6-33) 2h
+* L11 (28 Marzo 2023 8:30 - 11:30 U6-33) 3h
+* L12 (29 Marzo 2023 11:30 - 14:30 LAB716) 3h
+* L13 (4 Aprile 2023 8:30 - 10:30 U6-33) 2h
+* L14 (5 Aprile 2023 8:30 - 11:30 U6-33) 3h
+* L15 (12 Aprile 2023 8:30 - 11:30 U6-33) 3h
+* L16 (13 Aprile 2023 11:30 - 14:30 LAB716) 2h
+* L17 (18 Aprile 2023 8:30 - 10:30 U6-33) 2h
 
 ## Materiale didattico
 
@@ -48,92 +46,52 @@ Corso di Laurea Magistrale in Scienze Statistiche ed Economiche, Università deg
 <td>[SLIDES](docs/SLIDES/Introduction.pdf). </td>
 <td></td>
 <td></td>
-<td>[ESERCIZI](docs/EXERCISES/Introduction.pdf).</td>
+<td></td>
 </tr>
 
 
 <tr>
 <td>Prediction, Estimation, and Attribution.</td>
-<td> [SLIDES](docs/SLIDES/EfronPEA.pdf). </td>
-<td> [R CODE](https://github.com/aldosolari/SL/blob/master/docs/RCODE/EfronPEA.R)</td>
+<td></td>
+<td></td>
 <td> CASI §1, §Epilogue </td>
-<td> [ESERCIZI](docs/EXERCISES/EfronPEA.pdf).</td>
-</tr>
-
-<tr>
-<td>James-Stein estimation.</td>
-<td> [SLIDES](docs/SLIDES/JamesStein.pdf). </td>
-<td> [R CODE](https://github.com/aldosolari/SL/blob/master/docs/RCODE/JamesStein.R)</td>
-<td> CASI §7.1, §7.2</td>
-<td>[ESERCIZI](docs/EXERCISES/JamesStein.pdf).</td>
-</tr>
-
-<tr>
-<td>Ridge regression.</td>
-<td> [SLIDES](docs/SLIDES/Ridge.pdf). </td>
-<td> [R CODE](https://github.com/aldosolari/SL/blob/master/docs/RCODE/Ridge.R)</td>
-<td> CASI §7.3, ESL §3.4.1, CASL §3 </td>
-<td>[ESERCIZI](docs/EXERCISES/Ridge.pdf).</td>
-</tr>
-
-<tr>
-<td>Smoothing splines.</td>
-<td> [SLIDES](docs/SLIDES/Splines.pdf). </td>
-<td> [R CODE](https://github.com/aldosolari/SL/blob/master/docs/RCODE/Splines.R)</td>
-<td> ESL §5.1-§5.5, CASL §4.2, §4.5, §4.6 </td>
-<td>[ESERCIZI](docs/EXERCISES/Splines.pdf)</td>
-</tr>
-
-
-<tr>
-<td>Classical versus high-dimensional theory.</td>
-<td> [SLIDES](docs/SLIDES/HighDimension.pdf). </td>
-<td> [R CODE](https://github.com/aldosolari/SL/blob/master/docs/RCODE/HighDimension.R)</td>
-<td> HDS §1.1-§1.3  </td>
-<td>[ESERCIZI](docs/EXERCISES/HighDimension.pdf)</td>
-</tr>
-
-
-<tr>
-<td>Sparse Modeling: Best Subset and the Lasso.</td>
-<td> [SLIDES](docs/SLIDES/Sparsity.pdf). </td>
-<td> [R CODE](https://github.com/aldosolari/SL/blob/master/docs/RCODE/Sparsity.R)</td>
-<td> CASI §16, ESL §3.3-§3.4.3, CASL §7.1-§7.3 </td>
-<td>[ESERCIZI](docs/EXERCISES/Sparsity.pdf)</td>
-</tr>
-
-
-<tr>
-<td>Data splitting for variable selection.</td>
-<td> [SLIDES](docs/SLIDES/Split.pdf). </td>
-<td> [R CODE](https://github.com/aldosolari/SL/blob/master/docs/RCODE/Split.R)</td>
-<td> CASI §15.1, CASI §15.2 </td>
-<td>[ESERCIZI](docs/EXERCISES/Split.pdf)</td>
-</tr>
-
-<tr>
-<td>Stability selection.</td>
-<td> [SLIDES](docs/SLIDES/Stability.pdf). </td>
-<td> [R CODE](https://github.com/aldosolari/SL/blob/master/docs/RCODE/Stability.R)</td>
-<td> </td>
-<td>[ESERCIZI](docs/EXERCISES/Stability.pdf)</td>
-</tr>
-
-<tr>
-<td>Knockoff filter.</td>
-<td> [SLIDES](docs/SLIDES/Knockoff.pdf). </td>
-<td> [R CODE](https://github.com/aldosolari/SL/blob/master/docs/RCODE/Knockoff.R)</td>
-<td>  </td>
-<td>[ESERCIZI](docs/EXERCISES/Knockoff.pdf)</td>
+<td></td>
 </tr>
 
 <tr>
 <td>Conformal prediction.</td>
-<td> [SLIDES](docs/SLIDES/Conformal.pdf). </td>
-<td> [R CODE](https://github.com/aldosolari/SL/blob/master/docs/RCODE/Conformal.R)</td>
-<td>  </td>
-<td>[ESERCIZI](docs/EXERCISES/Conformal.pdf)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
+
+<tr>
+<td>James-Stein estimation.</td>
+<td></td>
+<td></td>
+<td> CASI §7.1, §7.2</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Ridge regression.</td>
+<td></td>
+<td></td>
+<td> CASI §7.3, ESL §3.4.1, CASL §3 </td>
+<td></td>
+</tr>
+
+<tr>
+<td>Smoothing splines.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+
+
 
 </table>
 
@@ -143,24 +101,7 @@ Corso di Laurea Magistrale in Scienze Statistiche ed Economiche, Università deg
 
 La modalità di verifica consiste in una prova scritta in laboratorio. Lo studente (oppure il docente) può richiedere la prova orale. La prova scritta ha come obiettivo la verifica delle abilità di analisi dei dati e di programmazione e la comprensione degli aspetti matematico-statistici degli argomenti trattati.
 
-La prova si svolgerà in laboratorio, con accesso alla piattaforma "esami informatizzati". Per partecipare alla prova è necessario iscriversi all'appello. 
-
-Durante la prova sarà possibile utilizzare il software R / Rstudio, con le **librerie R** disponibili (ovvero quelle installate sul computer). Durante la prova non sarà disponibile il collegamento ad internet (quindi non sarà possibile installare nuove librerie). 
-
-* Librerie R installate [.TXT](https://github.com/aldosolari/SL/blob/master/docs/RCODE/Librerie_R_installate.txt)
-
-La prova è a libro-aperto. Durante la prova verranno resi disponibili i seguenti files:
-
-* Slides [.PDF](docs/SLIDES/SL_slides.pdf)
-
-* Codice R [.PDF](https://github.com/aldosolari/SL/blob/master/docs/RCODE/SL_Rcode.pdf) [.HTML](https://github.com/aldosolari/SL/blob/master/docs/RCODE/SL_Rcode.html)  
-
-Tale materiale verrà reso disponibile tramite la piattaforma "esami informatizzati" il giorno dell'esame. E' inoltre possibile portare il proprio materiale (appunti, libri di testo etc.) ma solo in formato **cartaceo**. 
-
-Esempio di prova d'esame:
-
-* 11 Aprile 2022 [Testo](docs/EXERCISES/SL11042022_testo.pdf) [Soluzione](docs/EXERCISES/SL11042022_soluzione.pdf) 
-
+La prova si svolgerà in laboratorio, con accesso alla piattaforma "esami informatizzati". Per partecipare alla prova è necessario iscriversi all'appello. Durante la prova sarà possibile utilizzare il software R / Rstudio, con le **librerie R** disponibili (ovvero quelle installate sul computer). Durante la prova non sarà disponibile il collegamento ad internet (quindi non sarà possibile installare nuove librerie). La prova è a libro aperto. Il materiale consultabile verrà reso disponibile tramite la piattaforma "esami informatizzati" il giorno dell'esame. 
 
 
 
@@ -169,23 +110,12 @@ Esempio di prova d'esame:
 || Sessione || Data || Luogo || Orario ||
 |-|-|-|-|-|-|-|-|-|-|
 ||  || ||  ||  || ||
-|| Primaverile || 26 Aprile 2022 || - ||  14:30  ||
-|| Estiva || 24 Giugno 2022 || LAB717 || 8:30  ||
-|| Estiva || 14 Luglio 2022 || LAB713 || 14:30 ||
-|| Estiva || 14 Settembre 2022 || LAB713 || 14:30 ||
-|| Invernale || -|| - || -  ||
-|| Invernale || - || - || - ||
+|| Primaverile || 8 Maggio 2023 || LAB713 ||  14:00  ||
+|| Estiva || 26 Giugno 2023 || LAB711 || 16:00  ||
+|| Estiva || 10 Luglio 2023 || LAB711 || 14:00 ||
+|| Estiva || 1 Settembre 2022 || LAB717 || 14:00 ||
  
-## Appelli
 
-* 26 Aprile 2022 [Soluzione](docs/EXERCISES/SL26042022_soluzione.pdf)
- 
-* 24 Giugno 2022 [Soluzione](docs/EXERCISES/SL24062022_soluzione.pdf)
- 
-* 14 Luglio 2022 [Soluzione](docs/EXERCISES/SL14072022_soluzione.pdf)
- 
-* 14 Settembre 2022 [Soluzione](docs/EXERCISES/SL14092022_soluzione.pdf)
- 
  
 ## Libri di testo.
 
@@ -201,6 +131,6 @@ Esempio di prova d'esame:
 <!-- * Shalizi (2021). Advanced Data Analysis -->
 <!-- from an Elementary Point of View. [ADA] -->
 
-* Wainwright (2019) High-Dimensional Statistics: A Non-Asymptotic Viewpoint. Cambridge University Press [HDS]
+<!-- * Wainwright (2019) High-Dimensional Statistics: A Non-Asymptotic Viewpoint. Cambridge University Press [HDS] -->
 
 <!-- * Wasserman (2006) All of Nonparametric Statistics. Springer [ANS] -->
