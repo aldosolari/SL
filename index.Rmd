@@ -123,9 +123,6 @@ La prova si svolgerà in laboratorio, con accesso alla piattaforma "esami inform
 
 * Hastie, Tibshirani, Friedman (2009). The Elements of Statistical Learning. Springer [ESL]
 
-<!-- * Hastie, Tibshirani, Wainwright (2015). Statistical Learning with Sparsity: -->
-<!-- The Lasso and Generalizations. CRC Press [SLS] -->
-
 * Lewis, Kane, Arnold (2019) A Computational Approach to Statistical Learning. Chapman And Hall/Crc. [CASL]
 
 <!-- * Shalizi (2021). Advanced Data Analysis -->
@@ -134,3 +131,10 @@ La prova si svolgerà in laboratorio, con accesso alla piattaforma "esami inform
 <!-- * Wainwright (2019) High-Dimensional Statistics: A Non-Asymptotic Viewpoint. Cambridge University Press [HDS] -->
 
 <!-- * Wasserman (2006) All of Nonparametric Statistics. Springer [ANS] -->
+
+### Approfondimenti.
+
+* Hastie, Tibshirani, Wainwright (2015). Statistical Learning with Sparsity:
+The Lasso and Generalizations. CRC Press [SLS]
+
+* Wainwright (2019) High-Dimensional Statistics: A Non-Asymptotic Viewpoint. Cambridge University Press [HDS]
