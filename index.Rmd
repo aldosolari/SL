@@ -46,14 +46,14 @@ Corso di Laurea Magistrale in Scienze Statistiche ed Economiche, Università deg
 <td>[SLIDES](docs/SLIDES/Introduction.pdf). </td>
 <td></td>
 <td></td>
-<td></td>
+<td>[ESERCIZI](docs/EXERCISES/Introduction.pdf).</td>
 </tr>
 
 
 <tr>
 <td>Prediction, Estimation, and Attribution.</td>
-<td></td>
-<td></td>
+<td>[SLIDES](docs/SLIDES/EfronPEA.pdf).</td>
+<td>[R CODE](https://github.com/aldosolari/SL/blob/master/docs/RCODE/EfronPEA.R).</td>
 <td> CASI §1, §Epilogue </td>
 <td></td>
 </tr>
@@ -68,18 +68,18 @@ Corso di Laurea Magistrale in Scienze Statistiche ed Economiche, Università deg
 
 <tr>
 <td>James-Stein estimation.</td>
-<td></td>
-<td></td>
+<td> [SLIDES](docs/SLIDES/JamesStein.pdf). </td>
+<td> [R CODE](https://github.com/aldosolari/SL/blob/master/docs/RCODE/JamesStein.R)</td>
 <td> CASI §7.1, §7.2</td>
-<td></td>
+<td>[ESERCIZI](docs/EXERCISES/JamesStein.pdf).</td>
 </tr>
 
 <tr>
 <td>Ridge regression.</td>
-<td></td>
-<td></td>
+<td> [SLIDES](docs/SLIDES/Ridge.pdf). </td>
+<td> [R CODE](https://github.com/aldosolari/SL/blob/master/docs/RCODE/Ridge.R)</td>
 <td> CASI §7.3, ESL §3.4.1, CASL §3 </td>
-<td></td>
+<td>[ESERCIZI](docs/EXERCISES/Ridge.pdf).</td>
 </tr>
 
 <tr>
@@ -128,8 +128,6 @@ La prova si svolgerà in laboratorio, con accesso alla piattaforma "esami inform
 <!-- * Shalizi (2021). Advanced Data Analysis -->
 <!-- from an Elementary Point of View. [ADA] -->
 
-<!-- * Wainwright (2019) High-Dimensional Statistics: A Non-Asymptotic Viewpoint. Cambridge University Press [HDS] -->
-
 <!-- * Wasserman (2006) All of Nonparametric Statistics. Springer [ANS] -->
 
 ### Approfondimenti.
@@ -138,3 +136,4 @@ La prova si svolgerà in laboratorio, con accesso alla piattaforma "esami inform
 The Lasso and Generalizations. CRC Press [SLS]
 
 * Wainwright (2019) High-Dimensional Statistics: A Non-Asymptotic Viewpoint. Cambridge University Press [HDS]
+
