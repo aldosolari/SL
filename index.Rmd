@@ -29,7 +29,7 @@ Corso di Laurea Magistrale in Scienze Statistiche ed Economiche, Università deg
 * L16 (13 Aprile 2023 11:30 - 14:30 LAB716) 2h
 * L17 (18 Aprile 2023 8:30 - 10:30 U6-33) 2h
 
-## Materiale didattico
+## Materiale didattico.
 
 <table>
 
@@ -86,10 +86,51 @@ Corso di Laurea Magistrale in Scienze Statistiche ed Economiche, Università deg
 <td>Smoothing splines.</td>
 <td></td>
 <td></td>
+<td>ESL §5.1-§5.5, CASL §4.2, §4.5, §4.6</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Classical versus high-dimensional theory.</td>
+<td></td>
+<td></td>
+<td> HDS §1.1-§1.3  </td>
+<td></td>
+</tr>
+
+
+<tr>
+<td>Sparse Modeling and the Lasso.</td>
+<td></td>
+<td></td>
+<td> CASI §16, ESL §3.3-§3.4.3, CASL §7.1-§7.3 </td>
+<td></td>
+</tr>
+
+
+<tr>
+<td>Data splitting for variable selection.</td>
+<td></td>
+<td></td>
+<td> CASI §15.1, CASI §15.2 </td>
+<td></td>
+</tr>
+
+<tr>
+<td>Stability selection.</td>
+<td></td>
+<td></td>
 <td></td>
 <td></td>
 </tr>
 
+<tr>
+<td>Knockoff filter.</td>
+<td></td>
+<td></td>
+<td>  </td>
+<td></td>
+</tr>
 
 
 
