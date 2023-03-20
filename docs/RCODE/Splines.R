@@ -15,54 +15,6 @@ x = sort(runif(n))
 f_x = sin(2*(4*x-2)) + 2*exp(-(16^2)*((x-.5)^2))
 y = f_x + rnorm(n, mean=0, sd=sigma)
 
-
-knots = seq(0.1, 0.9, by=.1)
-K = length(knots)
-
-
-#---------------------------------------
-# nat_spline_x function
-#---------------------------------------
-
-nat_spline_x <- function(x, knots){
-  
-  K <- length(knots)
-  n <- length(x)
-  xi <- knots
-  
-  d <- function(z, j)
-  {
-    out <- (x - xi[j])^3 * as.numeric(x > xi[j])
-    out <- out - (x - xi[K])^3 * as.numeric(x > xi[K])
-    out <- out / (xi[K] - xi[j])
-    out
-  }
-  
-  B <- matrix(0, ncol=K, nrow=n)
-  B[, 1L] <- 1
-  B[, 2L] <- x
-  for (j in seq(1L, (K-2L)))
-  {
-    B[, j + 2L] <- d(x, j) - d(x, K - 1L)
-  }
-  B
-  
-}
-
-#pdf("Figure_nat_spline.pdf")
-plot(x,y ,col="gray")
-lines(x, f_x, col=2, lwd=2)
-abline(v=knots, lty=2)
-B <- nat_spline_x(x, knots)
-y_hat <- B %*% solve(crossprod(B)) %*% crossprod(B, y)
-lines(x,y_hat, lwd=2)
-#dev.off()
-
-
-fit_ns <- lm(y ~ 0+B)
-y_hat_ns <- predict(fit_ns, se = TRUE)
-
-
 #---------------------------------------
 # Smoothing spline
 #---------------------------------------
@@ -80,8 +32,6 @@ lines(x, fit_smooth$y, col=4, lwd=2)
 #---------------------------------------
 # B-splines
 #---------------------------------------
-
-max(svd(B)$d) / min(svd(B)$d)
 
 tpower <- function(x, t, deg){
   (x - t) ^ deg * (x > t)
@@ -152,3 +102,4 @@ rm(list=ls())
 data(mcycle)
 x = mcycle$times
 y = mcycle$accel
+
