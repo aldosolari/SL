@@ -86,8 +86,8 @@ Martedì e mercoledì inizio ore 9:00, giovedì inizio ore 11:30.
 
 <tr>
 <td>Smoothing splines.</td>
-<td></td>
-<td></td>
+<td>[SLIDES](docs/SLIDES/Splines.pdf).</td>
+<td>[R CODE](https://github.com/aldosolari/SL/blob/master/docs/RCODE/Splines.R)</td>
 <td>ESL §5.1-§5.5, CASL §4.2, §4.5, §4.6</td>
 <td>[ESERCIZI](docs/EXERCISES/Psplines.pdf).</td>
 </tr>
