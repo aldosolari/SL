@@ -105,7 +105,7 @@ Martedì e mercoledì inizio ore 9:00, giovedì inizio ore 11:30.
 <td>Sparse Modeling and the Lasso.</td>
 <td>[SLIDES](docs/SLIDES/Sparsity.pdf).</td>
 <td>[R CODE](https://github.com/aldosolari/SL/blob/master/docs/RCODE/Sparsity.R)</td>
-<td> CASI §16, ESL §3.3-§3.4.3, CASL §7.1-§7.3, §7.5-§7.6 </td>
+<td> CASI §16, ESL §3.3-§3.4.3, CASL §7.1-§7.6 </td>
 <td>[ESERCIZI]()</td>
 </tr>
 
