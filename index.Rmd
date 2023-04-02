@@ -112,25 +112,25 @@ Martedì e mercoledì inizio ore 9:00, giovedì inizio ore 11:30.
 
 <tr>
 <td>Data splitting for variable selection.</td>
-<td></td>
-<td></td>
+<td>[SLIDES](docs/SLIDES/Split.pdf).</td>
+<td>[R CODE](https://github.com/aldosolari/SL/blob/master/docs/RCODE/Split.R)</td>
 <td> CASI §15.1, CASI §15.2 </td>
 <td></td>
 </tr>
 
 <tr>
 <td>Stability selection.</td>
-<td></td>
-<td></td>
+<td>[SLIDES](docs/SLIDES/Stability.pdf).</td>
+<td>[R CODE](https://github.com/aldosolari/SL/blob/master/docs/RCODE/Stability.R)</td>
 <td></td>
 <td></td>
 </tr>
 
 <tr>
 <td>Knockoff filter.</td>
+<td>[SLIDES](docs/SLIDES/Knockoff.pdf).</td>
+<td>[R CODE](https://github.com/aldosolari/SL/blob/master/docs/RCODE/Knockoff.R)</td>
 <td></td>
-<td></td>
-<td>  </td>
 <td></td>
 </tr>
 
