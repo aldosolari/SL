@@ -124,7 +124,7 @@ Martedì e mercoledì inizio ore 9:00, giovedì inizio ore 11:30.
 <td>[SLIDES](docs/SLIDES/Stability.pdf).</td>
 <td>[R CODE](https://github.com/aldosolari/SL/blob/master/docs/RCODE/Stability.R)</td>
 <td></td>
-<td></td>
+<td>[ESERCIZI](docs/EXERCISES/Stability.pdf)</td>
 </tr>
 
 <tr>
