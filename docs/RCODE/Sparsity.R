@@ -148,8 +148,16 @@ plot(fit_lasso, lwd=2)
 #dev.off()
 
 #---------------------------------------
-# Coordinate descent
+# Elastic net via coordinate descent
 #---------------------------------------
+
+# ATTENZIONE: the function my_enet solves the problem
+# min (1/2) * || y - X %*% beta ||^2 + lambda * ( (1/2)*(1-alpha)*||beta||^2 + alpha*||beta||_1 )
+
+# glmnet solves the problem
+# min (1/2*n) * || y - X %*% beta ||^2 + lambda * ( (1/2)*(1-alpha)*||beta||^2 + alpha*||beta||_1 )
+
+
 
 # Soft threshold function.
 soft_thresh <- function(a, b)
@@ -217,7 +225,7 @@ my_enet <-function(X, y, lambda, alpha = 1,
 
   
 my_enet(X=X_std,y=y_std, lambda = 10, maxit=50, tol = 1e-8)
-coef(glmnet(X_std,y_std,lambda = 10/n,intercept=FALSE,standardize = FALSE, thresh = 1e-8))
+coef(glmnet(X_std,y_std,lambda = 10/n, intercept=FALSE,standardize = FALSE, thresh = 1e-8))
 
 #---------------------------------------
 # Lasso cross-validation
