@@ -159,7 +159,7 @@ e verrà reso disponibile tramite la piattaforma "esami informatizzati" il giorn
 
 **Calendario degli esami**.
 
-|| Sessione || Data || Luogo || Orario ||
+|| Sessione || Data || Luogo || Orario || 
 |-|-|-|-|-|-|-|-|-|-|
 ||  || ||  ||  || ||
 || Primaverile || 8 Maggio 2023 || LAB713 ||  14:00  ||
@@ -167,7 +167,7 @@ e verrà reso disponibile tramite la piattaforma "esami informatizzati" il giorn
 || Estiva || 10 Luglio 2023 || LAB711 || 14:00 ||
 || Estiva || 1 Settembre 2023 || LAB717 || 14:00 ||
  
-
+* [Soluzione 8/5/2023](docs/EXERCISES/SL08052023_soluzione.pdf)
  
 ## Libri di testo.
 
